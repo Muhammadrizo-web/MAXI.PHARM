@@ -1,7 +1,13 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Transition } from "framer-motion";
 
-const items = [
+type Item = {
+  title: string;
+  short: string;
+  full: string;
+};
+
+const items: Item[] = [
   {
     title: "РЕГИСТРАЦИЯ ЛЕКАРСТВЕННЫХ СРЕДСТВ",
     short:
@@ -32,7 +38,7 @@ const items = [
   },
 ];
 
-const spring = {
+const spring: Transition = {
   type: "spring",
   stiffness: 95,
   damping: 22,
@@ -40,7 +46,7 @@ const spring = {
 };
 
 export default function PriorityDirections() {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState<number | null>(null);
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-white px-6 py-[90px]">
@@ -60,7 +66,7 @@ export default function PriorityDirections() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.7 }}
           transition={{ duration: 0.65 }}
-          className="mx-auto max-w-[900px] text-center text-[30px] font-[700] uppercase leading-[1.05] tracking-[-0.035em] text-[#0B2A35] md:text-[42px]"
+          className="mx-auto max-w-[860px] text-center text-[34px] font-[900] uppercase leading-[1.05] tracking-[-0.035em] text-[#0B2A35] md:text-[42px]"
         >
           КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ ЭКСПЕРТНОГО
           <br />
@@ -79,7 +85,7 @@ export default function PriorityDirections() {
 
             return (
               <motion.button
-                key={index}
+                key={item.title}
                 layout
                 onClick={() => setActive(isActive ? null : index)}
                 transition={spring}
@@ -97,7 +103,7 @@ export default function PriorityDirections() {
                         y: -4,
                         boxShadow: "0 16px 35px rgba(20,35,45,.12)",
                       }
-                    : {}
+                    : undefined
                 }
                 className={[
                   "relative overflow-hidden text-left outline-none rounded-[8px] border border-[#DDE4E8] bg-white",
