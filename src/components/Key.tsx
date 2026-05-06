@@ -4,23 +4,31 @@ import { motion } from "framer-motion";
 const items = [
   {
     title: "РЕГИСТРАЦИЯ ЛЕКАРСТВЕННЫХ СРЕДСТВ",
-    short: "Подготовка, формирование и комплексное сопровождение регистрационного досье",
-    full: "Подготовка, формирование и комплексное сопровождение регистрационного досье в соответствии с установленными требованиями уполномоченных органов, включая анализ документации, структурирование материалов и сопровождение на всех этапах регистрационного процесса",
+    short:
+      "Подготовка, формирование и комплексное сопровождение регистрационного досье",
+    full:
+      "Подготовка, формирование и комплексное сопровождение регистрационного досье в соответствии с установленными требованиями уполномоченных органов, включая анализ документации, структурирование материалов и сопровождение на всех этапах регистрационного процесса.",
   },
   {
-    title: "НУТРИТИВНАЯ ПОДДЕРЖКА",
-    short: "Регистрационное сопровождение специализированных продуктов и добавок",
-    full: "Регистрационное сопровождение специализированных продуктов и добавок с подготовкой необходимых материалов, проверкой документации и сопровождением процесса подачи.",
+    title: "РЕГИСТРАЦИЯ МЕДИЦИНСКИХ ИЗДЕЛИЙ",
+    short:
+      "Формирование полного регистрационного досье с последующим профессиональным сопровождением",
+    full:
+      "Формирование полного регистрационного досье, проверка документации, подготовка материалов и последующее профессиональное сопровождение регистрационного процесса.",
   },
   {
-    title: "ЦИФРОВЫЕ ИССЛЕДОВАНИЯ",
-    short: "Подготовка и сопровождение аналитических материалов и отчетности",
-    full: "Подготовка и сопровождение аналитических материалов, отчетности и вспомогательной документации для экспертной оценки и регистрационных процедур.",
+    title: "КЛИНИЧЕСКИЕ ИССЛЕДОВАНИЯ",
+    short:
+      "Комплексная подготовка и сопровождение регистрационного досье с учетом действующих требований",
+    full:
+      "Комплексная подготовка и сопровождение регистрационного досье с учетом действующих требований уполномоченных органов и нормативной документации.",
   },
   {
-    title: "ПОДДЕРЖКА ЛЕКАРСТВЕННОГО ДОСЬЕ И СТД",
-    short: "Формирование, актуализация и проверка регистрационной документации",
-    full: "Формирование, актуализация и проверка регистрационного досье, СТД и сопутствующих документов для подачи в уполномоченные органы.",
+    title: "ПОДГОТОВКА РЕГИСТРАЦИОННОГО ДОСЬЕ (CTD)",
+    short:
+      "Формирование полного регистрационного досье с учетом требований уполномоченных органов",
+    full:
+      "Формирование полного регистрационного досье в формате CTD, актуализация документов и проверка соответствия требованиям уполномоченных органов.",
   },
 ];
 
@@ -35,14 +43,14 @@ export default function PriorityDirections() {
   const [active, setActive] = useState(null);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-white px-6 py-[92px]">
+    <section className="relative min-h-screen w-full overflow-hidden bg-white px-6 py-[90px]">
       <div className="mx-auto max-w-[1180px]">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.7 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto mb-[24px] flex h-[44px] w-fit items-center justify-center rounded-[20px] border border-[#CED6DA] bg-white px-[30px] text-[20px] font-medium text-[#0B2A35]"
+          transition={{ duration: 0.55 }}
+          className="mx-auto mb-[26px] flex h-[44px] w-fit items-center justify-center rounded-[22px] border border-[#CED6DA] bg-white px-[30px] text-[18px] font-medium text-[#0B2A35]"
         >
           Приоритетные направления
         </motion.div>
@@ -51,8 +59,8 @@ export default function PriorityDirections() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.7 }}
-          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-[900px] text-center text-[30px] font-[700] uppercase leading-[1.04] tracking-[-0.035em] text-[#0B2A35] md:text-[40px]"
+          transition={{ duration: 0.65 }}
+          className="mx-auto max-w-[900px] text-center text-[30px] font-[700] uppercase leading-[1.05] tracking-[-0.035em] text-[#0B2A35] md:text-[42px]"
         >
           КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ ЭКСПЕРТНОГО
           <br />
@@ -63,7 +71,7 @@ export default function PriorityDirections() {
 
         <motion.div
           layout
-          className="relative mx-auto mt-[42px] grid max-w-[1080px] grid-cols-1 gap-[28px] md:grid-cols-2"
+          className="relative mx-auto mt-[44px] grid max-w-[1060px] grid-cols-1 gap-[28px] md:grid-cols-2"
         >
           {items.map((item, index) => {
             const isActive = active === index;
@@ -75,38 +83,43 @@ export default function PriorityDirections() {
                 layout
                 onClick={() => setActive(isActive ? null : index)}
                 transition={spring}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.25 }}
                 animate={{
                   opacity: isBlurred ? 0.22 : 1,
-                  filter: isBlurred ? "blur(7px)" : "blur(0px)",
+                  filter: isBlurred ? "blur(8px)" : "blur(0px)",
                   scale: isBlurred ? 0.985 : 1,
                 }}
                 whileHover={
                   active === null
                     ? {
-                        y: -3,
-                        transition: { duration: 0.25 },
+                        y: -4,
+                        boxShadow: "0 16px 35px rgba(20,35,45,.12)",
                       }
                     : {}
                 }
                 className={[
-                  "relative overflow-hidden text-left outline-none",
-                  "rounded-[8px] border border-[#E2E7EB] bg-white",
-                  "will-change-transform",
+                  "relative overflow-hidden text-left outline-none rounded-[8px] border border-[#DDE4E8] bg-white",
                   isActive
-                    ? "z-20 min-h-[220px] px-[34px] py-[32px] shadow-[0_16px_34px_rgba(20,35,45,0.16)]"
-                    : "min-h-[138px] px-[28px] py-[26px] shadow-[0_8px_24px_rgba(20,35,45,0.08)]",
+                    ? "z-20 min-h-[235px] px-[36px] py-[34px] shadow-[0_16px_38px_rgba(20,35,45,0.14)]"
+                    : "min-h-[150px] px-[32px] py-[30px] shadow-[0_10px_28px_rgba(20,35,45,0.08)]",
                 ].join(" ")}
               >
-                <motion.div layout transition={spring} className="flex items-start gap-[22px]">
+                <motion.div
+                  layout
+                  transition={spring}
+                  className="flex items-start gap-[18px]"
+                >
                   <motion.div
                     layout
                     transition={spring}
                     className={[
                       "flex shrink-0 items-center justify-center rounded-full border border-[#DDE5EA] bg-[#F8FAFB]",
-                      isActive ? "h-[38px] w-[38px]" : "h-[30px] w-[30px]",
+                      isActive ? "h-[40px] w-[40px]" : "h-[32px] w-[32px]",
                     ].join(" ")}
                   >
-                    <span className="text-[13px] text-[#273F52]">☤</span>
+                    <span className="text-[14px] text-[#273F52]">☤</span>
                   </motion.div>
 
                   <div className="w-full">
@@ -115,7 +128,7 @@ export default function PriorityDirections() {
                       transition={spring}
                       className={[
                         "font-[900] uppercase leading-[1.2] text-[#102A34]",
-                        isActive ? "text-[17px]" : "text-[14px]",
+                        isActive ? "text-[18px]" : "text-[15px]",
                       ].join(" ")}
                     >
                       {item.title}
@@ -125,23 +138,19 @@ export default function PriorityDirections() {
                       layout
                       transition={spring}
                       className={[
-                        "mt-[12px] leading-[1.45] text-[#686F74]",
+                        "mt-[12px] leading-[1.5] text-[#686F74]",
                         isActive
-                          ? "max-w-[470px] text-[18px]"
-                          : "max-w-[410px] text-[14px]",
+                          ? "max-w-[520px] text-[18px]"
+                          : "max-w-[430px] text-[15px]",
                       ].join(" ")}
                     >
                       {isActive ? item.full : item.short}
                     </motion.p>
 
                     {!isActive && (
-                      <motion.div
-                        layout
-                        transition={spring}
-                        className="mt-[16px] text-[12px] font-medium text-[#8CBCCD]"
-                      >
-                        Learn More&nbsp;&nbsp;→
-                      </motion.div>
+                      <div className="mt-[18px] text-[12px] font-medium text-[#8CBCCD]">
+                        Читать дальше →
+                      </div>
                     )}
                   </div>
                 </motion.div>

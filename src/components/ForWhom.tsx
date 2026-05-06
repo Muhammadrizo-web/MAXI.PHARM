@@ -67,7 +67,7 @@ export default function ForWhom() {
 
                 <h2
                     className={`
-            mx-auto mt-7 max-w-[860px] text-[30px] font-black uppercase leading-[1.04]
+            mx-auto mt-7 max-w-[1000px] text-[30px] font-bold uppercase leading-[1.04]
             tracking-[-0.045em] text-[#0B2A34] md:text-[42px]
             transition-all duration-700 delay-100
             ${visible
