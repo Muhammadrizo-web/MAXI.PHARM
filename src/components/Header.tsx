@@ -10,7 +10,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex items-start justify-between">
+    <div className="flex items-start justify-between static top-0 left-0 right-0 px-6 py-4 z-50">
       <a href="/" className="block">
         <img
           src="/logo.png"
@@ -24,7 +24,7 @@ export default function Header() {
           className={`
             absolute right-0 top-0 flex h-[56px] items-center overflow-hidden
             rounded-full border border-white/30
-            bg-white/24 backdrop-blur-2xl
+            bg-white/10 backdrop-blur-xl
             shadow-[0_12px_35px_rgba(0,0,0,.12)]
             transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)]
             ${
@@ -53,7 +53,7 @@ export default function Header() {
                 className="
                   whitespace-nowrap rounded-full
                   px-[22px] py-[13px]
-                  text-[15px] font-semibold text-white
+                  text-[16px] font-semibold text-white
                   transition duration-300
                   hover:bg-white/18
                 "
