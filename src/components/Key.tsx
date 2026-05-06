@@ -56,7 +56,7 @@ export default function PriorityDirections() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.7 }}
           transition={{ duration: 0.55 }}
-          className="mx-auto mb-[26px] flex h-[44px] w-fit items-center justify-center rounded-[22px] border border-[#CED6DA] bg-white px-[30px] text-[18px] font-medium text-[#0B2A35]"
+          className="mx-auto mb-[26px] flex h-[44px] w-fit items-center justify-center rounded-[20px] border border-[#CED6DA] bg-white px-[30px] text-[18px] font-medium text-[#0B2A35]"
         >
           Приоритетные направления
         </motion.div>

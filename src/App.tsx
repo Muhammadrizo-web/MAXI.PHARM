@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ForWhom from "./components/ForWhom";
 import Key from "./components/Key";
+import Why from "./components/Why";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
 
       <ForWhom />
       <Key />
+      <Why />
     </main>
   );
 }

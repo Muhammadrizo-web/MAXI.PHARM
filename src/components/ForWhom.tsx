@@ -52,7 +52,7 @@ export default function ForWhom() {
             <div className="relative mx-auto max-w-[1180px] text-center">
                 <div
                     className={`
-            inline-flex rounded-full border border-[#D7D7D7] bg-white/70 px-8 py-3
+            inline-flex rounded-[26px] border border-[#D7D7D7] bg-white/70 px-8 py-3
             text-[22px] font-semibold tracking-[-0.02em] text-[#0B2A34]
             shadow-[0_10px_30px_rgba(11,42,52,0.06)] backdrop-blur-xl
             transition-all duration-700
