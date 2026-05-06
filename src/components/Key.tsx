@@ -66,7 +66,7 @@ export default function PriorityDirections() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.7 }}
           transition={{ duration: 0.65 }}
-          className="mx-auto max-w-[860px] text-center text-[34px] font-[900] uppercase leading-[1.05] tracking-[-0.035em] text-[#0B2A35] md:text-[42px]"
+          className="mx-auto max-w-[1100px] text-center text-[30px] font-[700] uppercase leading-[1.05] tracking-[-0.035em] text-[#0B2A35] md:text-[42px]"
         >
           КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ ЭКСПЕРТНОГО
           <br />
