@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import Lenis from "lenis";
+
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ForWhom from "./components/ForWhom";
@@ -6,8 +9,31 @@ import Why from "./components/Why";
 import Service from "./components/Service";
 
 export default function App() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      smoothWheel: true,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.5,
+    });
+
+    let frameId: number;
+
+    function raf(time: number) {
+      lenis.raf(time);
+      frameId = requestAnimationFrame(raf);
+    }
+
+    frameId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      lenis.destroy();
+    };
+  }, []);
+
   return (
-    <main className="min-h-screen bg-[#F3F3F1] p-5">
+    <main className="min-h-screen bg-[#F3F3F1]  overflow-hidden">
       <div className="mx-auto w-full">
         <Hero>
           <Header />

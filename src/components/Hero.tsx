@@ -1,3 +1,4 @@
+import { div } from "framer-motion/client";
 import type { ReactNode } from "react";
 
 type HeroProps = {
@@ -6,7 +7,8 @@ type HeroProps = {
 
 export default function Hero({ children }: HeroProps) {
   return (
-    <section className="relative h-[calc(100vh-40px)] min-h-[700px] max-h-[980px] w-full overflow-hidden rounded-[22px] bg-[#071E22]">
+    <div className="p-2">
+      <section className="relative h-[calc(100vh-40px)] min-h-[700px] max-h-[980px] w-full overflow-hidden rounded-[22px] bg-[#071E22]">
       <img
         src="/hero.png"
         alt="Hero"
@@ -49,5 +51,6 @@ export default function Hero({ children }: HeroProps) {
         </div>
       </div>
     </section>
+    </div>
   );
 }

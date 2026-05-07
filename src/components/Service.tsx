@@ -116,60 +116,65 @@ export default function ServicesSection() {
                   delay: index * 0.04,
                 }}
                 whileHover={{
-                  y: -6,
-                  scale: 1.012,
-                  borderColor: "#C8D7DF",
+                  y: -10,
+                  scale: 1.018,
+                  borderColor: "#BFD4DE",
+                  backgroundColor: "#FBFDFE",
                   boxShadow:
-                    "0 24px 60px rgba(20,35,45,0.10), 0 8px 22px rgba(20,35,45,0.06), 0 0 0 1px rgba(11,42,53,0.02)",
-                  transition: {
-                    duration: 0.28,
-                    ease: [0.19, 1, 0.22, 1],
-                  },
+                    "0 30px 70px rgba(11,42,53,0.13), 0 12px 28px rgba(11,42,53,0.08), 0 0 0 1px rgba(110,171,193,0.18)",
                 }}
-                className="group min-h-[205px] rounded-[8px] border border-[#DDE4E8] bg-white px-[28px] py-[26px] shadow-[0_8px_22px_rgba(20,35,45,0.06)] transition-all duration-300"
+                transition={{
+                  ...transition,
+                  delay: index * 0.04,
+                  duration: 0.5,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                
+                
+          className="group min-h-[205px] rounded-[8px] border border-[#DDE4E8] bg-white px-[28px] py-[26px] shadow-[0_8px_22px_rgba(20,35,45,0.06)] transition-all duration-500 ease-out"
               >
-                <div className="flex items-start gap-[20px]">
-                  <motion.div
-                    whileHover={{ scale: 1.045 }}
-                    transition={{
-                      duration: 0.25,
-                      ease: [0.19, 1, 0.22, 1],
-                    }}
-                    className="shrink-0"
-                  >
-                    <Icon
-                      size={44}
-                      strokeWidth={1.75}
-                      className="mt-[2px] text-[#0B2A35]"
-                    />
-                  </motion.div>
+          <div className="flex items-start gap-[20px]">
+            <motion.div
+              whileHover={{ scale: 1.045 }}
+              transition={{
+                duration: 0.25,
+                ease: [0.19, 1, 0.22, 1],
+              }}
+              className="shrink-0"
+            >
+              <Icon
+                size={44}
+                strokeWidth={1.75}
+                className="mt-[2px] text-[#0B2A35]"
+              />
+            </motion.div>
 
-                  <div>
-                    <h3 className="whitespace-pre-line text-[16px] font-[700] uppercase leading-[1.08] tracking-[-0.01em] text-[#0B2A35]">
-                      {item.title}
-                    </h3>
+            <div>
+              <h3 className="whitespace-pre-line text-[16px] font-[700] uppercase leading-[1.08] tracking-[-0.01em] text-[#0B2A35]">
+                {item.title}
+              </h3>
 
-                    <p className="mt-[18px] max-w-[290px] text-[16px] font-medium leading-[1.28] text-[#5F6870]">
-                      {item.text}
-                    </p>
+              <p className="mt-[18px] max-w-[290px] text-[16px] font-medium leading-[1.28] text-[#5F6870]">
+                {item.text}
+              </p>
 
-                    <motion.div
-                      whileHover={{ x: 4 }}
-                      transition={{
-                        duration: 0.22,
-                        ease: [0.19, 1, 0.22, 1],
-                      }}
-                      className="mt-[22px] text-[12px] font-bold text-[#6EABC1]"
-                    >
-                      Подробнее →
-                    </motion.div>
-                  </div>
-                </div>
+              <motion.div
+                whileHover={{ x: 4 }}
+                transition={{
+                  duration: 0.22,
+                  ease: [0.19, 1, 0.22, 1],
+                }}
+                className="mt-[22px] text-[12px] font-bold text-[#6EABC1]"
+              >
+                Подробнее →
               </motion.div>
-            );
+            </div>
+          </div>
+        </motion.div>
+        );
           })}
-        </div>
       </div>
-    </section>
+    </div>
+    </section >
   );
 }
