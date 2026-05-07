@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import type { ReactNode } from "react";
 
 type HeroProps = {

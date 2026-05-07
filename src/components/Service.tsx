@@ -84,14 +84,14 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.7 }}
           transition={{ ...transition, delay: 0.08 }}
-          className="mx-auto mt-[18px] max-w-[650px] text-center text-[18px] font-semi leading-[1.4] text-[#6B747B]"
+          className="mx-auto mt-[18px] max-w-[650px] text-center text-[18px] leading-[1.4] text-[#6B747B]"
         >
           Профессиональное сопровождение на всех этапах регистрации —
           <br />
           от подготовки документов до получения разрешения
         </motion.p>
 
-        <div className="mt-[38px] grid grid-cols-1 gap-[32px] md:grid-cols-3">
+        <div className="mt-[38px] grid grid-cols-1 gap-[32px] md:grid-cols-2 xl:grid-cols-3">
           {services.map((item, index) => {
             const Icon = item.icon;
 
@@ -111,10 +111,6 @@ export default function ServicesSection() {
                   filter: "blur(0px)",
                 }}
                 viewport={{ once: false, amount: 0.2 }}
-                transition={{
-                  ...transition,
-                  delay: index * 0.04,
-                }}
                 whileHover={{
                   y: -10,
                   scale: 1.018,
@@ -129,52 +125,44 @@ export default function ServicesSection() {
                   duration: 0.5,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                
-                
-          className="group min-h-[205px] rounded-[8px] border border-[#DDE4E8] bg-white px-[28px] py-[26px] shadow-[0_8px_22px_rgba(20,35,45,0.06)] transition-all duration-500 ease-out"
+                className="group min-h-[205px] rounded-[8px] border border-[#DDE4E8] bg-white px-[28px] py-[26px] shadow-[0_8px_22px_rgba(20,35,45,0.06)]"
               >
-          <div className="flex items-start gap-[20px]">
-            <motion.div
-              whileHover={{ scale: 1.045 }}
-              transition={{
-                duration: 0.25,
-                ease: [0.19, 1, 0.22, 1],
-              }}
-              className="shrink-0"
-            >
-              <Icon
-                size={44}
-                strokeWidth={1.75}
-                className="mt-[2px] text-[#0B2A35]"
-              />
-            </motion.div>
+                <div className="flex items-start gap-[20px]">
+                  <motion.div
+                    whileHover={{ scale: 1.045 }}
+                    transition={{ duration: 0.25 }}
+                    className="shrink-0"
+                  >
+                    <Icon
+                      size={44}
+                      strokeWidth={1.75}
+                      className="mt-[2px] text-[#0B2A35]"
+                    />
+                  </motion.div>
 
-            <div>
-              <h3 className="whitespace-pre-line text-[16px] font-[700] uppercase leading-[1.08] tracking-[-0.01em] text-[#0B2A35]">
-                {item.title}
-              </h3>
+                  <div>
+                    <h3 className="whitespace-pre-line text-[16px] font-[700] uppercase leading-[1.08] tracking-[-0.01em] text-[#0B2A35]">
+                      {item.title}
+                    </h3>
 
-              <p className="mt-[18px] max-w-[290px] text-[16px] font-medium leading-[1.28] text-[#5F6870]">
-                {item.text}
-              </p>
+                    <p className="mt-[18px] max-w-[290px] text-[16px] font-medium leading-[1.28] text-[#5F6870]">
+                      {item.text}
+                    </p>
 
-              <motion.div
-                whileHover={{ x: 4 }}
-                transition={{
-                  duration: 0.22,
-                  ease: [0.19, 1, 0.22, 1],
-                }}
-                className="mt-[22px] text-[12px] font-bold text-[#6EABC1]"
-              >
-                Подробнее →
+                    <motion.div
+                      whileHover={{ x: 4 }}
+                      transition={{ duration: 0.22 }}
+                      className="mt-[22px] text-[12px] font-bold text-[#6EABC1]"
+                    >
+                      Подробнее →
+                    </motion.div>
+                  </div>
+                </div>
               </motion.div>
-            </div>
-          </div>
-        </motion.div>
-        );
+            );
           })}
+        </div>
       </div>
-    </div>
-    </section >
+    </section>
   );
 }
