@@ -2,10 +2,17 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
-export default function FaqSection() {
-  const [active, setActive] = useState(null);
+type FaqItem = {
+  question: string;
+  answer: string;
+  leftTitle: string;
+  leftText: string;
+};
 
-  const faqs = [
+export default function FaqSection() {
+  const [active, setActive] = useState<number | null>(null);
+
+  const faqs: FaqItem[] = [
     {
       question: "Сколько времени занимает регистрация продукции?",
       answer:
@@ -39,8 +46,7 @@ export default function FaqSection() {
         "Мы помогаем выстроить процесс корректно с точки зрения документов, требований, сроков и взаимодействия с ответственными сторонами.",
     },
     {
-      question:
-        "Как компания помогает снизить риски отказа или задержек?",
+      question: "Как компания помогает снизить риски отказа или задержек?",
       answer:
         "Благодаря глубокому анализу документации, корректной подготовке регистрационного досье и сопровождению проекта в соответствии с действующими требованиями, специалисты компании помогают минимизировать регуляторные риски и сократить вероятность дополнительных доработок",
       leftTitle: "ТОЧЕЧНАЯ КОНСУЛЬТАЦИЯ",
@@ -58,7 +64,7 @@ export default function FaqSection() {
   ];
 
   const current = active !== null ? faqs[active] : null;
-  const ease = [0.16, 1, 0.3, 1];
+  const ease = [0.16, 1, 0.3, 1] as const;
 
   return (
     <motion.section

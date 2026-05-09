@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
 export default function Footer() {
   const menu = [
@@ -19,9 +20,9 @@ export default function Footer() {
     "Регуляторный консалтинг",
   ];
 
-  const smooth = [0.16, 1, 0.3, 1];
+  const smooth = [0.16, 1, 0.3, 1] as const;
 
-  function HoverLink({ children }) {
+  function HoverLink({ children }: { children: ReactNode }) {
     return (
       <motion.div
         className="relative w-fit cursor-pointer"
