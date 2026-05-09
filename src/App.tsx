@@ -7,6 +7,11 @@ import ForWhom from "./components/ForWhom";
 import Key from "./components/Key";
 import Why from "./components/Why";
 import Service from "./components/Service";
+import Work from "./components/Work";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import FAQ from "./components/FAQ";
+
 
 export default function App() {
   useEffect(() => {
@@ -44,6 +49,10 @@ export default function App() {
       <Key />
       <Why />
       <Service />
+      <Work />
+      <FAQ />
+      <Contact />
+      <Footer />
     </main>
   );
 }

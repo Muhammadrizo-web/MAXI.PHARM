@@ -42,7 +42,7 @@ const transition: Transition = {
 
 export default function WhyChooseUs() {
   return (
-    <section className="w-full bg-[#B6B6B6] px-6 py-[70px]">
+    <section className="w-full bg-[#0B2A34] px-6 py-[70px]">
       <div className="mx-auto max-w-[1280px]">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.55 }}
           transition={{ ...transition, delay: 0.06 }}
-          className="mx-auto max-w-[850px] text-center text-[30px] font-[700] uppercase leading-[1.08] tracking-[-0.03em] text-white"
+          className="mx-auto max-w-[850px] text-center text-[32px] font-[600] uppercase leading-[1.08] tracking-[-0.03em] text-white"
         >
           МЫ ПРЕДОСТАВЛЯЕМ ЭКСПЕРТНЫЕ РЕШЕНИЯ
           <br />
@@ -93,11 +93,11 @@ export default function WhyChooseUs() {
                   className="mb-[18px] text-[#062632]"
                 />
 
-                <div className="text-[26px] font-[900] leading-[1.05] text-[#062632]">
+                <div className="text-[26px] font-[700] leading-[1.05] text-[#062632]">
                   {item.number}
                 </div>
 
-                <div className="mt-[8px] whitespace-pre-line text-[21px] font-[800] leading-[1.08] text-[#062632]">
+                <div className="mt-[8px] whitespace-pre-line text-[21px] font-[600] leading-[1.08] text-[#062632]">
                   {item.title}
                 </div>
 
