@@ -54,7 +54,7 @@ export default function ProcessTimeline() {
             Как мы работаем
           </div>
 
-          <h2 className="mx-auto max-w-[1280px] text-[#0b252a] text-[28px] sm:text-[34px] md:text-[40px] font-bold uppercase tracking-[-0.045em] leading-[0.98] sm:leading-[0.94]">
+          <h2 className="mx-auto max-w-[1280px] text-[#0b252a] text-[25px] sm:text-[34px] md:text-[40px] font-bold uppercase tracking-[-0.045em] leading-[0.98] sm:leading-[0.94]">
             Пошаговое сопровождение регистрационного
             <br className="hidden sm:block" />
             процесса

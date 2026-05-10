@@ -20,59 +20,70 @@ const contacts = [
 ];
 
 export default function ContactSection() {
+  const smooth = [0.16, 1, 0.3, 1] as const;
+
   return (
-    <section className="w-full bg-white py-24 overflow-hidden">
-      <div className="mx-auto max-w-[1280px] px-6 md:px-10">
-        <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-start">
-
-          {/* LEFT */}
+    <section className="w-full bg-white overflow-hidden py-[56px] md:py-[92px]">
+      <div className="max-w-[1180px] mx-auto px-[20px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[505px_590px] gap-[44px] lg:gap-[85px] items-start">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, x: -24, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 1.05, ease: smooth }}
           >
-            <div className="inline-flex px-6 py-2.5 rounded-full border border-[#dcdcdc] bg-white text-[#183138] text-[15px] font-medium">
+            <motion.div
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.7, ease: smooth }}
+              className="inline-flex items-center h-[40px] px-[20px] rounded-full border border-[#9FB2B8] bg-white text-[#0D3B4A] text-[17px] font-semibold leading-none"
+            >
               Начните сотрудничество
-            </div>
+            </motion.div>
 
-            <h2 className="mt-6 text-[#163037] text-[34px] md:text-[48px] font-black tracking-[-0.03em] leading-[1]">
+            <h2 className="mt-[15px] text-[#12323B] text-[32px] md:text-[36px] lg:text-[38px] font-black uppercase tracking-[-0.04em] leading-[1.03]">
               Свяжитесь с нами
             </h2>
 
-            <div className="mt-10 space-y-4">
+            <div className="mt-[26px] space-y-[15px]">
               {contacts.map((item, i) => {
                 const Icon = item.icon;
 
                 return (
                   <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 25 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 0.5, delay: i * 0.08 }}
-                    whileHover={{ y: -3 }}
-                    className="
-                      rounded-2xl
-                      border border-[#ececec]
-                      bg-[#fafafa]
-                      px-5
-                      py-5
-                      transition-all
-                      hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)]
-                    "
+                    key={item.title}
+                    initial={{ opacity: 0, y: 24, filter: "blur(7px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    viewport={{ once: true, amount: 0.25 }}
+                    transition={{
+                      duration: 0.95,
+                      delay: i * 0.12,
+                      ease: smooth,
+                    }}
+                    whileHover={{
+                      y: -4,
+                      boxShadow: "0 18px 36px rgba(15,50,60,0.12)",
+                    }}
+                    className="w-full min-h-[88px] rounded-[10px] border border-[#EEF3F4] bg-white px-[18px] py-[18px] shadow-[0_10px_26px_rgba(15,50,60,0.08)]"
                   >
-                    <div className="flex gap-4">
-                      <div className="w-11 h-11 rounded-xl bg-white border border-[#ececec] flex items-center justify-center shrink-0">
-                        <Icon size={19} className="text-[#183138]" />
-                      </div>
+                    <div className="flex items-center gap-[19px]">
+                      <motion.div
+                        whileHover={{ scale: 1.06 }}
+                        transition={{ duration: 0.55, ease: smooth }}
+                        className="w-[39px] h-[39px] rounded-[6px] bg-[#F4F8F9] flex items-center justify-center shrink-0"
+                      >
+                        <Icon
+                          size={25}
+                          strokeWidth={2.35}
+                          className="text-[#12323B]"
+                        />
+                      </motion.div>
 
                       <div>
-                        <h3 className="text-[#183138] text-[15px] font-bold mb-1">
+                        <h3 className="text-[#12323B] text-[15px] font-extrabold leading-[1.1] mb-[7px]">
                           {item.title}
                         </h3>
 
-                        <p className="whitespace-pre-line text-[#667171] text-[14px] leading-[1.45]">
+                        <p className="whitespace-pre-line text-[#6E8086] text-[12px] font-semibold leading-[1.3]">
                           {item.text}
                         </p>
                       </div>
@@ -83,115 +94,54 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          {/* RIGHT */}
           <motion.form
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.7 }}
-            className="
-              rounded-[24px]
-              border border-[#ececec]
-              bg-[#fafafa]
-              p-6 md:p-7
-            "
+            initial={{ opacity: 0, x: 24, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 1.05, delay: 0.08, ease: smooth }}
+            className="w-full rounded-[10px] border border-[#EEF3F4] bg-white px-[30px] pt-[30px] pb-[48px] shadow-[0_12px_30px_rgba(15,50,60,0.09)]"
           >
-            <h3 className="text-[#183138] text-[24px] font-bold mb-6">
+            <h3 className="text-[#12323B] text-[20px] font-extrabold leading-none mb-[20px]">
               Оставьте свои контакты
             </h3>
 
-            <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-[15px]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[13px]">
                 <input
                   placeholder="Имя"
-                  className="
-                    h-14
-                    rounded-xl
-                    border border-[#e8e8e8]
-                    bg-white
-                    px-5
-                    text-[14px]
-                    outline-none
-                    transition-all
-                    focus:border-[#bfc9ca]
-                    focus:shadow-[0_8px_20px_rgba(0,0,0,0.04)]
-                  "
+                  className="h-[48px] rounded-[9px] border border-[#DFE8EB] bg-[#F3F7F8] px-[18px] text-[12px] font-semibold text-[#12323B] placeholder:text-[#7C8D92] outline-none transition-all duration-500 focus:border-[#9FB2B8] focus:bg-white focus:shadow-[0_8px_18px_rgba(15,50,60,0.07)]"
                 />
 
                 <input
                   placeholder="Фамилия"
-                  className="
-                    h-14
-                    rounded-xl
-                    border border-[#e8e8e8]
-                    bg-white
-                    px-5
-                    text-[14px]
-                    outline-none
-                    transition-all
-                    focus:border-[#bfc9ca]
-                    focus:shadow-[0_8px_20px_rgba(0,0,0,0.04)]
-                  "
+                  className="h-[48px] rounded-[9px] border border-[#DFE8EB] bg-[#F3F7F8] px-[18px] text-[12px] font-semibold text-[#12323B] placeholder:text-[#7C8D92] outline-none transition-all duration-500 focus:border-[#9FB2B8] focus:bg-white focus:shadow-[0_8px_18px_rgba(15,50,60,0.07)]"
                 />
               </div>
 
               <input
                 placeholder="Номер телефона"
-                className="
-                  w-full
-                  h-14
-                  rounded-xl
-                  border border-[#e8e8e8]
-                  bg-white
-                  px-5
-                  text-[14px]
-                  outline-none
-                  transition-all
-                  focus:border-[#bfc9ca]
-                  focus:shadow-[0_8px_20px_rgba(0,0,0,0.04)]
-                "
+                className="w-full h-[48px] rounded-[9px] border border-[#DFE8EB] bg-[#F3F7F8] px-[18px] text-[12px] font-semibold text-[#12323B] placeholder:text-[#7C8D92] outline-none transition-all duration-500 focus:border-[#9FB2B8] focus:bg-white focus:shadow-[0_8px_18px_rgba(15,50,60,0.07)]"
               />
 
               <textarea
                 placeholder="Опишите ваш запрос"
-                className="
-                  w-full
-                  h-36
-                  rounded-xl
-                  border border-[#e8e8e8]
-                  bg-white
-                  px-5
-                  py-4
-                  text-[14px]
-                  outline-none
-                  resize-none
-                  transition-all
-                  focus:border-[#bfc9ca]
-                  focus:shadow-[0_8px_20px_rgba(0,0,0,0.04)]
-                "
+                className="w-full h-[96px] rounded-[9px] border border-[#DFE8EB] bg-[#F3F7F8] px-[18px] py-[17px] text-[12px] font-semibold text-[#12323B] placeholder:text-[#7C8D92] outline-none resize-none transition-all duration-500 focus:border-[#9FB2B8] focus:bg-white focus:shadow-[0_8px_18px_rgba(15,50,60,0.07)]"
               />
 
               <motion.button
                 type="button"
-                whileHover={{ y: -2, scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-                className="
-                  w-full
-                  h-14
-                  rounded-xl
-                  bg-[#183138]
-                  text-white
-                  text-[14px]
-                  font-medium
-                  transition-all
-                  hover:shadow-[0_14px_30px_rgba(24,49,56,0.18)]
-                "
+                whileHover={{
+                  y: -2,
+                  boxShadow: "0 16px 30px rgba(14,155,103,0.26)",
+                }}
+                whileTap={{ scale: 0.985 }}
+                transition={{ duration: 0.55, ease: smooth }}
+                className="w-full h-[48px] rounded-[8px] bg-[#0E9B67] text-white text-[14px] font-extrabold transition-colors duration-500 hover:bg-[#0B8B5C]"
               >
                 Получить консультацию
               </motion.button>
             </div>
           </motion.form>
-
         </div>
       </div>
     </section>
