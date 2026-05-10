@@ -23,30 +23,65 @@ const contacts = [
 export default function ContactSection() {
   const smooth = [0.16, 1, 0.3, 1] as const;
 
-  const [phone, setPhone] = useState("+998 ");
+  const [phone, setPhone] = useState("");
 
-  const formatPhone = (value: string) => {
-    const digits = value.replace(/\D/g, "").replace(/^998/, "").slice(0, 9);
+  const formatPhone = (rawValue: string) => {
+    let digits = rawValue.replace(/\D/g, "");
 
-    let formatted = "+998 ";
-
-    if (digits.length > 0) {
-      formatted += `(${digits.slice(0, 2)}`;
+    if (digits.startsWith("998")) {
+      digits = digits.slice(3);
     }
 
-    if (digits.length >= 2) {
-      formatted += `) ${digits.slice(2, 5)}`;
+    digits = digits.slice(0, 9);
+
+    if (!digits.length) return "+998 ";
+
+    let result = "+998 ";
+
+    if (digits.length > 0) result += `(${digits.slice(0, 2)}`;
+    if (digits.length >= 2) result += `) ${digits.slice(2, 5)}`;
+    if (digits.length >= 5) result += `-${digits.slice(5, 7)}`;
+    if (digits.length >= 7) result += `-${digits.slice(7, 9)}`;
+
+    return result;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhone(formatPhone(e.target.value));
+  };
+
+  const handlePhoneFocus = () => {
+    if (!phone) {
+      setPhone("+998 ");
+    }
+  };
+
+  const handlePhoneBlur = () => {
+    if (phone === "+998 ") {
+      setPhone("");
+    }
+  };
+
+  const handlePhoneKeyDown = (
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (e.key !== "Backspace") return;
+
+    const digits = phone.replace(/\D/g, "").replace(/^998/, "");
+
+    if (!digits.length) {
+      e.preventDefault();
+      setPhone("");
+      return;
     }
 
-    if (digits.length >= 5) {
-      formatted += `-${digits.slice(5, 7)}`;
-    }
+    const lastChar = phone[phone.length - 1];
 
-    if (digits.length >= 7) {
-      formatted += `-${digits.slice(7, 9)}`;
+    if ([" ", ")", "-", "("].includes(lastChar)) {
+      e.preventDefault();
+      const newDigits = digits.slice(0, -1);
+      setPhone(newDigits ? formatPhone("+998" + newDigits) : "+998 ");
     }
-
-    return formatted;
   };
 
   return (
@@ -150,13 +185,11 @@ export default function ContactSection() {
                 inputMode="numeric"
                 autoComplete="tel"
                 value={phone}
-                onChange={(e) => setPhone(formatPhone(e.target.value))}
-                onFocus={() => {
-                  if (!phone.startsWith("+998")) {
-                    setPhone("+998 ");
-                  }
-                }}
-                placeholder="+998 (__) ___-__-__"
+                onChange={handlePhoneChange}
+                onFocus={handlePhoneFocus}
+                onBlur={handlePhoneBlur}
+                onKeyDown={handlePhoneKeyDown}
+                placeholder="Номер телефона"
                 className="w-full h-[48px] rounded-[9px] border border-[#DFE8EB] bg-[#F3F7F8] px-[18px] text-[12px] font-semibold text-[#12323B] placeholder:text-[#7C8D92] outline-none transition-all duration-500 focus:border-[#9FB2B8] focus:bg-white focus:shadow-[0_8px_18px_rgba(15,50,60,0.07)]"
               />
 
