@@ -9,78 +9,90 @@ type FaqItem = {
   leftText: string;
 };
 
+const faqs: FaqItem[] = [
+  {
+    question: "Сколько времени занимает регистрация продукции?",
+    answer:
+      "Срок регистрационного процесса в среднем составляет от 6 до 24 месяцев в зависимости от категории продукции, полноты регистрационного досье, необходимости проведения дополнительных исследований и действующих регуляторных требований.",
+    leftTitle: "СРОКИ РЕГИСТРАЦИИ",
+    leftText:
+      "Мы заранее оцениваем документацию, категорию продукции и возможные этапы согласования, чтобы клиент понимал реальный путь регистрации.",
+  },
+  {
+    question: "С какими категориями продукции работает MAXIPHARM?",
+    answer:
+      "Компания сопровождает процессы регистрации лекарственных средств, медицинских изделий, биологически активных добавок, косметической продукции, а также оказывает экспертную поддержку по вопросам клинических исследований.",
+    leftTitle: "КАТЕГОРИИ ПРОДУКЦИИ",
+    leftText:
+      "MAXIPHARM сопровождает проекты в сфере фармацевтики и медицинских технологий, где важны точность, документы и регуляторная экспертиза.",
+  },
+  {
+    question: "Что входит в комплексное сопровождение?",
+    answer:
+      "Комплексное сопровождение включает анализ документации, подготовку регистрационного досье, подачу материалов в уполномоченные органы, сопровождение процесса рассмотрения и завершение регистрационной процедуры.",
+    leftTitle: "ПОЛНОЕ СОПРОВОЖДЕНИЕ",
+    leftText:
+      "Клиент получает системную поддержку на каждом этапе: от проверки исходных материалов до завершения регистрационного процесса.",
+  },
+  {
+    question: "Можно ли обратиться только за отдельной услугой?",
+    answer:
+      "Да. MAXIPHARM оказывает как полный цикл сопровождения, так и экспертную поддержку по отдельным направлениям — подготовка досье, анализ документации и консультации по регуляторным требованиям.",
+    leftTitle: "ОТДЕЛЬНЫЕ УСЛУГИ",
+    leftText:
+      "Если нужна помощь только на одном этапе, мы можем подключиться к конкретной задаче без полного сопровождения проекта.",
+  },
+  {
+    question: "Как компания помогает снизить риски отказа или задержек?",
+    answer:
+      "Благодаря глубокому анализу документации, корректной подготовке регистрационного досье и сопровождению проекта в соответствии с действующими требованиями специалисты компании помогают минимизировать регуляторные риски.",
+    leftTitle: "СНИЖЕНИЕ РИСКОВ",
+    leftText:
+      "Мы заранее выявляем слабые места в документации и помогаем сократить вероятность доработок, задержек и отказов.",
+  },
+  {
+    question: "Как начать сотрудничество?",
+    answer:
+      "Сотрудничество начинается с первичной консультации, анализа категории продукции и оценки текущего состояния документации, после чего формируется стратегия дальнейшего сопровождения.",
+    leftTitle: "НАЧАЛО РАБОТЫ",
+    leftText:
+      "Мы начинаем с первичного анализа задачи, после чего формируем понятный план действий, сроки и формат сопровождения.",
+  },
+];
+
 export default function FaqSection() {
   const [active, setActive] = useState<number | null>(null);
-
-  const faqs: FaqItem[] = [
-    {
-      question: "Сколько времени занимает регистрация продукции?",
-      answer:
-        "Срок регистрационного процесса в среднем составляет от 6 до 24 месяцев в зависимости от категории продукции, полноты регистрационного досье, необходимости проведения дополнительных исследований и действующих регуляторных требований. На старте проекта специалисты компании помогают определить ориентировочные сроки сопровождения",
-      leftTitle: "СРОКИ РЕГИСТРАЦИИ",
-      leftText:
-        "Мы заранее оцениваем документацию, категорию продукции и возможные этапы согласования, чтобы клиент понимал реальный путь регистрации.",
-    },
-    {
-      question: "С какими категориями продукции работает MAXlPHARM?",
-      answer:
-        "Компания сопровождает процессы регистрации лекарственных средств, медицинских изделий, биологически активных добавок, косметической продукции, а также оказывает экспертную поддержку по вопросам клинических исследований и подготовки регистрационного досье",
-      leftTitle: "КАТЕГОРИИ ПРОДУКЦИИ",
-      leftText:
-        "MAXIPHARM сопровождает проекты в сфере фармацевтики и медицинских технологий, где важны точность, документы и регуляторная экспертиза.",
-    },
-    {
-      question: "Что входит в комплексное сопровождение?",
-      answer:
-        "Комплексное сопровождение включает анализ документации, подготовку регистрационного досье, подачу материалов в уполномоченные органы, сопровождение процесса рассмотрения, организацию клинических исследований (при необходимости) и завершение регистрационной процедуры в установленном порядке",
-      leftTitle: "ПОЛНОЕ СОПРОВОЖДЕНИЕ",
-      leftText:
-        "Клиент получает системную поддержку на каждом этапе: от проверки исходных материалов до завершения регистрационного процесса.",
-    },
-    {
-      question: "Можно ли обратиться только за отдельной услугой?",
-      answer:
-        "Да. MAXIPHARM оказывает как полный цикл сопровождения, так и экспертную поддержку по отдельным направлениям — подготовка регистрационного досье, анализ документации, консультации по регуляторным требованиям и сопровождение отдельных этапов регистрации",
-      leftTitle: "КЛИНИЧЕСКИЕ ИССЛЕДОВАНИЯ",
-      leftText:
-        "Мы помогаем выстроить процесс корректно с точки зрения документов, требований, сроков и взаимодействия с ответственными сторонами.",
-    },
-    {
-      question: "Как компания помогает снизить риски отказа или задержек?",
-      answer:
-        "Благодаря глубокому анализу документации, корректной подготовке регистрационного досье и сопровождению проекта в соответствии с действующими требованиями, специалисты компании помогают минимизировать регуляторные риски и сократить вероятность дополнительных доработок",
-      leftTitle: "ТОЧЕЧНАЯ КОНСУЛЬТАЦИЯ",
-      leftText:
-        "Если нужна помощь только на одном этапе, мы можем подключиться к конкретной задаче без полного сопровождения проекта.",
-    },
-    {
-      question: "Как начать сотрудничество?",
-      answer:
-        "Сотрудничество начинается с первичной консультации, анализа категории продукции и оценки текущего состояния документации, после чего специалисты компании предлагают оптимальную стратегию дальнейшего регистрационного сопровождения",
-      leftTitle: "НАЧАЛО РАБОТЫ",
-      leftText:
-        "Мы начинаем с первичного анализа задачи, после чего формируем понятный план действий, сроки и формат сопровождения.",
-    },
-  ];
 
   const current = active !== null ? faqs[active] : null;
   const ease = [0.16, 1, 0.3, 1] as const;
 
+  const viewportMain = {
+    once: false,
+    amount: 0.18,
+    margin: "-80px 0px -80px 0px",
+  };
+
+  const viewportCard = {
+    once: false,
+    amount: 0.12,
+    margin: "-60px 0px -60px 0px",
+  };
+
   return (
-    <motion.section
-      className="bg-[#082F37] text-white py-[56px] px-[18px] md:py-[88px] md:px-0"
-      initial={{ opacity: 0, y: 35 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.22 }}
-      transition={{ duration: 0.8, ease }}
-    >
-      <div className="max-w-[1135px] mx-auto grid grid-cols-1 gap-[34px] items-start md:grid-cols-[360px_1fr] md:gap-[130px]">
+    <section className="relative w-full overflow-hidden bg-[#082F37] text-white py-[56px] px-[18px] md:py-[88px] md:px-0">
+      <motion.div
+        className="max-w-[1135px] mx-auto grid grid-cols-1 gap-[34px] items-start md:grid-cols-[360px_1fr] md:gap-[130px]"
+        initial={{ opacity: 0, y: 36 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={viewportMain}
+        transition={{ duration: 0.9, ease }}
+      >
         <motion.div
           className="pt-0 md:pt-[20px]"
-          initial={{ opacity: 0, x: -35 }}
+          initial={{ opacity: 0, x: -42 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.75, ease }}
+          viewport={viewportMain}
+          transition={{ duration: 0.85, ease }}
         >
           <motion.div
             className="inline-flex items-center justify-center h-[36px] px-[22px] rounded-full border border-white/45 text-[15px] leading-none mb-[20px] md:h-[39px] md:px-[28px] md:text-[18px] md:mb-[24px]"
@@ -89,7 +101,7 @@ export default function FaqSection() {
               backgroundColor: "rgba(255,255,255,.05)",
               y: -1,
             }}
-            transition={{ duration: 0.35, ease }}
+            transition={{ duration: 0.45, ease }}
           >
             Как мы работаем
           </motion.div>
@@ -98,10 +110,10 @@ export default function FaqSection() {
             {current ? (
               <motion.div
                 key={current.leftTitle}
-                initial={{ opacity: 0, y: 22, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -14, filter: "blur(8px)" }}
-                transition={{ duration: 0.5, ease }}
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.45, ease }}
               >
                 <h2 className="text-[23px] leading-[27px] font-bold tracking-[1px] uppercase max-w-[310px] mb-[16px] md:text-[28px] md:leading-[31px] md:tracking-[1.2px] md:mb-[24px]">
                   {current.leftTitle}
@@ -114,12 +126,12 @@ export default function FaqSection() {
             ) : (
               <motion.div
                 key="default"
-                initial={{ opacity: 0, y: 22, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -14, filter: "blur(8px)" }}
-                transition={{ duration: 0.5, ease }}
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.45, ease }}
               >
-                <h2 className="text-[23px] leading-[27px] font-bold tracking-[1px] uppercase max-w-[310px] mb-[16px]  md:text-[35px]  md:leading-[31px] md:tracking-[1.2px] md:mb-[24px]">
+                <h2 className="text-[23px] leading-[27px] font-bold tracking-[1px] uppercase max-w-[310px] mb-[16px] md:text-[35px] md:leading-[35px] md:tracking-[1.2px] md:mb-[24px]">
                   ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
                 </h2>
 
@@ -134,10 +146,10 @@ export default function FaqSection() {
 
         <motion.div
           className="space-y-[10px] md:space-y-[14px]"
-          initial={{ opacity: 0, x: 35 }}
+          initial={{ opacity: 0, x: 42 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.75, ease }}
+          viewport={viewportMain}
+          transition={{ duration: 0.85, ease, delay: 0.08 }}
         >
           {faqs.map((item, index) => {
             const isOpen = active === index;
@@ -146,22 +158,23 @@ export default function FaqSection() {
               <motion.div
                 key={item.question}
                 layout
-                onClick={() => setActive(active === index ? null : index)}
+                onClick={() => setActive(isOpen ? null : index)}
                 className="bg-[#F7F8F8] text-[#24404A] rounded-[8px] cursor-pointer overflow-hidden shadow-[0_14px_35px_rgba(0,0,0,.08)]"
-                initial={{ opacity: 0, y: 35 }}
+                initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.25 }}
+                viewport={viewportCard}
                 whileHover={{
                   y: -2,
                   boxShadow: "0 18px 42px rgba(0,0,0,.16)",
                 }}
                 transition={{
-                  duration: 0.5,
-                  ease,
-                  delay: index * 0.04,
+                  layout: { duration: 0.45, ease },
+                  opacity: { duration: 0.55, ease },
+                  y: { duration: 0.55, ease },
+                  delay: index * 0.045,
                 }}
               >
-                <div className="min-h-[54px] px-[16px] py-[12px] flex items-center justify-between gap-[14px] md:h-[48px] md:min-h-0 md:px-[20px] md:py-0 md:gap-0">
+                <div className="min-h-[54px] px-[16px] py-[12px] flex items-center justify-between gap-[14px] md:h-[48px] md:min-h-0 md:px-[20px] md:py-0">
                   <p className="text-[13px] leading-[17px] font-bold md:leading-[15px]">
                     {item.question}
                   </p>
@@ -184,7 +197,7 @@ export default function FaqSection() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{
                         height: { duration: 0.45, ease },
-                        opacity: { duration: 0.28 },
+                        opacity: { duration: 0.3, ease },
                       }}
                     >
                       <div className="px-[16px] pb-[18px] pt-[2px] md:px-[20px]">
@@ -200,7 +213,7 @@ export default function FaqSection() {
             );
           })}
         </motion.div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }
