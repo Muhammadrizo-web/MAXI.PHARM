@@ -68,22 +68,22 @@ export default function FaqSection() {
 
   return (
     <motion.section
-      className="bg-[#082F37] text-white py-[88px]"
+      className="bg-[#082F37] text-white py-[56px] px-[18px] md:py-[88px] md:px-0"
       initial={{ opacity: 0, y: 35 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.22 }}
       transition={{ duration: 0.8, ease }}
     >
-      <div className="max-w-[1135px] mx-auto grid grid-cols-[360px_1fr] gap-[130px] items-start">
+      <div className="max-w-[1135px] mx-auto grid grid-cols-1 gap-[34px] items-start md:grid-cols-[360px_1fr] md:gap-[130px]">
         <motion.div
-          className="pt-[20px]"
+          className="pt-0 md:pt-[20px]"
           initial={{ opacity: 0, x: -35 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.75, ease }}
         >
           <motion.div
-            className="inline-flex items-center justify-center h-[39px] px-[28px] rounded-full border border-white/45 text-[18px] leading-none mb-[24px]"
+            className="inline-flex items-center justify-center h-[36px] px-[22px] rounded-full border border-white/45 text-[15px] leading-none mb-[20px] md:h-[39px] md:px-[28px] md:text-[18px] md:mb-[24px]"
             whileHover={{
               borderColor: "rgba(255,255,255,.75)",
               backgroundColor: "rgba(255,255,255,.05)",
@@ -103,11 +103,11 @@ export default function FaqSection() {
                 exit={{ opacity: 0, y: -14, filter: "blur(8px)" }}
                 transition={{ duration: 0.5, ease }}
               >
-                <h2 className="text-[28px] leading-[31px] font-bold tracking-[1.2px] uppercase max-w-[310px] mb-[24px]">
+                <h2 className="text-[23px] leading-[27px] font-bold tracking-[1px] uppercase max-w-[310px] mb-[16px] md:text-[28px] md:leading-[31px] md:tracking-[1.2px] md:mb-[24px]">
                   {current.leftTitle}
                 </h2>
 
-                <p className="text-[15px] leading-[17px] text-white/65 max-w-[315px]">
+                <p className="text-[14px] leading-[19px] text-white/65 max-w-full md:text-[15px] md:leading-[17px] md:max-w-[315px]">
                   {current.leftText}
                 </p>
               </motion.div>
@@ -119,11 +119,11 @@ export default function FaqSection() {
                 exit={{ opacity: 0, y: -14, filter: "blur(8px)" }}
                 transition={{ duration: 0.5, ease }}
               >
-                <h2 className="text-[28px] leading-[31px] font-bold tracking-[1.2px] uppercase max-w-[310px] mb-[24px]">
+                <h2 className="text-[23px] leading-[27px] font-bold tracking-[1px] uppercase max-w-[310px] mb-[16px]  md:text-[35px]  md:leading-[31px] md:tracking-[1.2px] md:mb-[24px]">
                   ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
                 </h2>
 
-                <p className="text-[15px] leading-[17px] text-white/65 max-w-[315px]">
+                <p className="text-[14px] leading-[19px] text-white/65 max-w-full md:text-[15px] md:leading-[17px] md:max-w-[315px]">
                   Ответы на наиболее распространённые вопросы о процессе
                   регистрации, сроках сопровождения и взаимодействии с компанией
                 </p>
@@ -133,7 +133,7 @@ export default function FaqSection() {
         </motion.div>
 
         <motion.div
-          className="space-y-[14px]"
+          className="space-y-[10px] md:space-y-[14px]"
           initial={{ opacity: 0, x: 35 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -161,15 +161,15 @@ export default function FaqSection() {
                   delay: index * 0.04,
                 }}
               >
-                <div className="h-[48px] px-[20px] flex items-center justify-between">
-                  <p className="text-[13px] leading-[15px] font-bold">
+                <div className="min-h-[54px] px-[16px] py-[12px] flex items-center justify-between gap-[14px] md:h-[48px] md:min-h-0 md:px-[20px] md:py-0 md:gap-0">
+                  <p className="text-[13px] leading-[17px] font-bold md:leading-[15px]">
                     {item.question}
                   </p>
 
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.35, ease }}
-                    className="text-[#24404A]"
+                    className="text-[#24404A] shrink-0"
                   >
                     {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                   </motion.div>
@@ -187,9 +187,9 @@ export default function FaqSection() {
                         opacity: { duration: 0.28 },
                       }}
                     >
-                      <div className="px-[20px] pb-[18px] pt-[2px]">
+                      <div className="px-[16px] pb-[18px] pt-[2px] md:px-[20px]">
                         <div className="w-full h-px bg-[#24404A]/10 mb-[13px]" />
-                        <p className="text-[13px] leading-[18px] font-medium text-[#24404A]/75 max-w-[690px]">
+                        <p className="text-[13px] leading-[19px] font-medium text-[#24404A]/75 max-w-[690px]">
                           {item.answer}
                         </p>
                       </div>
