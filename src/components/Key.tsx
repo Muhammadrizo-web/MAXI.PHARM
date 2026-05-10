@@ -66,12 +66,6 @@ export default function PriorityDirections() {
 
   const y = useTransform(scrollYProgress, [0, 1], [80, -80]);
 
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0.4, 1, 1, 0.4]
-  );
-
   const scale = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
@@ -81,8 +75,8 @@ export default function PriorityDirections() {
   return (
     <motion.section
       ref={sectionRef}
-      style={isMobile ? undefined : { y, opacity, scale }}
-      className="relative w-full overflow-hidden bg-white px-4 py-[72px] md:px-6 md:py-[85px]"
+      style={isMobile ? undefined : { y, scale }}
+      className="relative w-full overflow-hidden bg-white px-4 py-[72px] md:px-6 md:pt-[85px] md:pb-[70px]"
     >
       <motion.div
         initial={{ opacity: 0, y: isMobile ? 18 : 28 }}
