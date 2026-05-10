@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion, type Transition } from "framer-motion";
 
 type ServiceItem = {
