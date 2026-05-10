@@ -1,8 +1,7 @@
 import { motion, type Transition } from "framer-motion";
-import { FileText, Clock3, UserRoundCheck, Check } from "lucide-react";
 
 type StatItem = {
-  icon: React.ElementType;
+  icon: string;
   number: string;
   title: string;
   text: string;
@@ -10,25 +9,25 @@ type StatItem = {
 
 const stats: StatItem[] = [
   {
-    icon: FileText,
+    icon: "/icons/Group-1.png",
     number: "80+",
     title: "Наименований\nпрепаратов",
     text: "Зарегистрировано специалистами компании в 2025 году, экспертного рассмотрения и полного регистрационного процесса",
   },
   {
-    icon: Clock3,
+    icon: "/icons/Group-2.png",
     number: "6–24",
     title: "Месяцев",
     text: "Средний срок сопровождения регистрационного процесса в зависимости от категории продукции, объёма документации и регуляторных требований",
   },
   {
-    icon: UserRoundCheck,
+    icon: "/icons/Group-3.png",
     number: "10–30",
     title: "Лет опыта",
     text: "Практический опыт руководящего состава и специалистов компании в сфере фармацевтического законодательства",
   },
   {
-    icon: Check,
+    icon: "/icons/Group-4.png",
     number: "Полный цикл",
     title: "Комплексное\nсопровождение",
     text: "От анализа регистрационного досье и подготовки необходимой документации до сопровождения клинических исследований и завершения процедуры",
@@ -68,8 +67,6 @@ export default function WhyChooseUs() {
 
         <div className="mt-[58px] grid grid-cols-1 gap-[36px] md:grid-cols-4">
           {stats.map((item, index) => {
-            const Icon = item.icon;
-
             return (
               <motion.div
                 key={item.number}
@@ -87,21 +84,22 @@ export default function WhyChooseUs() {
                 }}
                 className="flex min-h-[260px] flex-col items-center rounded-[14px] bg-white px-[28px] py-[28px] text-center shadow-[0_12px_28px_rgba(0,0,0,0.18)]"
               >
-                <Icon
-                  size={38}
-                  strokeWidth={2.4}
-                  className="mb-[18px] text-[#062632]"
+                <img
+                  src={item.icon}
+                  alt=""
+                  aria-hidden="true"
+                  className="mb-[18px] h-[50px] w-[50px] object-contain text-[#0B2A34]"
                 />
 
-                <div className="text-[26px] font-[700] leading-[1.05] text-[#062632]">
+                <div className="text-[26px] font-[500] leading-[1.05] text-[#0B2A34]">
                   {item.number}
                 </div>
 
-                <div className="mt-[8px] whitespace-pre-line text-[21px] font-[600] leading-[1.08] text-[#062632]">
+                <div className="mt-[8px] whitespace-pre-line text-[20px] font-[500] leading-[1.08] text-[#3C555D]">
                   {item.title}
                 </div>
 
-                <p className="mt-[20px] max-w-[220px] text-[13px] font-medium leading-[1.32] text-[#5C6670]">
+                <p className="mt-[22px] max-w-[220px] text-[15px] font-medium leading-[1.32] text-[#5C6670]">
                   {item.text}
                 </p>
               </motion.div>
