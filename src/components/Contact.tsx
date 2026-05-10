@@ -119,6 +119,10 @@ export default function ContactSection() {
               </div>
 
               <input
+                type="tel"
+                inputMode="numeric"
+                autoComplete="tel"
+                pattern="[0-9+ ]*"
                 placeholder="Номер телефона"
                 className="w-full h-[48px] rounded-[9px] border border-[#DFE8EB] bg-[#F3F7F8] px-[18px] text-[12px] font-semibold text-[#12323B] placeholder:text-[#7C8D92] outline-none transition-all duration-500 focus:border-[#9FB2B8] focus:bg-white focus:shadow-[0_8px_18px_rgba(15,50,60,0.07)]"
               />
