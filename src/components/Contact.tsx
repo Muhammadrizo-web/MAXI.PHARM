@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail } from "lucide-react";
 
@@ -21,6 +22,32 @@ const contacts = [
 
 export default function ContactSection() {
   const smooth = [0.16, 1, 0.3, 1] as const;
+
+  const [phone, setPhone] = useState("+998 ");
+
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, "").replace(/^998/, "").slice(0, 9);
+
+    let formatted = "+998 ";
+
+    if (digits.length > 0) {
+      formatted += `(${digits.slice(0, 2)}`;
+    }
+
+    if (digits.length >= 2) {
+      formatted += `) ${digits.slice(2, 5)}`;
+    }
+
+    if (digits.length >= 5) {
+      formatted += `-${digits.slice(5, 7)}`;
+    }
+
+    if (digits.length >= 7) {
+      formatted += `-${digits.slice(7, 9)}`;
+    }
+
+    return formatted;
+  };
 
   return (
     <section className="w-full bg-white overflow-hidden py-[56px] md:py-[92px]">
@@ -122,8 +149,14 @@ export default function ContactSection() {
                 type="tel"
                 inputMode="numeric"
                 autoComplete="tel"
-                pattern="[0-9+ ]*"
-                placeholder="Номер телефона"
+                value={phone}
+                onChange={(e) => setPhone(formatPhone(e.target.value))}
+                onFocus={() => {
+                  if (!phone.startsWith("+998")) {
+                    setPhone("+998 ");
+                  }
+                }}
+                placeholder="+998 (__) ___-__-__"
                 className="w-full h-[48px] rounded-[9px] border border-[#DFE8EB] bg-[#F3F7F8] px-[18px] text-[12px] font-semibold text-[#12323B] placeholder:text-[#7C8D92] outline-none transition-all duration-500 focus:border-[#9FB2B8] focus:bg-white focus:shadow-[0_8px_18px_rgba(15,50,60,0.07)]"
               />
 
