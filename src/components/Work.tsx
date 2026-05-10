@@ -41,7 +41,7 @@ const steps = [
 
 export default function ProcessTimeline() {
   return (
-    <section className="relative w-full bg-[#f7f7f4] overflow-hidden">
+    <section className="relative w-full bg-[#FFFF] overflow-hidden">
       <div className="mx-auto max-w-[1480px] px-5 sm:px-6 md:px-16 py-16 sm:py-20 md:py-28">
         <motion.div
           initial={{ opacity: 0, y: 55 }}

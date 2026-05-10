@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 type Item = {
@@ -45,7 +45,19 @@ const items: Item[] = [
 
 export default function PriorityDirections() {
   const [active, setActive] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
   const sectionRef = useRef(null);
+  const smooth = [0.19, 1, 0.22, 1] as const;
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -53,33 +65,45 @@ export default function PriorityDirections() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [80, -80]);
+
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8, 1],
     [0.4, 1, 1, 0.4]
   );
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.97]);
+
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [0.97, 1, 0.97]
+  );
 
   return (
     <motion.section
       ref={sectionRef}
-      style={{ y, opacity, scale }}
-      className="relative min-h-screen w-full overflow-hidden bg-white px-6 py-[105px]"
+      style={isMobile ? undefined : { y, opacity, scale }}
+      className="relative w-full overflow-hidden bg-white px-4 py-[72px] md:px-6 md:py-[85px]"
     >
-      <div className="mx-auto max-w-[1180px]">
+      <motion.div
+        initial={{ opacity: 0, y: isMobile ? 18 : 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: isMobile ? 0.08 : 0.18 }}
+        transition={{ duration: isMobile ? 0.55 : 0.85, ease: smooth }}
+        className="mx-auto max-w-[1180px] transform-gpu will-change-transform"
+      >
         <div className="mx-auto mb-[22px] flex h-[34px] w-fit items-center justify-center rounded-[16px] border border-[#D6DCDD] bg-white px-[24px] text-[15px] font-medium text-[#0B2A35]">
           Приоритетные направления
         </div>
 
-        <h2 className="mx-auto max-w-[800px] text-center text-[24px] font-[700] uppercase leading-[1.08] tracking-[-0.025em] text-[#0B2A35] md:text-[27px]">
+        <h2 className="mx-auto max-w-[800px] text-center text-[22px] font-[700] uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[27px] md:leading-[1.08]">
           КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ ЭКСПЕРТНОГО
-          <br />
+          <br className="hidden md:block" />
           СОПРОВОЖДЕНИЯ В СФЕРЕ ФАРМАЦЕВТИЧЕСКОЙ
-          <br />
+          <br className="hidden md:block" />
           РЕГИСТРАЦИИ
         </h2>
 
-        <div className="relative mx-auto mt-[34px] grid max-w-[1070px] grid-cols-1 gap-x-[32px] gap-y-[28px] md:grid-cols-2">
+        <div className="relative mx-auto mt-[34px] grid max-w-[1070px] grid-cols-1 gap-x-[32px] gap-y-[20px] md:grid-cols-2 md:gap-y-[28px]">
           {items.map((item, index) => {
             const isActive = active === index;
             const isBlurred = active !== null && active !== index;
@@ -90,45 +114,48 @@ export default function PriorityDirections() {
                 type="button"
                 onClick={() => setActive(isActive ? null : index)}
                 className={[
-                  "group relative overflow-hidden rounded-[7px] border border-[#D9DFE2] bg-white text-left outline-none",
-                  "transition-[height,opacity,filter,transform,box-shadow,border-color] duration-[900ms] ease-[cubic-bezier(0.19,1,0.22,1)]",
-                  "hover:-translate-y-[3px] hover:border-[#B8C3C8] hover:shadow-[0_14px_30px_rgba(11,42,52,0.10)]",
+                  "group relative overflow-hidden rounded-[12px] border border-[#D9DFE2] bg-white text-left outline-none transform-gpu will-change-transform",
+                  "transition-[height,opacity,transform,box-shadow,border-color] duration-[650ms] ease-[cubic-bezier(0.19,1,0.22,1)]",
+                  "md:rounded-[7px] md:hover:-translate-y-[3px] md:hover:border-[#B8C3C8] md:hover:shadow-[0_14px_30px_rgba(11,42,52,0.10)]",
                   "active:scale-[0.99]",
                   isActive
-                    ? "z-20 h-[240px] shadow-[0_18px_42px_rgba(20,35,45,0.14)]"
-                    : "h-[190px] shadow-none",
+                    ? "z-20 h-[285px] shadow-[0_18px_42px_rgba(20,35,45,0.12)] md:h-[240px]"
+                    : "h-[230px] shadow-[0_10px_26px_rgba(11,42,52,0.06)] md:h-[190px] md:shadow-none",
                   isBlurred
-                    ? "scale-[0.985] opacity-[0.25] blur-[7px]"
-                    : "scale-100 opacity-100 blur-0",
+                    ? "scale-[0.99] opacity-[0.55] md:opacity-[0.32]"
+                    : "scale-100 opacity-100",
                 ].join(" ")}
               >
-                <div className="flex h-full items-start gap-[24px] px-[28px] pb-[42px] pt-[28px]">
+                <div className="flex h-full items-start gap-[18px] px-[22px] pb-[48px] pt-[26px] md:gap-[24px] md:px-[28px] md:pb-[42px] md:pt-[28px]">
                   <div
                     className={[
                       "flex shrink-0 items-center justify-center rounded-full border border-[#DDE5EA] bg-[#F7F9FA]",
-                      "transition-[width,height,transform,background-color,border-color] duration-[1900ms] ease-[cubic-bezier(0.19,1,0.22,1)]",
-                      "group-hover:-translate-y-[1px] group-hover:scale-[1.05] group-hover:border-[#C7D8D3] group-hover:bg-[#F1FAF7]",
-                      isActive ? "h-[34px] w-[34px]" : "h-[30px] w-[30px]",
+                      "transition-[width,height,transform,background-color,border-color] duration-[700ms] ease-[cubic-bezier(0.19,1,0.22,1)]",
+                      "md:group-hover:-translate-y-[1px] md:group-hover:scale-[1.05] md:group-hover:border-[#C7D8D3] md:group-hover:bg-[#F1FAF7]",
+                      isActive
+                        ? "h-[54px] w-[54px] md:h-[34px] md:w-[34px]"
+                        : "h-[50px] w-[50px] md:h-[30px] md:w-[30px]",
                     ].join(" ")}
                   >
                     <img
                       src={item.icon}
                       alt=""
                       aria-hidden="true"
-                      className="h-[28px] w-[28px] object-contain"
+                      loading="lazy"
+                      className="h-[40px] w-[40px] object-contain md:h-[28px] md:w-[28px]"
                     />
                   </div>
 
                   <div className="min-w-0 flex-1 pt-[1px]">
-                    <h3 className="text-[14px] font-[900] uppercase leading-[1.18] tracking-[-0.01em] text-[#102A34]">
+                    <h3 className="text-[16px] font-[900] uppercase leading-[1.16] tracking-[-0.01em] text-[#102A34] md:text-[14px] md:leading-[1.18]">
                       {item.title}
                     </h3>
 
-                    <p className="mt-[10px] max-w-[430px] text-[14px] leading-[1.28] text-[#6F7377]">
+                    <p className="mt-[12px] max-w-[430px] text-[15px] leading-[1.34] text-[#6F7377] md:mt-[10px] md:text-[14px] md:leading-[1.28]">
                       {item.short}
                       <span
                         className={[
-                          "inline transition-opacity duration-[750ms] ease-out",
+                          "inline transition-opacity duration-[500ms] ease-out",
                           isActive ? "opacity-100" : "opacity-0",
                         ].join(" ")}
                       >
@@ -141,10 +168,9 @@ export default function PriorityDirections() {
                 <a
                   href="#contact"
                   className={[
-                    "absolute bottom-[15px] left-[79px]",
-                    "text-[12px] font-extrabold leading-none text-[#009B72]",
-                    "transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]",
-                    "group-hover:left-[84px] group-hover:text-[#00B383]",
+                    "absolute bottom-[18px] left-[90px] text-[13px] font-extrabold leading-none text-[#009B72]",
+                    "transition-all duration-[500ms] ease-[cubic-bezier(0.19,1,0.22,1)]",
+                    "md:bottom-[15px] md:left-[79px] md:text-[12px] md:group-hover:left-[84px] md:group-hover:text-[#00B383]",
                     isActive
                       ? "translate-y-[10px] opacity-0 pointer-events-none"
                       : "translate-y-0 opacity-100",
@@ -156,7 +182,7 @@ export default function PriorityDirections() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 }

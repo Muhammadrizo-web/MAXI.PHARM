@@ -38,7 +38,7 @@ export default function App() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#F3F3F1]  overflow-hidden">
+    <main className="min-h-screen bg-[#FFFF]  overflow-hidden">
       <div className="mx-auto w-full">
         <Hero>
           <Header />
