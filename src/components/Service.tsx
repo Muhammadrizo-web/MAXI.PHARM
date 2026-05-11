@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 import { motion, type Transition } from "framer-motion";
 
 type ServiceItem = {
   icon: string;
   title: string;
   text: string;
+  slug: string;
 };
 
 const services: ServiceItem[] = [
@@ -11,31 +13,37 @@ const services: ServiceItem[] = [
     icon: "/icons/ic-1.png",
     title: "РЕГИСТРАЦИЯ\nЛЕКАРСТВЕННЫХ СРЕДСТВ",
     text: "Полное сопровождение государственной регистрации лекарственных препаратов, включая подготовку документации...",
+    slug: "drug-registration",
   },
   {
     icon: "/icons/ic-2.png",
     title: "РЕГИСТРАЦИЯ\nМЕДИЦИНСКИХ ИЗДЕЛИЙ",
     text: "Профессиональное сопровождение регистрации медицинских изделий, оборудования и продукции медицинского назначения...",
+    slug: "medical-devices",
   },
   {
     icon: "/icons/ic-3.png",
     title: "РЕГИСТРАЦИЯ\nБАД",
     text: "Регуляторное сопровождение регистрации биологически активных добавок с подготовкой необходимой документации...",
+    slug: "bad-registration",
   },
   {
     icon: "/icons/ic-4.png",
     title: "РЕГИСТРАЦИЯ\nКОСМЕТИЧЕСКОЙ ПРОДУКЦИИ",
     text: "Сопровождение регистрации лечебной и косметической продукции в соответствии с установленными требованиями...",
+    slug: "cosmetics-registration",
   },
   {
     icon: "/icons/ic-5.png",
     title: "КЛИНИЧЕСКИЕ\nИССЛЕДОВАНИЯ",
     text: "Организация и сопровождение клинических исследований в рамках регистрационного процесса с соблюдением...",
+    slug: "clinical-research",
   },
   {
     icon: "/icons/ic-6.png",
     title: "РЕГУЛЯТОРНЫЙ\nКОНСАЛТИНГ",
     text: "Экспертная поддержка по вопросам законодательства, подготовки регистрационного досье и сопровождения...",
+    slug: "regulatory-consulting",
   },
 ];
 
@@ -85,7 +93,7 @@ export default function ServicesSection() {
         <div className="mt-[30px] grid grid-cols-1 gap-[18px] sm:mt-[38px] sm:gap-[24px] md:grid-cols-2 xl:grid-cols-3 xl:gap-[32px]">
           {services.map((item, index) => (
             <motion.div
-              key={item.title}
+              key={item.slug}
               initial={{
                 opacity: 0,
                 y: 36,
@@ -141,9 +149,14 @@ export default function ServicesSection() {
                   <motion.div
                     whileHover={{ x: 4 }}
                     transition={{ duration: 0.22 }}
-                    className="mt-[18px] text-[12px] font-bold text-[#6EABC1] sm:mt-[22px]"
+                    className="mt-[18px] sm:mt-[22px]"
                   >
-                    Подробнее →
+                    <Link
+                      to={`/services/${item.slug}`}
+                      className="text-[12px] font-bold text-[#6EABC1] transition-colors duration-300 hover:text-[#0E9B67]"
+                    >
+                      Подробнее →
+                    </Link>
                   </motion.div>
                 </div>
               </div>

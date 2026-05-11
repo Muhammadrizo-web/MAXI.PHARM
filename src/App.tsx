@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ForWhom from "./components/ForWhom";
@@ -12,6 +18,28 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
 
+import ServiceDetail from "./pages/ServiceDetail";
+
+function Home() {
+  return (
+    <main className="min-h-screen bg-[#FFFF] overflow-hidden">
+      <div className="mx-auto w-full">
+        <Hero>
+          <Header />
+        </Hero>
+      </div>
+
+      <ForWhom />
+      <Key />
+      <Why />
+      <Service />
+      <Work />
+      <FAQ />
+      <Contact />
+      <Footer />
+    </main>
+  );
+}
 
 export default function App() {
   useEffect(() => {
@@ -38,21 +66,15 @@ export default function App() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#FFFF]  overflow-hidden">
-      <div className="mx-auto w-full">
-        <Hero>
-          <Header />
-        </Hero>
-      </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-      <ForWhom />
-      <Key />
-      <Why />
-      <Service />
-      <Work />
-      <FAQ />
-      <Contact />
-      <Footer />
-    </main>
+        <Route
+          path="/services/:slug"
+          element={<ServiceDetail />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }

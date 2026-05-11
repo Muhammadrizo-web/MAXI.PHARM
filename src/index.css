@@ -8,8 +8,21 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
   font-family: Inter, Arial, sans-serif;
   background: #f5f7f7;
+}
+
+* {
+  box-sizing: border-box;
 }
