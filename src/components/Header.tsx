@@ -1,22 +1,44 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "О компании", href: "#about" },
-  { label: "Преимущества", href: "#advantages" },
+  { label: "Направление", href: "#key" },
+  { label: "Преимущества", href: "#why" },
   { label: "Услуги", href: "#services" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-[28px] pt-[18px]">
-      <div className="mx-auto flex max-w-none items-start justify-between">
+    <header
+      className={`
+        fixed left-0 right-0 top-0 z-50
+        transition-all duration-500
+        ${
+          scrolled
+            ? "bg-[#FFFFFF]/90 backdrop-blur-2xl shadow-[0_12px_30px_rgba(0,0,0,.12)]"
+            : "bg-transparent"
+        }
+      `}
+    >
+      <div className="mx-auto flex h-[86px] max-w-[1440px] items-center justify-between px-[24px] md:px-[34px]">
         <a href="/" className="relative z-30 block shrink-0">
           <img
-            src="/logo.png"
+            src="/logo1.png"
             alt="Maxi Pharm"
-            className="h-[58px] w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,.12)]"
+            className="h-[56px] w-auto object-contain"
           />
         </a>
 
@@ -25,12 +47,12 @@ export default function Header() {
           <nav
             className={`
               absolute right-0 top-0 hidden h-[48px] items-center overflow-hidden
-              rounded-full border border-white/25
-              bg-white/10 backdrop-blur-xl
-              shadow-[0_8px_24px_rgba(0,0,0,.10)]
+              rounded-full border border-white/20
+              bg-black/5 backdrop-blur-xl
+              shadow-[0_8px_24px_rgba(0,0,0,.12)]
               transition-[width] duration-500 ease-[cubic-bezier(.22,1,.36,1)]
               md:flex
-              ${open ? "w-[620px]" : "w-[48px]"}
+              ${open ? "w-[730px]" : "w-[48px]"}
             `}
           >
             <div
@@ -55,7 +77,7 @@ export default function Header() {
                   className={`
                     whitespace-nowrap rounded-full
                     px-[20px] py-[13px]
-                    text-[14px] font-medium leading-none text-white
+                    text-[14px] font-medium leading-none text-black
                     transition-all duration-300
                     hover:bg-white/15
                     ${
@@ -70,7 +92,7 @@ export default function Header() {
               ))}
 
               <a
-                href="#contact"
+                href="#contacts"
                 onClick={() => setOpen(false)}
                 style={{
                   transitionDelay: open ? "260ms" : "0ms",
@@ -105,29 +127,25 @@ export default function Header() {
             className="
               relative z-20 flex h-[48px] w-[48px]
               items-center justify-center
-              rounded-full border border-white/25
-              bg-white/20 backdrop-blur-xl
-              shadow-[0_8px_22px_rgba(0,0,0,.10)]
               transition duration-300
-              hover:bg-white/30
               active:scale-[.96]
             "
           >
             <span
-              className={`absolute h-[2.5px] w-[21px] rounded-full bg-[#073C46] transition-all duration-300 ${
-                open ? "rotate-45 translate-y-0" : "-translate-y-[7px]"
+              className={`absolute h-[3.5px] w-[24px] rounded-full bg-black transition-all duration-300 ${
+                open ? "rotate-45 translate-y-0" : "-translate-y-[8px]"
               }`}
             />
 
             <span
-              className={`absolute h-[2.5px] w-[21px] rounded-full bg-[#073C46] transition-all duration-300 ${
+              className={`absolute h-[3.5px] w-[24px] rounded-full bg-black transition-all duration-300 ${
                 open ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"
               }`}
             />
 
             <span
-              className={`absolute h-[2.5px] w-[21px] rounded-full bg-[#073C46] transition-all duration-300 ${
-                open ? "-rotate-45 translate-y-0" : "translate-y-[7px]"
+              className={`absolute h-[3.5px] w-[24px] rounded-full bg-black transition-all duration-300 ${
+                open ? "-rotate-45 translate-y-0" : "translate-y-[8px]"
               }`}
             />
           </button>
@@ -135,11 +153,11 @@ export default function Header() {
           {/* Mobile */}
           <div
             className={`
-              absolute right-0 top-[60px] w-[280px]
-              rounded-[24px] border border-white/25
-              bg-white/15 p-[8px]
-              backdrop-blur-xl
-              shadow-[0_14px_40px_rgba(0,0,0,.16)]
+              absolute right-0 top-[64px] w-[290px]
+              rounded-[26px] border border-white/15
+              bg-black/70 p-[8px]
+              backdrop-blur-2xl
+              shadow-[0_20px_50px_rgba(0,0,0,.28)]
               transition-all duration-300 ease-out
               md:hidden
               ${
@@ -158,7 +176,7 @@ export default function Header() {
                   block rounded-[18px]
                   px-[18px] py-[14px]
                   text-[15px] font-medium text-white
-                  transition hover:bg-white/15
+                  transition hover:bg-white/10
                 "
               >
                 {item.label}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const steps = [
   {
@@ -40,13 +41,26 @@ const steps = [
 ];
 
 export default function ProcessTimeline() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
   return (
     <section className="relative w-full bg-[#FFFF] overflow-hidden">
       <div className="mx-auto max-w-[1480px] px-5 sm:px-6 md:px-16 py-16 sm:py-20 md:py-28">
         <motion.div
           initial={{ opacity: 0, y: 55 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: isMobile, amount: 0.25 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12 sm:mb-16 md:mb-20"
         >
@@ -71,7 +85,7 @@ export default function ProcessTimeline() {
           <motion.div
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
-            viewport={{ once: false, amount: 0.12 }}
+            viewport={{ once: isMobile, amount: 0.12 }}
             transition={{ duration: 1.35, ease: "easeInOut" }}
             className="absolute left-[22px] md:left-1/2 top-[10px] bottom-[10px] w-px bg-[#d4d4cf] origin-top md:-translate-x-1/2"
           />
@@ -90,7 +104,7 @@ export default function ProcessTimeline() {
                   x: 0,
                   y: 0,
                 }}
-                viewport={{ once: false, amount: 0.42 }}
+                viewport={{ once: isMobile, amount: 0.42 }}
                 transition={{
                   duration: 0.78,
                   delay: index * 0.06,
@@ -118,10 +132,10 @@ export default function ProcessTimeline() {
                   <motion.div
                     initial={{ scale: 0.76, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: false, amount: 0.6 }}
+                    viewport={{ once: isMobile, amount: 0.6 }}
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.35 }}
-                    className="relative z-20 w-[44px] h-[44px] rounded-full bg-[#089A69] text-white flex items-center justify-center text-[16px] font-bold shadow-[0_12px_32px_rgba(0,0,0,0.14)]"
+                    className="relative z-20 w-[44px] h-[44px] rounded-full bg-[#089A69] text-white flex items-center justify-center text-[16px] font-bold"
                   >
                     {step.id}
                   </motion.div>
