@@ -89,11 +89,9 @@ export default function PriorityDirections() {
           Приоритетные направления
         </div>
 
-        <h2 className="mx-auto max-w-[800px] text-center text-[18px] font-[700] uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[27px] md:leading-[1.08]">
+        <h2 className="mx-auto max-w-[800px] text-center text-[16px] font-[700] uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[27px] md:leading-[1.08]">
           КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ ЭКСПЕРТНОГО
-          <br className="hidden md:block" />
           СОПРОВОЖДЕНИЯ В СФЕРЕ ФАРМАЦЕВТИЧЕСКОЙ
-          <br className="hidden md:block" />
           РЕГИСТРАЦИИ
         </h2>
 
