@@ -65,7 +65,7 @@ export default function Footer() {
               transition={{ duration: 0.7, ease: smooth }}
             >
               <img
-                src="/logo1.png"
+                src="/logo.png"
                 alt="MAXIPHARM EXPERT"
                 className="w-[132px] sm:w-[160px] h-auto mb-[18px] sm:mb-[26px]"
               />
