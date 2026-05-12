@@ -153,7 +153,7 @@ export default function ServicesSection() {
                   >
                     <Link
                       to={`/services/${item.slug}`}
-                      className="text-[12px] font-bold text-[#6EABC1] transition-colors duration-300 hover:text-[#0E9B67]"
+                      className="text-[12px] font-bold text-[#0E9B67] transition-colors duration-300 hover:text-[#0E9B67]"
                     >
                       Подробнее →
                     </Link>

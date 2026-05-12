@@ -17,6 +17,7 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -28,30 +29,44 @@ export default function Header() {
         transition-all duration-500
         ${
           scrolled
-            ? "bg-[#FFFFFF]/90 backdrop-blur-2xl shadow-[0_12px_30px_rgba(0,0,0,.12)]"
+            ? "bg-[#FFFFFF]/92 backdrop-blur-2xl shadow-[0_12px_30px_rgba(0,0,0,.12)]"
             : "bg-transparent"
         }
       `}
     >
-      <div className="mx-auto flex h-[86px] max-w-[1440px] items-center justify-between px-[24px] md:px-[34px]">
+      <div
+        className={`
+          mx-auto flex h-[86px] max-w-none items-center justify-between
+          transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)]
+          ${
+            scrolled
+              ? "px-[24px] md:px-[72px]"
+              : "px-[8px] md:px-[14px]"
+          }
+        `}
+      >
         <a href="/" className="relative z-30 block shrink-0">
           <img
-            src="/logo1.png"
+            src={scrolled ? "/logo1.png" : "/logo.png"}
             alt="Maxi Pharm"
-            className="h-[56px] w-auto object-contain"
+            className="h-[56px] w-auto object-contain transition-all duration-500"
           />
         </a>
 
         <div className="relative h-[48px]">
-          {/* Desktop animated capsule */}
           <nav
             className={`
               absolute right-0 top-0 hidden h-[48px] items-center overflow-hidden
-              rounded-full border border-white/20
-              bg-black/5 backdrop-blur-xl
+              rounded-full border
+              backdrop-blur-xl
               shadow-[0_8px_24px_rgba(0,0,0,.12)]
-              transition-[width] duration-500 ease-[cubic-bezier(.22,1,.36,1)]
+              transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)]
               md:flex
+              ${
+                scrolled
+                  ? "border-black/10 bg-black/5"
+                  : "border-white/20 bg-white/10"
+              }
               ${open ? "w-[730px]" : "w-[48px]"}
             `}
           >
@@ -77,9 +92,10 @@ export default function Header() {
                   className={`
                     whitespace-nowrap rounded-full
                     px-[20px] py-[13px]
-                    text-[14px] font-medium leading-none text-black
+                    text-[14px] font-medium leading-none
                     transition-all duration-300
-                    hover:bg-white/15
+                    hover:bg-black/5
+                    ${scrolled ? "text-black" : "text-white"}
                     ${
                       open
                         ? "translate-x-0 opacity-100"
@@ -118,7 +134,6 @@ export default function Header() {
             </div>
           </nav>
 
-          {/* Toggle */}
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
@@ -132,25 +147,24 @@ export default function Header() {
             "
           >
             <span
-              className={`absolute h-[3.5px] w-[24px] rounded-full bg-black transition-all duration-300 ${
-                open ? "rotate-45 translate-y-0" : "-translate-y-[8px]"
-              }`}
+              className={`absolute h-[3.5px] w-[24px] rounded-full transition-all duration-300 ${
+                scrolled ? "bg-[#073C46]" : "bg-white"
+              } ${open ? "rotate-45 translate-y-0" : "-translate-y-[8px]"}`}
             />
 
             <span
-              className={`absolute h-[3.5px] w-[24px] rounded-full bg-black transition-all duration-300 ${
-                open ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"
-              }`}
+              className={`absolute h-[3.5px] w-[24px] rounded-full transition-all duration-300 ${
+                scrolled ? "bg-[#073C46]" : "bg-white"
+              } ${open ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"}`}
             />
 
             <span
-              className={`absolute h-[3.5px] w-[24px] rounded-full bg-black transition-all duration-300 ${
-                open ? "-rotate-45 translate-y-0" : "translate-y-[8px]"
-              }`}
+              className={`absolute h-[3.5px] w-[24px] rounded-full transition-all duration-300 ${
+                scrolled ? "bg-[#073C46]" : "bg-white"
+              } ${open ? "-rotate-45 translate-y-0" : "translate-y-[8px]"}`}
             />
           </button>
 
-          {/* Mobile */}
           <div
             className={`
               absolute right-0 top-[64px] w-[290px]

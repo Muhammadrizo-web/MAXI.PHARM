@@ -145,7 +145,7 @@ export default function ContactSection() {
                           {item.title}
                         </h3>
 
-                        <p className="whitespace-pre-line text-[#6E8086] text-[12px] font-semibold leading-[1.3]">
+                        <p className="whitespace-pre-line text-[#6E8086] text-[16px] font-semibold leading-[1.3]">
                           {item.text}
                         </p>
                       </div>
