@@ -2,91 +2,136 @@ import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
 export default function Footer() {
-  const menu = ["О компании", "Услуги", "Как мы работаем", "FAQ", "Контакты"];
+  const menu = [
+    { title: "О компании", href: "#about" },
+    { title: "Услуги", href: "#services" },
+    { title: "Как мы работаем", href: "#process" },
+    { title: "FAQ", href: "#faq" },
+    { title: "Контакты", href: "#contacts" },
+  ];
 
   const contacts = [
-    "Республика Узбекистан, г. Ташкент",
-    "ул. Сайрам, дом 26/4",
-    "+998 (90) 928-22-99",
-    "info@maxipharm",
-    "maxipharm.reg@gmail.com",
+    {
+      title: "Республика Узбекистан, г. Ташкент",
+      href: "https://maps.google.com/?q=Ташкент",
+    },
+    {
+      title: "ул. Сайрам, дом 26/4",
+      href: "https://maps.google.com/?q=Ташкент ул. Сайрам 26/4",
+    },
+    {
+      title: "+998 (90) 928-22-99",
+      href: "tel:+998909282299",
+    },
+    {
+      title: "maxipharm.reg@gmail.com",
+      href: "mailto:maxipharm.reg@gmail.com",
+    },
   ];
 
   const smooth = [0.16, 1, 0.3, 1] as const;
 
-  function HoverLink({ children }: { children: ReactNode }) {
+  function HoverLink({
+    children,
+    href,
+  }: {
+    children: ReactNode;
+    href: string;
+  }) {
     return (
-      <motion.div className="relative w-fit cursor-pointer text-white/48 hover:text-white/80 transition-colors duration-500">
-        <motion.span whileHover={{ y: -1 }} transition={{ duration: 0.5, ease: smooth }}>
-          {children}
-        </motion.span>
-      </motion.div>
+      <motion.a
+        href={href}
+        className="relative block w-fit cursor-pointer text-white/48 hover:text-white/85 transition-colors duration-500"
+        whileHover={{ y: -1 }}
+        whileTap={{ scale: 0.985 }}
+        transition={{ duration: 0.45, ease: smooth }}
+      >
+        {children}
+      </motion.a>
     );
   }
 
   return (
-    <footer className="w-full bg-[#07333B] text-white">
-      <div className="max-w-[1180px] mx-auto px-[20px] sm:px-[24px] pt-[38px] sm:pt-[56px] pb-[28px] sm:pb-[38px]">
-        <div className="grid grid-cols-1 md:grid-cols-[430px_180px_1fr] gap-[34px] md:gap-[86px]">
-          <div>
-            <motion.img
-              src="/logo1.png"
-              alt="MAXIPHARM EXPERT"
-              className="w-[138px] sm:w-[160px] h-auto mb-[20px] sm:mb-[26px]"
+    <footer className="w-full bg-[#07333B] text-white overflow-hidden">
+      <div className="max-w-[1180px] mx-auto px-[18px] sm:px-[24px] lg:px-[20px] pt-[42px] sm:pt-[56px] pb-[26px] sm:pb-[38px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[430px_180px_1fr] gap-[36px] sm:gap-[48px] lg:gap-[86px]">
+          {/* LEFT */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <motion.a
+              href="#hero"
+              className="block w-fit"
               whileHover={{ scale: 1.015, y: -1 }}
+              whileTap={{ scale: 0.985 }}
               transition={{ duration: 0.7, ease: smooth }}
-            />
+            >
+              <img
+                src="/logo1.png"
+                alt="MAXIPHARM EXPERT"
+                className="w-[132px] sm:w-[160px] h-auto mb-[18px] sm:mb-[26px]"
+              />
+            </motion.a>
 
-            <p className="w-full max-w-[310px] text-[12px] sm:text-[14px] leading-[16px] sm:leading-[18px] font-medium text-white/42">
+            <p className="w-full max-w-[320px] text-[12px] sm:text-[14px] leading-[17px] sm:leading-[19px] font-medium text-white/42">
               Экспертное регуляторное сопровождение
-              <br />
               в сфере фармацевтики и медицинских
-              <br />
-              технологий
+              технологий!
             </p>
           </div>
 
-          <div className="pt-0 md:pt-[4px]">
-            <h4 className="text-[14px] sm:text-[16px] leading-none font-bold mb-[18px] sm:mb-[28px] text-white/92">
+          {/* MENU */}
+          <div>
+            <h4 className="text-[15px] sm:text-[16px] leading-none font-bold mb-[18px] sm:mb-[28px] text-white/92">
               Меню
             </h4>
 
-            <div className="space-y-[12px] sm:space-y-[15px] text-[12px] sm:text-[14px] leading-none font-medium">
+            <nav className="space-y-[13px] sm:space-y-[15px] text-[13px] sm:text-[14px] leading-none font-medium">
               {menu.map((item) => (
-                <HoverLink key={item}>{item}</HoverLink>
+                <HoverLink key={item.title} href={item.href}>
+                  {item.title}
+                </HoverLink>
               ))}
-            </div>
+            </nav>
           </div>
 
-          <div className="pt-0 md:pt-[4px]">
-            <h4 className="text-[14px] sm:text-[16px] leading-none font-bold mb-[18px] sm:mb-[28px] text-white/92">
+          {/* CONTACTS */}
+          <div id="contacts">
+            <h4 className="text-[15px] sm:text-[16px] leading-none font-bold mb-[18px] sm:mb-[28px] text-white/92">
               Контактная информация
             </h4>
 
-            <div className="space-y-[12px] sm:space-y-[15px] text-[12px] sm:text-[14px] leading-none font-medium">
+            <div className="space-y-[13px] sm:space-y-[15px] text-[13px] sm:text-[14px] leading-none font-medium">
               {contacts.map((item) => (
-                <HoverLink key={item}>{item}</HoverLink>
+                <HoverLink key={item.title} href={item.href}>
+                  {item.title}
+                </HoverLink>
               ))}
             </div>
           </div>
         </div>
 
+        {/* LINE */}
         <motion.div
-          className="w-full h-px bg-white/16 mt-[34px] sm:mt-[48px] origin-left"
+          className="w-full h-px bg-white/16 mt-[36px] sm:mt-[48px] origin-left"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.1, ease: smooth }}
         />
 
-        <div className="flex flex-col sm:flex-row justify-between items-start gap-[14px] sm:gap-0 pt-[16px] sm:pt-[18px]">
-          <span className="text-[11px] sm:text-[12px] font-medium text-white/38">
+        {/* BOTTOM */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-[18px] pt-[18px]">
+          <span className="text-[11px] sm:text-[12px] text-[#3C555D] leading-[15px] font-medium text-white/38">
             © 2026 MAXIPHARM. Все права защищены.
           </span>
 
-          <div className="sm:mr-[120px] space-y-[4px] sm:space-y-[5px] text-[11px] sm:text-[12px] leading-[14px] sm:leading-[15px] font-medium">
-            <HoverLink>Политика конфиденциальности</HoverLink>
-            <HoverLink>Условия использования</HoverLink>
+          <div className="flex flex-col sm:flex-row gap-[8px] sm:gap-[24px] text-[11px] sm:text-[12px] leading-[15px] font-medium">
+            <HoverLink href="#privacy">
+              Политика конфиденциальности
+            </HoverLink>
+
+            <HoverLink href="#terms">
+              Условия использования
+            </HoverLink>
           </div>
         </div>
       </div>

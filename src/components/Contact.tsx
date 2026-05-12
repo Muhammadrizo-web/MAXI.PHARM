@@ -16,7 +16,7 @@ const contacts = [
   {
     icon: Mail,
     title: "Email",
-    text: "info@maxipharm.uz\nmaxipharm.reg@gmail.com",
+    text: "nmaxipharm.reg@gmail.com",
   },
 ];
 
@@ -102,7 +102,7 @@ export default function ContactSection() {
               Начните сотрудничество
             </motion.div>
 
-            <h2 className="mt-[15px] text-[#12323B] text-[32px] md:text-[36px] lg:text-[38px] font-black uppercase tracking-[-0.04em] leading-[1.03]">
+            <h2 className="mt-[15px] text-[#12323B] text-[32px] md:text-[36px] lg:text-[38px] font-bold uppercase tracking-[-0.04em] leading-[1.03]">
               Свяжитесь с нами
             </h2>
 
@@ -141,7 +141,7 @@ export default function ContactSection() {
                       </motion.div>
 
                       <div>
-                        <h3 className="text-[#12323B] text-[15px] font-extrabold leading-[1.1] mb-[7px]">
+                        <h3 className="text-[#12323B] text-[15px] font-bold leading-[1.1] mb-[7px]">
                           {item.title}
                         </h3>
 

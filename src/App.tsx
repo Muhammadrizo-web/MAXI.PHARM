@@ -1,11 +1,7 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -23,19 +19,40 @@ import ServiceDetail from "./pages/ServiceDetail";
 function Home() {
   return (
     <main className="min-h-screen bg-[#FFFF] overflow-hidden">
-      <div className="mx-auto w-full">
+      <section id="hero" className="mx-auto w-full">
         <Hero>
           <Header />
         </Hero>
-      </div>
+      </section>
 
-      <ForWhom />
-      <Key />
-      <Why />
-      <Service />
-      <Work />
-      <FAQ />
-      <Contact />
+      <section id="about">
+        <ForWhom />
+      </section>
+
+      <section id="key">
+        <Key />
+      </section>
+
+      <section id="why">
+        <Why />
+      </section>
+
+      <section id="services">
+        <Service />
+      </section>
+
+      <section id="process">
+        <Work />
+      </section>
+
+      <section id="faq">
+        <FAQ />
+      </section>
+
+      <section id="contacts">
+        <Contact />
+      </section>
+
       <Footer />
     </main>
   );
@@ -70,10 +87,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route
-          path="/services/:slug"
-          element={<ServiceDetail />}
-        />
+        <Route path="/services/:slug" element={<ServiceDetail />} />
       </Routes>
     </BrowserRouter>
   );

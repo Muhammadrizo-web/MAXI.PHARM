@@ -71,7 +71,7 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.7 }}
           transition={{ ...transition, delay: 0.04 }}
-          className="mx-auto max-w-[980px] text-center text-[25px] font-[700] uppercase leading-[1.08] tracking-[-0.03em] text-[#0B2A35] sm:text-[30px] md:text-[36px]"
+          className="mx-auto max-w-[980px] text-center text-[18px] font-[700] uppercase leading-[1.08] tracking-[-0.03em] text-[#0B2A35] sm:text-[30px] md:text-[36px]"
         >
           КОМПЛЕКСНОЕ РЕГУЛЯТОРНОЕ СОПРОВОЖДЕНИЕ
           <br className="hidden sm:block" />

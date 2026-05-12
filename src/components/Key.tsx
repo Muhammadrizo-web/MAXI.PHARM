@@ -89,7 +89,7 @@ export default function PriorityDirections() {
           Приоритетные направления
         </div>
 
-        <h2 className="mx-auto max-w-[800px] text-center text-[22px] font-[700] uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[27px] md:leading-[1.08]">
+        <h2 className="mx-auto max-w-[800px] text-center text-[18px] font-[700] uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[27px] md:leading-[1.08]">
           КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ ЭКСПЕРТНОГО
           <br className="hidden md:block" />
           СОПРОВОЖДЕНИЯ В СФЕРЕ ФАРМАЦЕВТИЧЕСКОЙ
@@ -123,12 +123,12 @@ export default function PriorityDirections() {
                 <div className="flex h-full items-start gap-[18px] px-[22px] pb-[48px] pt-[26px] md:gap-[24px] md:px-[28px] md:pb-[42px] md:pt-[28px]">
                   <div
                     className={[
-                      "flex shrink-0 items-center justify-center rounded-full border border-[#DDE5EA] bg-[#F7F9FA]",
+                      // "flex shrink-0 items-center justify-center rounded-full border border-[#DDE5EA] bg-[#F7F9FA]",
                       "transition-[width,height,transform,background-color,border-color] duration-[700ms] ease-[cubic-bezier(0.19,1,0.22,1)]",
-                      "md:group-hover:-translate-y-[1px] md:group-hover:scale-[1.05] md:group-hover:border-[#C7D8D3] md:group-hover:bg-[#F1FAF7]",
+                      // "md:group-hover:-translate-y-[1px] md:group-hover:scale-[1.05] md:group-hover:border-[#C7D8D3] md:group-hover:bg-[#F1FAF7]",
                       isActive
-                        ? "h-[54px] w-[54px] md:h-[34px] md:w-[34px]"
-                        : "h-[50px] w-[50px] md:h-[30px] md:w-[30px]",
+                        ? "h-[54px] w-[54px] md:h-[70px] md:w-[70px]"
+                        : "h-[50px] w-[50px] md:h-[65px] md:w-[65px]",
                     ].join(" ")}
                   >
                     <img
@@ -136,12 +136,12 @@ export default function PriorityDirections() {
                       alt=""
                       aria-hidden="true"
                       loading="lazy"
-                      className="h-[40px] w-[40px] object-contain md:h-[28px] md:w-[28px]"
+                      className="h-[70px] w-[70px] object-contain md:h-[70px] md:w-[70px]"
                     />
                   </div>
 
                   <div className="min-w-0 flex-1 pt-[1px]">
-                    <h3 className="text-[16px] font-[900] uppercase leading-[1.16] tracking-[-0.01em] text-[#102A34] md:text-[14px] md:leading-[1.18]">
+                    <h3 className="text-[16px] font-[700] uppercase leading-[1.16] tracking-[-0.01em] text-[#102A34] md:text-[14px] md:leading-[1.18]">
                       {item.title}
                     </h3>
 

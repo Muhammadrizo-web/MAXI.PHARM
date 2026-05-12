@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.55 }}
           transition={{ ...transition, delay: 0.06 }}
-          className="mx-auto max-w-[850px] text-center text-[32px] font-[600] uppercase leading-[1.08] tracking-[-0.03em] text-white"
+          className="mx-auto max-w-[850px] text-center text-[28px] font-[600] uppercase leading-[1.08] tracking-[-0.03em] text-white"
         >
           МЫ ПРЕДОСТАВЛЯЕМ ЭКСПЕРТНЫЕ РЕШЕНИЯ
           <br />
