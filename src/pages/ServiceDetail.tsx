@@ -110,7 +110,7 @@ export default function ServiceDetail() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.04, ease: smooth }}
-              className="mx-auto mt-[18px] max-w-[820px] text-[28px] font-black uppercase leading-[1.03] tracking-[-0.045em] text-[#0B2A35] md:text-[46px]"
+              className="mx-auto mt-[18px] max-w-[820px] text-[28px] font-bold uppercase leading-[1.03] tracking-[-0.045em] text-[#0B2A35] md:text-[38px]"
             >
               {service.title}
             </motion.h1>
