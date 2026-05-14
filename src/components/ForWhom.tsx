@@ -51,7 +51,7 @@ export default function ForWhom() {
       id="for-whom"
       className="relative overflow-hidden bg-white px-4 py-[56px] sm:px-6 md:py-[74px] lg:py-[82px]"
     >
-      <div className="mx-auto max-w-[1120px] text-center">
+      <div className="mx-auto max-w-[1120px] text-center mt-[50px]">
         <div
           className={`
             inline-flex h-[34px] items-center justify-center rounded-full
@@ -71,9 +71,9 @@ export default function ForWhom() {
         <h2
           className={`
             mx-auto mt-[22px] max-w-[780px]
-            text-[24px] font-bold uppercase leading-[1.12]
+            text-[24px] font-bold uppercase leading-[1.2]
             tracking-[-0.035em] text-[#0B2A34]
-            sm:text-[28px] md:text-[32px]
+            sm:text-[28px] md:text-[30px]
             md:transition-all md:duration-700 md:delay-75 md:ease-[cubic-bezier(.22,1,.36,1)]
             ${
               visible

@@ -87,7 +87,7 @@ export default function ContactSection() {
   return (
     <section className="w-full bg-white overflow-hidden py-[56px] md:py-[92px]">
       <div className="max-w-[1180px] mx-auto px-[20px]">
-        <div className="grid grid-cols-1 lg:grid-cols-[505px_590px] gap-[44px] lg:gap-[85px] items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[505px_590px] gap-[44px] lg:gap-[85px] items-start mt-[60px]">
           <motion.div
             initial={{ opacity: 0, x: -24, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
@@ -102,7 +102,7 @@ export default function ContactSection() {
               Начните сотрудничество
             </motion.div>
 
-            <h2 className="mt-[15px] text-[#12323B] text-[32px] md:text-[36px] lg:text-[38px] font-bold uppercase tracking-[-0.04em] leading-[1.03]">
+            <h2 className="mt-[15px] text-[#12323B] text-[32px] md:text-[35px] lg:text-[32px] font-bold uppercase tracking-[-0.04em] leading-[1.03]">
               Свяжитесь с нами
             </h2>
 

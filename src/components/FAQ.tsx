@@ -160,7 +160,7 @@ export default function FaqSection() {
   return (
     <section className="relative w-full overflow-hidden bg-[#082F37] text-white py-[56px] px-[18px] md:py-[88px] md:px-0">
       <RevealBlock
-        className="max-w-[1135px] mx-auto grid grid-cols-1 gap-[34px] items-start md:grid-cols-[360px_1fr] md:gap-[130px]"
+        className="max-w-[1135px] mx-auto grid grid-cols-1 gap-[34px] items-start md:grid-cols-[360px_1fr] md:gap-[130px] mt-[50px]"
         from={{ opacity: 0, y: 36 }}
         to={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease }}
@@ -208,7 +208,7 @@ export default function FaqSection() {
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.15, ease }}
               >
-                <h2 className="text-[23px] leading-[27px] font-bold tracking-[1px] uppercase max-w-[310px] mb-[16px] md:text-[35px] md:leading-[35px] md:tracking-[1.2px] md:mb-[14px]">
+                <h2 className="text-[23px] leading-[34px] font-bold tracking-[1px] uppercase max-w-[310px] mb-[16px] md:text-[35px] md:leading-[40px] md:tracking-[1.2px] md:mb-[14px]">
                   ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
                 </h2>
 

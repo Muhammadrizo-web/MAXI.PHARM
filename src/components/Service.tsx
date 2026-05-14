@@ -55,7 +55,7 @@ const transition: Transition = {
 export default function ServicesSection() {
   return (
     <section className="w-full bg-white px-4 py-[58px] sm:px-6 sm:py-[70px] md:py-[84px]">
-      <div className="mx-auto max-w-[1220px]">
+      <div className="mx-auto max-w-[1220px] mt-[50px]">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.7 }}
           transition={{ ...transition, delay: 0.04 }}
-          className="mx-auto max-w-[980px] text-center text-[18px] font-[700] uppercase leading-[1.08] tracking-[-0.03em] text-[#0B2A35] sm:text-[30px] md:text-[36px]"
+          className="mx-auto max-w-[980px] text-center text-[18px] font-bold uppercase leading-[1.2] tracking-[-0.03em] text-[#0B2A35] sm:text-[30px] md:text-[30px]"
         >
           КОМПЛЕКСНОЕ РЕГУЛЯТОРНОЕ СОПРОВОЖДЕНИЕ
           <br className="hidden sm:block" />
@@ -83,7 +83,7 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.7 }}
           transition={{ ...transition, delay: 0.08 }}
-          className="mx-auto mt-[16px] max-w-[650px] text-center text-[15px] leading-[1.4] text-[#6B747B] sm:mt-[18px] sm:text-[18px]"
+          className="mx-auto max-w-[650px] text-center text-[15px] leading-[1.4] text-[#6B747B] sm:mt-[18px] sm:text-[16px]"
         >
           Профессиональное сопровождение на всех этапах регистрации —
           <br className="hidden sm:block" />

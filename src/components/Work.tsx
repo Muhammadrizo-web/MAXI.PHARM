@@ -56,7 +56,7 @@ export default function ProcessTimeline() {
 
   return (
     <section className="relative w-full bg-[#FFFF] overflow-hidden">
-      <div className="mx-auto max-w-[1480px] px-5 sm:px-6 md:px-16 py-16 sm:py-20 md:py-28">
+      <div className="mx-auto max-w-[1480px] px-5 sm:px-6 md:px-16 py-16 sm:py-20 md:py-28 mt-[50px]">
         <motion.div
           initial={{ opacity: 0, y: 55 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,13 +68,13 @@ export default function ProcessTimeline() {
             Как мы работаем
           </div>
 
-          <h2 className="mx-auto max-w-[1280px] text-[#0b252a] text-[22px] sm:text-[34px] md:text-[40px] font-bold uppercase tracking-[-0.045em] leading-[0.98] sm:leading-[0.94]">
+          <h2 className="mx-auto max-w-[1280px] text-[#0b252a] text-[22px] sm:text-[34px] md:text-[30px] font-bold uppercase tracking-[-0.045em] leading-[0.98] sm:leading-[1.2]">
             Пошаговое сопровождение регистрационного
             <br className="hidden sm:block" />
             процесса
           </h2>
 
-          <p className="mt-6 sm:mt-7 mx-auto max-w-[640px] text-[#687172] text-[15.5px] sm:text-[17px] md:text-[20px] leading-[1.5] sm:leading-[1.45]">
+          <p className="mt-3 sm:mt-2 mx-auto max-w-[640px] text-[#687172] text-[15.5px] sm:text-[17px] md:text-[16px] leading-[1.5] sm:leading-[1.45]">
             Системный подход к сопровождению регистрационных процедур —
             от первичного анализа документации до получения итогового
             регистрационного решения

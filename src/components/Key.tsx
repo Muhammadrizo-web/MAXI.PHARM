@@ -83,13 +83,13 @@ export default function PriorityDirections() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: isMobile ? 0.08 : 0.18 }}
         transition={{ duration: isMobile ? 0.55 : 0.85, ease: smooth }}
-        className="mx-auto max-w-[1180px] transform-gpu will-change-transform"
+        className="mx-auto mt-[50px] max-w-[1180px] transform-gpu will-change-transform"
       >
         <div className="mx-auto mb-[22px] flex h-[34px] w-fit items-center justify-center rounded-[16px] border border-[#D6DCDD] bg-white px-[24px] text-[15px] font-medium text-[#0B2A35]">
           Приоритетные направления
         </div>
 
-        <h2 className="mx-auto max-w-[800px] text-center text-[16px] font-[700] uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[27px] md:leading-[1.08]">
+        <h2 className="mx-auto max-w-[800px] mt-[20px] text-center text-[16px] font-bold uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[30px] md:leading-[1.2]">
           КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ ЭКСПЕРТНОГО
           СОПРОВОЖДЕНИЯ В СФЕРЕ ФАРМАЦЕВТИЧЕСКОЙ
           РЕГИСТРАЦИИ
@@ -160,7 +160,7 @@ export default function PriorityDirections() {
                 <a
                   href="#contact"
                   className={[
-                    "absolute bottom-[18px] left-[90px] text-[13px] font-extrabold leading-none text-[#009B72]",
+                    "absolute bottom-[16px] left-[90px] text-[13px] font-extrabold leading-none text-[#009B72]",
                     "transition-all duration-[500ms] ease-[cubic-bezier(0.19,1,0.22,1)]",
                     "md:bottom-[15px] md:left-[79px] md:text-[12px] md:group-hover:left-[84px] md:group-hover:text-[#00B383]",
                     isActive

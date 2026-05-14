@@ -55,9 +55,9 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[#f4f5f5] overflow-hidden py-[110px] px-[20px] md:px-[40px] lg:px-[70px]"
+      className="w-full bg-[#FFFF] overflow-hidden py-[110px] px-[20px] md:px-[40px] lg:px-[70px] "
     >
-      <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-[70px] items-center">
+      <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-[70px] items-center mt-[50px]">
         {/* LEFT SIDE */}
 
         <div className="relative flex justify-center lg:justify-start">
@@ -74,7 +74,7 @@ export default function AboutSection() {
 
             {/* FLOATING IMAGE */}
 
-            <div className="floating-card absolute right-0 bottom-[20px] w-[62%] h-[52%] rounded-[22px] overflow-hidden bg-white shadow-[0_20px_50px_rgba(0,0,0,0.10)] border border-white/70">
+            <div className="floating-card absolute right-0 bottom-[20px] w-[330px] h-[370px] rounded-[22px] overflow-hidden bg-white shadow-[0_20px_50px_rgba(0,0,0,0.10)] border border-white/70">
               <img
                 src="/image-02.svg"
                 alt=""
@@ -95,14 +95,14 @@ export default function AboutSection() {
 
           {/* TITLE */}
 
-          <h1 className="fade-up text-[#0d2d39] text-[32px] sm:text-[42px] lg:text-[42px] leading-[1.05] tracking-[-1.5px] font-bold uppercase mb-[28px]">
+          <h1 className="fade-up text-[#0d2d39] text-[32px] sm:text-[30px] lg:text-[30px] leading-[1.2] tracking-[-1.5px] font-bold uppercase mb-[10px]">
             ЭКСПЕРТНОЕ СОПРОВОЖДЕНИЕ В СФЕРЕ ФАРМАЦЕВТИКИ И МЕДИЦИНСКИХ
             ТЕХНОЛОГИЙ
           </h1>
 
           {/* DESCRIPTION */}
 
-          <p className="fade-up text-[#7b8a91] text-[16px] sm:text-[18px] leading-[1.7] mb-[42px] max-w-[620px]">
+          <p className="fade-up text-[#7b8a91] text-[16px] sm:text-[16px] leading-[1.7] mb-[42px] max-w-[620px]">
             Maxipharm expert специализируется на профессиональном сопровождении
             регистрации лекарственных средств, медицинских изделий и
             сопутствующей продукции на территории Республики Узбекистан
@@ -116,7 +116,7 @@ export default function AboutSection() {
                 ✓
               </div>
 
-              <span className="text-[#3f535c] text-[16px] sm:text-[18px] font-[500] leading-[1.5]">
+              <span className="text-[#3C555D] text-[16px] sm:text-[16px] font-[600] leading-[1.5]">
                 Экспертиза специалистов от 10 до 30 лет
               </span>
             </div>
@@ -126,7 +126,7 @@ export default function AboutSection() {
                 ✓
               </div>
 
-              <span className="text-[#3f535c] text-[16px] sm:text-[18px] font-[500] leading-[1.5]">
+              <span className="text-[#3C555D] text-[16px] sm:text-[16px] font-[600] leading-[1.5]">
                 Полный цикл сопровождения регистрации
               </span>
             </div>
@@ -136,7 +136,7 @@ export default function AboutSection() {
                 ✓
               </div>
 
-              <span className="text-[#3f535c] text-[16px] sm:text-[18px] font-[500] leading-[1.5]">
+              <span className="text-[#3C555D] text-[16px] sm:text-[16px] font-[600] leading-[1.5]">
                 Более 80 зарегистрированных наименований препаратов в 2025 году
               </span>
             </div>
@@ -145,13 +145,13 @@ export default function AboutSection() {
           {/* BUTTONS */}
 
           <div className="fade-up flex flex-wrap gap-[18px]">
-            <button className="h-[52px] px-[38px] rounded-[24px] bg-[#089A69] text-white text-[20px] font-bold transition-all duration-300 hover:bg-[#007935] hover:text-grey hover:scale-[1.03]  shadow-[0_12px_30px_rgba(16,183,122,0.25)]">
+            <a href="#services" className="h-[52px] px-[38px] flex items-center justify-center rounded-[24px] bg-[#089A69] text-white text-[20px] font-bold transition-all duration-300 hover:bg-[#007935] hover:text-grey hover:scale-[1.03]  shadow-[0_12px_30px_rgba(16,183,122,0.25)]">
               Услуги
-            </button>
+            </a>
 
-            <button className="h-[52px] px-[38px] rounded-[24px] bg-[#072c3a] text-white text-[20px] font-bold transition-all duration-300 hover:text-[#072c3a] hover:scale-[1.03] hover:bg-[#9DAAAE]/50 shadow-[0_12px_30px_rgba(7,44,58,0.20)]">
+            <a href="#contacts" className="h-[52px] px-[38px] flex items-center justify-center rounded-[24px] bg-[#072c3a] text-white text-[20px] font-bold transition-all duration-300 hover:text-[#072c3a] hover:scale-[1.03] hover:bg-[#9DAAAE]/50 shadow-[0_12px_30px_rgba(7,44,58,0.20)]">
               Контакт
-            </button>
+            </a>
           </div>
         </div>
       </div>

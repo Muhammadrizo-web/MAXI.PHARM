@@ -42,7 +42,7 @@ const transition: Transition = {
 export default function WhyChooseUs() {
   return (
     <section className="w-full bg-[#0B2A34] px-6 py-[70px]">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1280px] mt-[50px]">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,14 +58,14 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.55 }}
           transition={{ ...transition, delay: 0.06 }}
-          className="mx-auto max-w-[850px] text-center text-[28px] font-[600] uppercase leading-[1.08] tracking-[-0.03em] text-white"
+          className="mx-auto max-w-[850px] text-center text-[28px] font-bold uppercase leading-[1.2] tracking-[-0.03em] text-white"
         >
           МЫ ПРЕДОСТАВЛЯЕМ ЭКСПЕРТНЫЕ РЕШЕНИЯ
           <br />
           ДЛЯ КОМПАНИЙ ФАРМАЦЕВТИЧЕСКОЙ ОТРАСЛИ
         </motion.h2>
 
-        <div className="mt-[58px] grid grid-cols-1 gap-[36px] md:grid-cols-4">
+        <div className="mt-[56px] grid grid-cols-1 gap-[36px] md:grid-cols-4">
           {stats.map((item, index) => {
             return (
               <motion.div
