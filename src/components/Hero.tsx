@@ -38,8 +38,8 @@ export default function Hero({ children }: HeroProps) {
             </p>
 
             <a
-              href="#contact"
-              className="mt-[18px] inline-flex rounded-2xl bg-[#0B2A34] px-[18px] py-[11px] text-[15px] font-medium text-white shadow-[0_10px_24px_rgba(0,0,0,.18)] transition hover:bg-[#009B72] md:px-[22px] md:py-[12px] md:text-[20px]"
+              href="#contacts"
+              className="mt-[30px] inline-flex rounded-3xl bg-[#0B2A34] px-[28px] py-[11px] text-[15px] font-medium text-white shadow-[0_10px_24px_rgba(0,0,0,.18)] transition hover:bg-[#007935] md:px-[30px] md:py-[14px] md:text-[20px]"
             >
               Получить консультацию
             </a>

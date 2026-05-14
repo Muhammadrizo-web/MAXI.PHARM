@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { label: "О компании", href: "#about" },
+  { label: "О компании", href: "#about_us" },
   { label: "Направление", href: "#key" },
   { label: "Преимущества", href: "#why" },
   { label: "Услуги", href: "#services" },
@@ -36,20 +36,20 @@ export default function Header() {
     >
       <div
         className={`
-          mx-auto flex h-[86px] max-w-none items-center justify-between
+          mx-auto flex h-[86px] max-w-none items-center justify-between mt-[6px]
           transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)]
           ${
             scrolled
               ? "px-[24px] md:px-[72px]"
-              : "px-[8px] md:px-[14px]"
+              : "px-[20px] md:px-[40px]"
           }
         `}
       >
         <a href="/" className="relative z-30 block shrink-0">
           <img
-            src={scrolled ? "/logo1.png" : "/logo.png"}
+            src={scrolled ? "/logo1.png" : "/logo.svg"}
             alt="Maxi Pharm"
-            className="h-[56px] w-auto object-contain transition-all duration-500"
+            className="h-[40px] md:h-[56px] w-auto object-contain transition-all duration-500"
           />
         </a>
 
@@ -143,7 +143,7 @@ export default function Header() {
               relative z-20 flex h-[48px] w-[48px]
               items-center justify-center
               transition duration-300
-              active:scale-[.96]
+              active:scale-[.96] bg-[#9DAAAE]/70 rounded-full
             "
           >
             <span

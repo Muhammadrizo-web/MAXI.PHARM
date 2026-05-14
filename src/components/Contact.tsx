@@ -6,7 +6,7 @@ const contacts = [
   {
     icon: MapPin,
     title: "Адрес",
-    text: "Республика Узбекистан, г. Ташкент,\nул. Сайрам, дом 26/4",
+    text: "г.Ташкент, Юнусабадский район, ул.Янгитарнов, 1-й проезд, дом 12",
   },
   {
     icon: Phone,
@@ -163,7 +163,7 @@ export default function ContactSection() {
             transition={{ duration: 1.05, delay: 0.08, ease: smooth }}
             className="w-full rounded-[10px] border border-[#EEF3F4] bg-white px-[30px] pt-[30px] pb-[48px] shadow-[0_12px_30px_rgba(15,50,60,0.09)]"
           >
-            <h3 className="text-[#12323B] text-[20px] font-extrabold leading-none mb-[20px]">
+            <h3 className="text-[#12323B] text-[20px] font-bold leading-none mb-[20px]">
               Оставьте свои контакты
             </h3>
 
@@ -206,7 +206,7 @@ export default function ContactSection() {
                 }}
                 whileTap={{ scale: 0.985 }}
                 transition={{ duration: 0.55, ease: smooth }}
-                className="w-full h-[48px] rounded-[8px] bg-[#0E9B67] text-white text-[14px] font-extrabold transition-colors duration-500 hover:bg-[#0B8B5C]"
+                className="w-full h-[48px] rounded-[8px] bg-[#0E9B67] text-white text-[14px] font-bold transition-colors duration-500 hover:bg-[#007935]"
               >
                 Получить консультацию
               </motion.button>

@@ -13,6 +13,7 @@ import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
+import About from "./components/About";
 
 import ServiceDetail from "./pages/ServiceDetail";
 
@@ -23,6 +24,10 @@ function Home() {
         <Hero>
           <Header />
         </Hero>
+      </section>
+
+      <section id="about_us">
+        <About />
       </section>
 
       <section id="about">

@@ -13,11 +13,11 @@ export default function Footer() {
   const contacts = [
     {
       title: "Республика Узбекистан, г. Ташкент",
-      href: "https://maps.google.com/?q=Ташкент",
+      href: "https://www.google.com/maps/place/41%C2%B020'11.9%22N+69%C2%B018'12.5%22E/@41.336651,69.303464,17z/data=!3m1!4b1!4m4!3m3!8m2!3d41.336651!4d69.303464?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D",
     },
     {
-      title: "ул. Сайрам, дом 26/4",
-      href: "https://maps.google.com/?q=Ташкент ул. Сайрам 26/4",
+      title: "ул.Янгитарнов, 1-й проезд, дом 12",
+      href: "https://www.google.com/maps/place/41%C2%B020'11.9%22N+69%C2%B018'12.5%22E/@41.336651,69.303464,17z/data=!3m1!4b1!4m4!3m3!8m2!3d41.336651!4d69.303464?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D ул. Сайрам 26/4",
     },
     {
       title: "+998 (90) 928-22-99",
@@ -65,7 +65,7 @@ export default function Footer() {
               transition={{ duration: 0.7, ease: smooth }}
             >
               <img
-                src="/logo.png"
+                src="/logo.svg"
                 alt="MAXIPHARM EXPERT"
                 className="w-[132px] sm:w-[160px] h-auto mb-[18px] sm:mb-[26px]"
               />
