@@ -41,31 +41,116 @@ const transition: Transition = {
 
 export default function WhyChooseUs() {
   return (
-    <section className="w-full bg-[#0B2A34] px-6 py-[70px]">
-      <div className="mx-auto max-w-[1280px] mt-[50px]">
+    <section
+      className="
+        w-full 
+        bg-[#0B2A34] 
+        
+        px-4
+        py-[70px]
+
+        sm:px-6
+
+        lg:px-6
+      "
+    >
+      <div
+        className="
+          mx-auto 
+          max-w-[1280px] 
+
+          mt-[20px]
+          sm:mt-[35px]
+          lg:mt-[50px]
+        "
+      >
+        {/* TOP TAG */}
+
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.55 }}
           transition={transition}
-          className="mx-auto mb-[30px] flex h-[42px] w-fit items-center justify-center rounded-[18px] border border-white/45 px-[30px] text-[17px] font-medium text-white"
+          className="
+            mx-auto 
+            mb-[24px] 
+
+            flex 
+            w-fit 
+            items-center 
+            justify-center 
+
+            rounded-[18px] 
+            border 
+            border-white/45 
+
+            h-[40px]
+            sm:h-[42px]
+
+            px-[20px]
+            sm:px-[30px]
+
+            text-[14px]
+            sm:text-[17px]
+
+            font-medium 
+            text-white
+          "
         >
           Почему выбирают нас
         </motion.div>
+
+        {/* TITLE */}
 
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.55 }}
           transition={{ ...transition, delay: 0.06 }}
-          className="mx-auto max-w-[850px] text-center text-[28px] font-bold uppercase leading-[1.2] tracking-[-0.03em] text-white"
+          className="
+            mx-auto 
+            max-w-[850px] 
+
+            text-center 
+            font-bold 
+            uppercase 
+
+            leading-[1.2] 
+            tracking-[-0.03em] 
+            text-white
+
+            text-[24px]
+            sm:text-[28px]
+          "
         >
           МЫ ПРЕДОСТАВЛЯЕМ ЭКСПЕРТНЫЕ РЕШЕНИЯ
           <br />
           ДЛЯ КОМПАНИЙ ФАРМАЦЕВТИЧЕСКОЙ ОТРАСЛИ
         </motion.h2>
 
-        <div className="mt-[56px] grid grid-cols-1 pl-[70px] gap-[30px] md:grid-cols-4">
+        {/* CARDS */}
+
+        <div
+          className="
+            mt-[40px]
+
+            grid 
+            grid-cols-1 
+
+            gap-[20px]
+
+            justify-items-center
+
+            sm:grid-cols-2
+            sm:gap-[24px]
+
+            md:grid-cols-2
+
+            lg:grid-cols-4
+            lg:gap-[30px]
+            lg:pl-[70px]
+          "
+        >
           {stats.map((item, index) => {
             return (
               <motion.div
@@ -82,24 +167,101 @@ export default function WhyChooseUs() {
                   scale: 1.015,
                   boxShadow: "0 22px 42px rgba(0,0,0,0.22)",
                 }}
-                className="flex min-h-[260px] flex-col items-center rounded-[14px] bg-white px-[10px] py-[20px] w-[270px] text-center shadow-[0_12px_28px_rgba(0,0,0,0.18)]"
+                className="
+                  flex 
+                  flex-col 
+                  items-center 
+
+                  text-center 
+
+                  rounded-[14px] 
+                  bg-white 
+
+                  shadow-[0_12px_28px_rgba(0,0,0,0.18)]
+
+                  px-[16px]
+                  py-[22px]
+
+                  w-full
+                  max-w-[320px]
+
+                  min-h-[260px]
+
+                  lg:w-[270px]
+                "
               >
+                {/* ICON */}
+
                 <img
                   src={item.icon}
                   alt=""
                   aria-hidden="true"
-                  className="mb-[18px] h-[50px] w-[50px] object-contain text-[#0B2A34]"
+                  className="
+                    mb-[18px] 
+
+                    h-[46px]
+                    w-[46px]
+
+                    sm:h-[50px]
+                    sm:w-[50px]
+
+                    object-contain
+                  "
                 />
 
-                <div className="text-[26px] font-[500] leading-[1.05] text-[#0B2A34]">
+                {/* NUMBER */}
+
+                <div
+                  className="
+                    text-[#0B2A34]
+
+                    text-[24px]
+                    sm:text-[26px]
+
+                    font-[500] 
+                    leading-[1.05]
+                  "
+                >
                   {item.number}
                 </div>
 
-                <div className="mt-[8px] whitespace-pre-line text-[20px] font-[500] leading-[1.08] text-[#3C555D]">
+                {/* TITLE */}
+
+                <div
+                  className="
+                    mt-[8px] 
+
+                    whitespace-pre-line 
+
+                    text-[#3C555D]
+
+                    text-[18px]
+                    sm:text-[20px]
+
+                    font-[500] 
+                    leading-[1.08]
+                  "
+                >
                   {item.title}
                 </div>
 
-                <p className="mt-[22px] max-w-[220px] text-[15px] font-medium leading-[1.32] text-[#5C6670]">
+                {/* TEXT */}
+
+                <p
+                  className="
+                    mt-[18px]
+
+                    max-w-[240px]
+
+                    text-[#5C6670]
+
+                    text-[14px]
+                    sm:text-[15px]
+
+                    font-medium 
+                    leading-[1.45]
+                  "
+                >
                   {item.text}
                 </p>
               </motion.div>
