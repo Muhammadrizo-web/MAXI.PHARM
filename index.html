@@ -1,25 +1,29 @@
-<head>
-  <meta charset="UTF-8" />
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <!-- favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="/site.webmanifest" />
+    <!-- manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Android -->
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png" />
+    <!-- mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- seo -->
+    <title>Maxipharm</title>
 
-  <!-- SEO -->
-  <title>Maxipharm</title>
+    <meta
+      name="description"
+      content="Комплексное регуляторное сопровождение фармацевтической продукции"
+    />
+  </head>
 
-  <meta
-    name="description"
-    content="Комплексное регуляторное сопровождение фармацевтической продукции"
-  />
-</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
