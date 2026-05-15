@@ -95,7 +95,7 @@ export default function PriorityDirections() {
           РЕГИСТРАЦИИ
         </h2>
 
-        <div className="relative mx-auto mt-[34px] grid max-w-[1070px] grid-cols-1 gap-x-[32px] gap-y-[20px] md:grid-cols-2 md:gap-y-[28px]">
+        <div className="relative mx-auto mt-[34px] grid max-w-[1150px] grid-cols-1 gap-x-[32px] gap-y-[20px] md:grid-cols-2 md:gap-y-[28px]">
           {items.map((item, index) => {
             const isActive = active === index;
             const isBlurred = active !== null && active !== index;
@@ -160,7 +160,7 @@ export default function PriorityDirections() {
                 <a
                   href="#contact"
                   className={[
-                    "absolute bottom-[16px] left-[90px] text-[13px] font-extrabold leading-none text-[#009B72]",
+                    "absolute bottom-[16px] left-[90px] text-[13px] font-bold leading-none text-[#009B72]",
                     "transition-all duration-[500ms] ease-[cubic-bezier(0.19,1,0.22,1)]",
                     "md:bottom-[15px] md:left-[79px] md:text-[12px] md:group-hover:left-[84px] md:group-hover:text-[#00B383]",
                     isActive
@@ -168,7 +168,7 @@ export default function PriorityDirections() {
                       : "translate-y-0 opacity-100",
                   ].join(" ")}
                 >
-                  Читать дальше&nbsp; →
+                  Читать дальше   →
                 </a>
               </button>
             );

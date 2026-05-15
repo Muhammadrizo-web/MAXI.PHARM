@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
           ДЛЯ КОМПАНИЙ ФАРМАЦЕВТИЧЕСКОЙ ОТРАСЛИ
         </motion.h2>
 
-        <div className="mt-[56px] grid grid-cols-1 gap-[36px] md:grid-cols-4">
+        <div className="mt-[56px] grid grid-cols-1 pl-[70px] gap-[30px] md:grid-cols-4">
           {stats.map((item, index) => {
             return (
               <motion.div
@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
                   scale: 1.015,
                   boxShadow: "0 22px 42px rgba(0,0,0,0.22)",
                 }}
-                className="flex min-h-[260px] flex-col items-center rounded-[14px] bg-white px-[28px] py-[28px] text-center shadow-[0_12px_28px_rgba(0,0,0,0.18)]"
+                className="flex min-h-[260px] flex-col items-center rounded-[14px] bg-white px-[10px] py-[20px] w-[270px] text-center shadow-[0_12px_28px_rgba(0,0,0,0.18)]"
               >
                 <img
                   src={item.icon}

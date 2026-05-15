@@ -90,7 +90,7 @@ export default function ServicesSection() {
           от подготовки документов до получения разрешения
         </motion.p>
 
-        <div className="mt-[30px] grid grid-cols-1 gap-[18px] sm:mt-[38px] sm:gap-[24px] md:grid-cols-2 xl:grid-cols-3 xl:gap-[32px]">
+        <div className="mt-[30px] grid grid-cols-1 gap-[18px] sm:mt-[38px] sm:gap-[24px] md:grid-cols-2 xl:grid-cols-3 xl:gap-[30px] pl-[20px]">
           {services.map((item, index) => (
             <motion.div
               key={item.slug}
@@ -121,7 +121,7 @@ export default function ServicesSection() {
                 duration: 0.5,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="group min-h-[185px] rounded-[8px] border border-[#DDE4E8] bg-white px-[20px] py-[22px] shadow-[0_8px_22px_rgba(20,35,45,0.06)] sm:min-h-[205px] sm:px-[28px] sm:py-[26px]"
+              className="group min-h-[185px] rounded-[8px] border border-[#DDE4E8] bg-white px-[20px] py-[22px] shadow-[0_8px_22px_rgba(20,35,45,0.06)] sm:min-h-[200px] sm:px-[20px] sm:py-[26px]"
             >
               <div className="flex items-start gap-[16px] sm:gap-[20px]">
                 <motion.div

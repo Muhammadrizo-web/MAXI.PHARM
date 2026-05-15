@@ -36,7 +36,7 @@ export default function Header() {
     >
       <div
         className={`
-          mx-auto flex h-[86px] max-w-none items-center justify-between mt-[6px]
+          mx-auto flex h-[86px] max-w-none items-center justify-between mt-[14px] ml-[14px]
           transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)]
           ${
             scrolled
@@ -49,7 +49,7 @@ export default function Header() {
           <img
             src={scrolled ? "/logo1.png" : "/logo.svg"}
             alt="Maxi Pharm"
-            className="h-[40px] md:h-[56px] w-auto object-contain transition-all duration-500"
+            className="h-[40px] md:h-[56px] mb-[14px] w-auto object-contain transition-all duration-500"
           />
         </a>
 
@@ -61,7 +61,7 @@ export default function Header() {
               backdrop-blur-xl
               shadow-[0_8px_24px_rgba(0,0,0,.12)]
               transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)]
-              md:flex
+              md:flex mt-[-6px]
               ${
                 scrolled
                   ? "border-black/10 bg-black/5"
@@ -93,7 +93,7 @@ export default function Header() {
                     whitespace-nowrap rounded-full
                     px-[20px] py-[13px]
                     text-[14px] font-medium leading-none
-                    transition-all duration-300
+                    transition-all duration-300 
                     hover:bg-black/5
                     ${scrolled ? "text-black" : "text-white"}
                     ${
@@ -115,7 +115,7 @@ export default function Header() {
                 }}
                 className={`
                   ml-[6px] whitespace-nowrap rounded-full
-                  bg-[#009B72]
+                  bg-[#009B72] 
                   px-[22px] py-[13px]
                   text-[14px] font-semibold leading-none text-white
                   shadow-[0_6px_18px_rgba(0,155,114,.28)]
@@ -140,7 +140,7 @@ export default function Header() {
             aria-label={open ? "Закрыть меню" : "Открыть меню"}
             aria-expanded={open}
             className="
-              relative z-20 flex h-[48px] w-[48px]
+              relative z-20 flex h-[48px] w-[48px] mt-[-6px]
               items-center justify-center
               transition duration-300
               active:scale-[.96] bg-[#9DAAAE]/70 rounded-full

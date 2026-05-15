@@ -64,9 +64,9 @@ export default function AboutSection() {
           <div className="relative w-full max-w-[560px] h-[620px] sm:h-[680px]">
             {/* MAIN IMAGE */}
 
-            <div className="left-image absolute left-0 top-0 w-[76%] h-full rounded-[26px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+            <div className="left-image absolute left-0 top-0 w-[440px] h-[560px] mt-[50px] rounded-[26px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
               <img
-                src="/image-01.svg"
+                src="/image-01.png"
                 alt=""
                 className="w-full h-full object-cover"
               />
@@ -74,9 +74,9 @@ export default function AboutSection() {
 
             {/* FLOATING IMAGE */}
 
-            <div className="floating-card absolute right-0 bottom-[20px] w-[330px] h-[370px] rounded-[22px] overflow-hidden bg-white shadow-[0_20px_50px_rgba(0,0,0,0.10)] border border-white/70">
+            <div className="floating-card absolute right-0 bottom-[60px] w-[320px] h-[340px] rounded-[22px] overflow-hidden bg-white shadow-[0_20px_50px_rgba(0,0,0,0.10)] border border-white/70">
               <img
-                src="/image-02.svg"
+                src="/image-02.png"
                 alt=""
                 className="w-full h-full object-cover"
               />

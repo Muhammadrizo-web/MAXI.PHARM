@@ -7,7 +7,7 @@ type HeroProps = {
 export default function Hero({ children }: HeroProps) {
   return (
     <div className="p-2">
-      <section className="relative h-[68svh] min-h-[560px] w-full overflow-hidden rounded-[22px] bg-[#071E22] md:h-[calc(100vh-40px)] md:min-h-[700px] md:max-h-[980px]">
+      <section className="relative h-[68svh] p-3 min-h-[560px] w-full overflow-hidden rounded-[22px] bg-[#071E22] md:h-[calc(100vh-40px)] md:min-h-[700px] md:max-h-[980px]">
         <img
           src="/hero.png"
           alt="Hero"
@@ -28,11 +28,11 @@ export default function Hero({ children }: HeroProps) {
         {/* content */}
         <div className="relative z-20 flex h-full items-end px-[18px] pb-[26px] pt-[120px] sm:px-[24px] sm:pb-[34px] md:items-center md:px-[34px] md:pb-0 md:pt-[25px]">
           <div className="w-full max-w-[1130px]">
-            <h2 className="max-w-[320px] text-[clamp(26px,7vw,56px)] font-bold uppercase leading-[1.15] tracking-[-0.045em] text-white sm:max-w-[500px] md:max-w-[620px]">
+            <h4 className="max-w-[320px] text-[clamp(26px,7vw,46px)] font-bold uppercase leading-[1.15] tracking-[-0.045em] text-white sm:max-w-[500px] md:max-w-[750px]">
               Экспертное сопровождение регистрации фармацевтической продукции
-            </h2>
+            </h4>
 
-            <p className="mt-[12px] max-w-[320px] text-[clamp(13px,3.8vw,20px)] font-medium leading-[1.35] text-white/90 sm:max-w-[430px] md:mt-[14px] md:max-w-[560px]">
+            <p className="mt-[12px] max-w-[320px] text-[clamp(13px,3.8vw,20px)] font-medium leading-[1.35] text-white/90 sm:max-w-[430px] md:mt-[14px] md:max-w-[700px]">
               От подготовки регистрационного досье до полного сопровождения
               процедуры регистрации и клинических исследований
             </p>
