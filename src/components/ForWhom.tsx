@@ -1,154 +1,176 @@
-import { useEffect, useRef, useState } from "react";
-
-const cards = [
-  {
-    icon: "/icons/icon-pill.svg.png",
-    title: "Фармацевтические компании",
-    text: "Производители лекарственных средств и фармацевтической продукции",
-  },
-  {
-    icon: "/icons/icon-device.svg.png",
-    title: "Производители медицинских изделий",
-    text: "Компании в сфере производства медицинской техники, медицинских изделий",
-  },
-  {
-    icon: "/icons/icon-document.svg.png",
-    title: "Компании фармацевтической отрасли",
-    text: "Производители БАДов, косметической продукции и сопутствующих товаров",
-  },
-];
-
-export default function ForWhom() {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
-
-    if (isMobile) {
-      setVisible(true);
-      return;
-    }
-
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
-      {
-        threshold: 0.25,
-        rootMargin: "-60px 0px -80px 0px",
-      }
-    );
-
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
+export default function CompaniesSection() {
+  const cards = [
+    {
+      icon: "/icons/icon-pill.svg.png",
+      title: "Фармацевтические компании",
+      text: "Производители лекарственных средств и фармацевтической продукции",
+    },
+    {
+      icon: "/icons/icon-device.svg.png",
+      title: "Производители медицинских изделий",
+      text: "Компании в сфере производства медицинской техники, медицинских изделий",
+    },
+    {
+      icon: "/icons/icon-document.svg.png",
+      title: "Компании фармацевтической отрасли",
+      text: "Производители БАДов, косметической продукции и сопутствующих товаров",
+    },
+  ];
 
   return (
     <section
-      ref={sectionRef}
-      id="for-whom"
-      className="relative overflow-hidden bg-white px-4 py-[56px] sm:px-6 md:py-[74px] lg:py-[82px]"
+      className="
+        relative w-full overflow-hidden
+
+        px-[22px]
+        py-[80px]
+
+        sm:px-[28px]
+        sm:py-[90px]
+
+        md:px-[46px]
+        md:py-[110px]
+
+        lg:px-[64px]
+        lg:py-[120px]
+
+        xl:px-[80px]
+      "
     >
-      <div className="mx-auto max-w-[1120px] text-center mt-[50px]">
-        <div
-          className={`
-            inline-flex h-[34px] items-center justify-center rounded-full
-            border border-[#AAB7BC] bg-white px-[18px]
-            text-[14px] font-medium leading-none text-[#073C46]
-            md:transition-all md:duration-700 md:ease-[cubic-bezier(.22,1,.36,1)]
-            ${
-              visible
-                ? "translate-y-0 opacity-100 blur-0"
-                : "md:translate-y-4 md:opacity-0 md:blur-[2px]"
-            }
-          `}
-        >
-          Для кого мы работаем
+      {/* GLOBAL CONTAINER */}
+      <div
+        className="
+          mx-auto
+          w-full
+          max-w-[1440px]
+        "
+      >
+        {/* TOP */}
+        <div className="text-center">
+          {/* LABEL */}
+          <div
+            className="
+              inline-flex
+              h-[42px]
+              items-center
+              rounded-full
+              border border-[#BCC8CD]
+              px-[18px]
+
+              text-[14px]
+              font-medium
+              text-[#0B2A34]
+            "
+          >
+            Для кого мы работаем
+          </div>
+
+          {/* TITLE */}
+          <h2
+            className="
+              mx-auto
+              mt-[22px]
+              max-w-[760px]
+
+              text-[30px]
+              font-bold
+              uppercase
+              leading-[1.04]
+              tracking-[-0.04em]
+              text-[#0B2A34]
+            "
+          >
+            МЫ ПРЕДОСТАВЛЯЕМ ЭКСПЕРТНЫЕ РЕШЕНИЯ ДЛЯ КОМПАНИЙ ФАРМАЦЕВТИЧЕСКОЙ ОТРАСЛИ
+          </h2>
         </div>
 
-        <h2
-          className={`
-            mx-auto mt-[22px] max-w-[780px]
-            text-[24px] font-bold uppercase leading-[1.2]
-            tracking-[-0.035em] text-[#0B2A34]
-            sm:text-[28px] md:text-[30px]
-            md:transition-all md:duration-700 md:delay-75 md:ease-[cubic-bezier(.22,1,.36,1)]
-            ${
-              visible
-                ? "translate-y-0 opacity-100 blur-0"
-                : "md:translate-y-5 md:opacity-0 md:blur-[2px]"
-            }
-          `}
-        >
-          Мы предоставляем экспертные решения для компаний фармацевтической
-          отрасли
-        </h2>
+        {/* CARDS */}
+        <div
+          className="
+            mt-[46px]
+            grid
+            gap-[22px]
 
-        <div className="mt-[34px] grid grid-cols-1 gap-[18px] sm:gap-[22px] md:grid-cols-3 lg:gap-[34px]">
+            md:grid-cols-2
+            xl:grid-cols-3
+          "
+        >
           {cards.map((card, index) => (
-            <article
-              key={card.title}
-              style={{
-                transitionDelay: visible ? `${140 + index * 90}ms` : "0ms",
-              }}
-              className={`
-                group relative min-h-[190px] overflow-hidden rounded-[16px]
-                bg-white px-[28px] pb-[24px] pt-[22px]
+            <div
+              key={index}
+              className="
+                flex
+                min-h-[250px]
+                flex-col
+                items-center
+                justify-start
+
+                rounded-[22px]
+                border border-[#E7ECEE]
+                bg-white
+
+                px-[28px]
+                pt-[42px]
+                pb-[34px]
+
                 text-center
-                shadow-[0_8px_24px_rgba(11,42,52,0.12)]
-                md:transition-all md:duration-700 md:ease-[cubic-bezier(.22,1,.36,1)]
-                md:hover:-translate-y-[8px]
-                md:hover:shadow-[0_22px_44px_rgba(11,42,52,0.18)]
-                sm:px-[34px]
-                md:min-h-[204px]
-                ${
-                  visible
-                    ? "translate-y-0 scale-100 opacity-100 blur-0"
-                    : "md:translate-y-8 md:scale-[0.97] md:opacity-0 md:blur-[2px]"
-                }
-              `}
+
+                shadow-[0_8px_24px_rgba(15,35,45,0.04)]
+
+                transition-all duration-300
+                hover:translate-y-[-3px]
+                hover:shadow-[0_18px_40px_rgba(15,35,45,0.08)]
+              "
             >
-              <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 md:group-hover:opacity-100">
-                <div className="absolute left-1/2 top-0 h-[140px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#009B72]/10 blur-[36px]" />
+              {/* ICON */}
+              <div
+                className="
+                  flex
+                  h-[72px]
+                  w-[72px]
+                  items-center
+                  justify-center
+                "
+              >
+                <img
+                  src={card.icon}
+                  alt={card.title}
+                  className="
+                    h-[72px]
+                    w-[72px]
+                    object-contain
+                  "
+                />
               </div>
 
-              <img
-                src={card.icon}
-                alt=""
-                aria-hidden="true"
-                className="
-                  relative mx-auto h-[42px] w-[42px] object-contain
-                  md:transition-all md:duration-500 md:ease-[cubic-bezier(.22,1,.36,1)]
-                  md:group-hover:-translate-y-[3px] md:group-hover:scale-110
-                "
-              />
-
+              {/* TITLE */}
               <h3
                 className="
-                  relative mx-auto mt-[22px] max-w-[260px]
-                  text-[20px] font-bold leading-[1.12]
-                  tracking-[-0.025em] text-[#0B2A34]
-                  transition-colors duration-300
-                  md:group-hover:text-[#009B72]
+                  mt-[18px]
+
+                  text-[20px]
+                  font-bold
+                  leading-[1.35]
+                  text-[#0B2A34]
                 "
               >
                 {card.title}
               </h3>
 
+              {/* DESCRIPTION */}
               <p
                 className="
-                  relative mx-auto mt-[14px] max-w-[270px]
-                  text-[16px] font-medium leading-[1.22]
-                  tracking-[-0.02em] text-[#7A8A91]
+                  mt-[16px]
+
+                  text-[16px]
+                  font-[500]
+                  leading-[1.45]
+                  text-[#7B8A90]
                 "
               >
                 {card.text}
               </p>
-
-              <div className="absolute inset-x-[24px] bottom-0 h-[2px] origin-center scale-x-0 rounded-full bg-[#009B72] transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] md:group-hover:scale-x-100" />
-            </article>
+            </div>
           ))}
         </div>
       </div>

@@ -54,11 +54,30 @@ const transition: Transition = {
 
 export default function ServicesSection() {
   return (
-    <section className="w-full bg-white px-4 py-[58px] sm:px-6 sm:py-[70px] md:py-[84px]">
+    <section
+      className="
+        relative w-full overflow-hidden bg-white
+
+        px-[22px]
+        py-[80px]
+
+        sm:px-[28px]
+        sm:py-[90px]
+
+        md:px-[46px]
+        md:py-[110px]
+
+        lg:px-[64px]
+        lg:py-[120px]
+
+        xl:px-[80px]
+      "
+    >
       <div
         className="
           mx-auto 
-          max-w-[1220px] 
+          w-full
+          max-w-[1440px] 
           
           mt-[20px]
           sm:mt-[35px]
@@ -124,7 +143,9 @@ export default function ServicesSection() {
         >
           КОМПЛЕКСНОЕ РЕГУЛЯТОРНОЕ СОПРОВОЖДЕНИЕ
           <br className="hidden sm:block" />
-          ФАРМАЦЕВТИЧЕСКОЙ<br /> ПРОДУКЦИИ
+          ФАРМАЦЕВТИЧЕСКОЙ
+          <br />
+          ПРОДУКЦИИ
         </motion.h2>
 
         <motion.p
@@ -170,8 +191,7 @@ export default function ServicesSection() {
             md:grid-cols-2 
             
             xl:grid-cols-3 
-            xl:gap-[30px] 
-            xl:pl-[20px]
+            xl:gap-[30px]
           "
         >
           {services.map((item, index) => (

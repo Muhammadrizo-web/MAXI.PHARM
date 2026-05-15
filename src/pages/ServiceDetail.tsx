@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -22,54 +23,59 @@ const services: Service[] = [
     image: "/services/drug-registration.png",
     sectionTitle: "РЕГИСТРАЦИЯ ЛЕКАРСТВЕННЫХ СРЕДСТВ",
     text:
-      "Регистрация лекарственных средств — комплексное сопровождение процесса государственной регистрации лекарственных препаратов в соответствии с действующими нормативными требованиями. Услуга включает подготовку и формирование регистрационного досье, анализ и систематизацию документации, взаимодействие с государственными органами, сопровождение экспертизы и консультационную поддержку по всем этапам регистрационных и инвестиционных процедур.",
+      "Регистрация лекарственных средств — комплексное сопровождение процесса государственной регистрации лекарственных препаратов в соответствии с действующими нормативными требованиями. Услуга включает подготовку и оформление регистрационного досье, анализ и систематизацию документации, взаимодействие с государственными органами, сопровождение экспертиз и консультационную поддержку на всех этапах регистрации, перерегистрации и внесения изменений",
   },
+
   {
     slug: "medical-devices",
     title: "РЕГУЛЯТОРНОЕ СОПРОВОЖДЕНИЕ ФАРМАЦЕВТИЧЕСКОЙ ПРОДУКЦИИ",
     subtitle:
-      "Профессиональное сопровождение регистрации медицинских изделий и оборудования",
+      "Помогаем фармацевтическим компаниям пройти регистрацию лекарственных средств и медицинских изделий — от подготовки досье до получения регистрационного удостоверения",
     image: "/services/medical-devices.png",
     sectionTitle: "РЕГИСТРАЦИЯ МЕДИЦИНСКИХ ИЗДЕЛИЙ",
     text:
-      "Профессиональное сопровождение регистрации медицинских изделий, оборудования и продукции медицинского назначения.",
+      "Полное профессиональное сопровождение регистрации медицинских изделий, оборудования и продукции  медицинского назначения. Включает анализ документации, определение класса риска, подготовку регистрационного досье, организацию необходимых испытаний и взаимодействие с регуляторными органами. Обеспечиваем соответствие требованиям законодательства, минимизацию рисков отказа и сокращение сроков регистрации для производителей и поставщиков",
   },
+
   {
     slug: "bad-registration",
     title: "РЕГУЛЯТОРНОЕ СОПРОВОЖДЕНИЕ ФАРМАЦЕВТИЧЕСКОЙ ПРОДУКЦИИ",
     subtitle:
-      "Регистрация биологически активных добавок с подготовкой полного пакета документов",
+      "Помогаем фармацевтическим компаниям пройти регистрацию лекарственных средств и медицинских изделий — от подготовки досье до получения регистрационного удостоверения",
     image: "/services/bad-registration.png",
     sectionTitle: "РЕГИСТРАЦИЯ БАД",
     text:
-      "Регуляторное сопровождение регистрации биологически активных добавок с подготовкой необходимой документации.",
+      "Профессиональное сопровождение регистрации биологически активных добавок (БАДов) в соответствии с действующими санитарными и регуляторными требованиями. Включает анализ состава и документации, подготовку регистрационного досье, проведение необходимых экспертиз и взаимодействие с уполномоченными органами. Обеспечиваем соответствие продукции установленным стандартам, снижение рисков отказа и ускорение процесса регистрации для выхода на рынок",
   },
+
   {
     slug: "cosmetics-registration",
     title: "РЕГУЛЯТОРНОЕ СОПРОВОЖДЕНИЕ ФАРМАЦЕВТИЧЕСКОЙ ПРОДУКЦИИ",
-    subtitle: "Сопровождение регистрации косметической продукции",
+    subtitle: "Помогаем фармацевтическим компаниям пройти регистрацию лекарственных средств и медицинских изделий — от подготовки досье до получения регистрационного удостоверения",
     image: "/services/cosmetics-registration.png",
     sectionTitle: "РЕГИСТРАЦИЯ КОСМЕТИЧЕСКОЙ ПРОДУКЦИИ",
     text:
-      "Сопровождение регистрации лечебной и косметической продукции в соответствии с установленными требованиями.",
+      "Профессиональное сопровождение регистрации и декларирования косметической продукции в соответствии с техническими регламентами и санитарными требованиями. Включает анализ состава и маркировки, подготовку полного пакета документов, проведение необходимых испытаний и взаимодействие с регуляторными органами. Обеспечиваем соответствие продукции нормативам, снижение рисков отказа и ускоренный вывод на рынок",
   },
+
   {
     slug: "clinical-research",
     title: "РЕГУЛЯТОРНОЕ СОПРОВОЖДЕНИЕ ФАРМАЦЕВТИЧЕСКОЙ ПРОДУКЦИИ",
-    subtitle: "Организация и сопровождение клинических исследований",
+    subtitle: "Помогаем фармацевтическим компаниям пройти регистрацию лекарственных средств и медицинских изделий — от подготовки досье до получения регистрационного удостоверения",
     image: "/services/clinical-research.png",
     sectionTitle: "КЛИНИЧЕСКИЕ ИССЛЕДОВАНИЯ",
     text:
-      "Организация и сопровождение клинических исследований в рамках регистрационного процесса.",
+      "Профессиональное сопровождение планирования и проведения клинических исследований лекарственных средств и медицинских изделий в соответствии с международными и национальными стандартами (GCP). Включает разработку протоколов, подготовку документации, подбор исследовательских центров, координацию процесса проведения исследований, мониторинг качества данных и взаимодействие с регуляторными органами. Обеспечиваем корректность, прозрачность и соответствие всех этапов требованиям регуляторов для успешной регистрации продукции.",
   },
+
   {
     slug: "regulatory-consulting",
     title: "РЕГУЛЯТОРНОЕ СОПРОВОЖДЕНИЕ ФАРМАЦЕВТИЧЕСКОЙ ПРОДУКЦИИ",
-    subtitle: "Экспертная поддержка по вопросам законодательства и регистрации",
+    subtitle: "Помогаем фармацевтическим компаниям пройти регистрацию лекарственных средств и медицинских изделий — от подготовки досье до получения регистрационного удостоверения",
     image: "/services/regulatory-consulting.png",
     sectionTitle: "РЕГУЛЯТОРНЫЙ КОНСАЛТИНГ",
     text:
-      "Экспертная поддержка по вопросам законодательства, подготовки регистрационного досье и сопровождения.",
+      "Профессиональное сопровождение по вопросам соответствия продукции требованиям регуляторных органов в сфере фармацевтики, медицинских изделий, БАДов и косметики. Включает анализ нормативной базы, оценку документации и продукции, разработку стратегии регистрации и вывода на рынок, а также консультационную поддержку на всех этапах взаимодействия с регуляторами. Обеспечиваем снижение регуляторных рисков, оптимизацию процессов и ускорение получения разрешительной документации",
   },
 ];
 
@@ -84,53 +90,144 @@ const tabs = [
 
 export default function ServiceDetail() {
   const { slug } = useParams();
+
   const service = services.find((item) => item.slug === slug) || services[0];
 
   const smooth = [0.16, 1, 0.3, 1] as const;
+
+  /* SCROLL TO TOP */
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [slug]);
 
   return (
     <>
       <Header />
 
-      <main className="overflow-hidden bg-[#FAFAFA] pt-[74px] md:pt-[88px]">
-        <section className="pb-[52px] md:pb-[64px]">
-          <div className="mx-auto w-full max-w-[860px] px-[22px] text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: smooth }}
-              className="flex justify-center"
-            >
-              <div className="flex h-[28px] items-center justify-center rounded-full border border-[#D7DEE2] bg-white px-[22px] text-[11px] font-medium text-[#0B2A35]">
-                Наши услуги
-              </div>
-            </motion.div>
+      <main
+        className="
+          overflow-hidden
+          bg-[#FAFAFA]
 
-            <motion.h1
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.75, delay: 0.04, ease: smooth }}
-              className="mx-auto mt-[18px] max-w-[820px] text-[28px] font-bold uppercase leading-[1.03] tracking-[-0.045em] text-[#0B2A35] md:text-[38px]"
-            >
-              {service.title}
-            </motion.h1>
+          pt-[78px]
 
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.08, ease: smooth }}
-              className="mx-auto mt-[11px] max-w-[620px] text-[11px] font-medium leading-[1.45] text-[#6B767B] md:text-[14px]"
-            >
-              {service.subtitle}
-            </motion.p>
-          </div>
+          md:pt-[92px]
+        "
+      >
+        <section
+          className="
+            relative w-full overflow-hidden
 
-          <div className="mx-auto mt-[28px] w-full max-w-[1120px] px-[22px] md:px-0">
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.75, delay: 0.12, ease: smooth }}
-              className="flex flex-wrap items-center justify-center gap-[7px] md:justify-start"
+            px-[22px]
+            pb-[80px]
+
+            sm:px-[28px]
+            sm:pb-[90px]
+
+            md:px-[46px]
+            md:pb-[110px]
+
+            lg:px-[64px]
+            lg:pb-[120px]
+
+            xl:px-[80px]
+          "
+        >
+          {/* CONTAINER */}
+
+          <div
+            className="
+              mx-auto
+              w-full
+              max-w-[1440px]
+            "
+          >
+            {/* TOP */}
+
+            <div className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.65, ease: smooth }}
+                className="flex justify-center"
+              >
+                <div
+                  className="
+                    flex
+                    h-[38px]
+                    items-center
+                    justify-center
+                    rounded-full
+                    border border-[#D7DEE2]
+                    bg-white
+
+                    px-[24px]
+
+                    text-[13px]
+                    font-medium
+                    text-[#0B2A35]
+                  "
+                >
+                  Наши услуги
+                </div>
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75, delay: 0.04, ease: smooth }}
+                className="
+                  mx-auto
+                  mt-[22px]
+                  max-w-[920px]
+
+                  text-[30px]
+                  font-bold
+                  uppercase
+                  leading-[1.04]
+                  tracking-[-0.045em]
+                  text-[#0B2A35]
+                "
+              >
+                {service.title}
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.08, ease: smooth }}
+                className="
+                  mx-auto
+                  mt-[18px]
+                  max-w-[720px]
+
+                  text-[16px]
+                  font-medium
+                  leading-[1.45]
+                  text-[#6B767B]
+                "
+              >
+                {service.subtitle}
+              </motion.p>
+            </div>
+
+            {/* TABS */}
+
+            <div
+              className="
+                mt-[46px]
+
+                flex
+                flex-wrap
+                items-center
+                justify-center
+
+                gap-[10px]
+              "
             >
               {tabs.map((tab) => {
                 const active = tab.slug === service.slug;
@@ -140,9 +237,22 @@ export default function ServiceDetail() {
                     key={tab.slug}
                     to={`/services/${tab.slug}`}
                     className={[
-                      "inline-flex h-[24px] items-center justify-center rounded-full px-[14px] text-[9px] font-semibold transition-all duration-500 md:text-[11px]",
+                      `
+                      inline-flex
+                      h-[38px]
+                      items-center
+                      justify-center
+                      rounded-full
+
+                      px-[18px]
+
+                      text-[12px]
+                      font-semibold
+
+                      transition-all duration-300
+                    `,
                       active
-                        ? "bg-[#12A05C] text-white shadow-[0_8px_18px_rgba(18,160,92,.22)]"
+                        ? "bg-[#12A05C] text-white shadow-[0_10px_24px_rgba(18,160,92,.22)]"
                         : "border border-[#DDE4E7] bg-[#F3F5F6] text-[#0B2A35] hover:border-[#12A05C] hover:text-[#12A05C]",
                     ].join(" ")}
                   >
@@ -150,51 +260,148 @@ export default function ServiceDetail() {
                   </Link>
                 );
               })}
-            </motion.div>
+            </div>
+
+            {/* IMAGE + TEXT */}
 
             <motion.div
+              key={service.slug}
               initial={{ opacity: 0, y: 24, scale: 0.988 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.85, delay: 0.16, ease: smooth }}
-              className="mt-[26px] w-full overflow-hidden rounded-[12px] shadow-[0_14px_34px_rgba(11,42,53,.08)]"
-            >
-              <img
-                src={service.image}
-                alt={service.sectionTitle}
-                className="h-[270px] w-full object-cover md:h-[430px]"
-              />
-            </motion.div>
+              transition={{
+                duration: 0.55,
+                ease: smooth,
+              }}
+              className="
+                mx-auto
+                mt-[34px]
 
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.75, delay: 0.2, ease: smooth }}
-              className="mt-[20px] text-left"
+                w-full
+                max-w-[980px]
+              "
             >
-              <h2 className="text-[12px] font-black uppercase leading-[1.2] text-[#0B2A35] md:text-[16px]">
-                {service.sectionTitle}
-              </h2>
+              {/* IMAGE */}
 
-              <p className="mt-[8px] max-w-[1040px] text-[10px] font-medium leading-[1.55] text-[#5F6D72] md:text-[13px]">
-                {service.text}
-              </p>
+              <div
+                className="
+                  overflow-hidden
+                  rounded-[18px]
+                  border border-[#E7ECEE]
+                  bg-[#F5F7F8]
+
+                  shadow-[0_14px_34px_rgba(11,42,53,.08)]
+                "
+              >
+                <img
+                  src={service.image}
+                  alt={service.sectionTitle}
+                  className="
+                    h-auto
+                    w-full
+                    object-cover
+                  "
+                />
+              </div>
+
+              {/* CONTENT */}
+
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.55,
+                  delay: 0.08,
+                  ease: smooth,
+                }}
+                className="
+                  mt-[24px]
+                  text-left
+                "
+              >
+                <h2
+                  className="
+                    text-[20px]
+                    font-bold
+                    uppercase
+                    leading-[1.2]
+                    text-[#0B2A35]
+                  "
+                >
+                  {service.sectionTitle}
+                </h2>
+
+                <p
+                  className="
+                    mt-[16px]
+
+                    text-[16px]
+                    font-medium
+                    leading-[1.55]
+                    text-[#5F6D72]
+                  "
+                >
+                  {service.text}
+                </p>
+              </motion.div>
             </motion.div>
           </div>
         </section>
+
+        {/* CTA */}
 
         <motion.section
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.35 }}
           transition={{ duration: 0.75, ease: smooth }}
-          className="px-[16px] pb-[56px] md:pb-[70px]"
+          className="
+            px-[22px]
+            pb-[80px]
+
+            sm:px-[28px]
+            sm:pb-[90px]
+
+            md:px-[46px]
+            md:pb-[110px]
+
+            lg:px-[64px]
+            lg:pb-[120px]
+
+            xl:px-[80px]
+          "
         >
-          <div className="mx-auto max-w-[650px] text-center">
-            <h3 className="text-[18px] font-black uppercase tracking-[-0.03em] text-[#0B2A35] md:text-[28px]">
-              Остались вопросы?
+          <div
+            className="
+              mx-auto
+              max-w-[650px]
+              text-center
+            "
+          >
+            <h3
+              className="
+                text-[30px]
+                font-bold
+                uppercase
+                leading-[1.05]
+                tracking-[-0.03em]
+                text-[#0B2A35]
+              "
+            >
+              ОСТАЛИСЬ ВОПРОСЫ?
             </h3>
 
-            <p className="mt-[8px] text-[10px] font-medium text-[#7A858B] md:text-[12px]">
+            <p
+              className="
+                mx-auto
+                mt-[16px]
+                max-w-[560px]
+
+                text-[16px]
+                font-medium
+                leading-[1.5]
+                text-[#7A858B]
+              "
+            >
               Свяжитесь с нами — подберем идеальное решение для вашего продукта
             </p>
 
@@ -203,7 +410,28 @@ export default function ServiceDetail() {
               whileHover={{ y: -1, scale: 1.015 }}
               whileTap={{ scale: 0.985 }}
               transition={{ duration: 0.35, ease: smooth }}
-              className="mx-auto mt-[14px] inline-flex h-[28px] items-center justify-center rounded-full bg-[#12A05C] px-[22px] text-[9px] font-bold text-white shadow-[0_10px_24px_rgba(18,160,92,.24)] hover:bg-[#0C8A4F] md:h-[32px] md:px-[26px] md:text-[10px]"
+              className="
+                mx-auto
+                mt-[28px]
+
+                inline-flex
+                h-[52px]
+                items-center
+                justify-center
+                rounded-full
+
+                bg-[#12A05C]
+
+                px-[34px]
+
+                text-[14px]
+                font-bold
+                text-white
+
+                shadow-[0_10px_24px_rgba(18,160,92,.24)]
+
+                hover:bg-[#0C8A4F]
+              "
             >
               КОНТАКТЫ
             </motion.a>

@@ -44,20 +44,29 @@ export default function WhyChooseUs() {
     <section
       className="
         w-full 
+        overflow-hidden
         bg-[#0B2A34] 
         
-        px-4
-        py-[70px]
+        px-[22px]
+        py-[80px]
 
-        sm:px-6
+        sm:px-[28px]
+        sm:py-[90px]
 
-        lg:px-6
+        md:px-[46px]
+        md:py-[110px]
+
+        lg:px-[64px]
+        lg:py-[120px]
+
+        xl:px-[80px]
       "
     >
       <div
         className="
           mx-auto 
-          max-w-[1280px] 
+          w-full
+          max-w-[1440px] 
 
           mt-[20px]
           sm:mt-[35px]
@@ -148,7 +157,6 @@ export default function WhyChooseUs() {
 
             lg:grid-cols-4
             lg:gap-[30px]
-            lg:pl-[70px]
           "
         >
           {stats.map((item, index) => {

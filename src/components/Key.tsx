@@ -76,26 +76,63 @@ export default function PriorityDirections() {
     <motion.section
       ref={sectionRef}
       style={isMobile ? undefined : { y, scale }}
-      className="relative w-full overflow-hidden bg-white px-4 py-[72px] md:px-6 md:pt-[85px] md:pb-[70px]"
+      className="
+        relative w-full overflow-hidden bg-white
+
+        px-[22px]
+        py-[72px]
+
+        sm:px-[28px]
+
+        md:px-[46px]
+        md:pt-[85px]
+        md:pb-[70px]
+
+        lg:px-[64px]
+
+        xl:px-[80px]
+      "
     >
       <motion.div
         initial={{ opacity: 0, y: isMobile ? 18 : 28 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: isMobile ? 0.08 : 0.18 }}
         transition={{ duration: isMobile ? 0.55 : 0.85, ease: smooth }}
-        className="mx-auto mt-[50px] max-w-[1180px] transform-gpu will-change-transform"
+        className="
+          mx-auto
+          mt-[50px]
+          w-full
+          max-w-[1440px]
+          transform-gpu
+          will-change-transform
+        "
       >
         <div className="mx-auto mb-[22px] flex h-[34px] w-fit items-center justify-center rounded-[16px] border border-[#D6DCDD] bg-white px-[24px] text-[15px] font-medium text-[#0B2A35]">
           Приоритетные направления
         </div>
 
-        <h2 className="mx-auto max-w-[800px] mt-[20px] text-center text-[16px] font-bold uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[30px] md:leading-[1.2]">
+        <h2 className="mx-auto mt-[20px] max-w-[800px] text-center text-[16px] font-bold uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[30px] md:leading-[1.2]">
           КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ ЭКСПЕРТНОГО
           СОПРОВОЖДЕНИЯ В СФЕРЕ ФАРМАЦЕВТИЧЕСКОЙ
           РЕГИСТРАЦИИ
         </h2>
 
-        <div className="relative mx-auto mt-[34px] grid max-w-[1150px] grid-cols-1 gap-x-[32px] gap-y-[20px] md:grid-cols-2 md:gap-y-[28px]">
+        <div
+          className="
+            relative mx-auto
+            mt-[34px]
+            grid
+            w-full
+            max-w-[1440px]
+
+            grid-cols-1
+            gap-x-[32px]
+            gap-y-[20px]
+
+            md:grid-cols-2
+            md:gap-y-[28px]
+          "
+        >
           {items.map((item, index) => {
             const isActive = active === index;
             const isBlurred = active !== null && active !== index;
@@ -121,9 +158,7 @@ export default function PriorityDirections() {
                 <div className="flex h-full items-start gap-[18px] px-[22px] pb-[48px] pt-[26px] md:gap-[24px] md:px-[28px] md:pb-[42px] md:pt-[28px]">
                   <div
                     className={[
-                      // "flex shrink-0 items-center justify-center rounded-full border border-[#DDE5EA] bg-[#F7F9FA]",
                       "transition-[width,height,transform,background-color,border-color] duration-[700ms] ease-[cubic-bezier(0.19,1,0.22,1)]",
-                      // "md:group-hover:-translate-y-[1px] md:group-hover:scale-[1.05] md:group-hover:border-[#C7D8D3] md:group-hover:bg-[#F1FAF7]",
                       isActive
                         ? "h-[54px] w-[54px] md:h-[70px] md:w-[70px]"
                         : "h-[50px] w-[50px] md:h-[65px] md:w-[65px]",
@@ -162,13 +197,13 @@ export default function PriorityDirections() {
                   className={[
                     "absolute bottom-[16px] left-[90px] text-[13px] font-bold leading-none text-[#009B72]",
                     "transition-all duration-[500ms] ease-[cubic-bezier(0.19,1,0.22,1)]",
-                    "md:bottom-[15px] md:left-[79px] md:text-[12px] md:group-hover:left-[84px] md:group-hover:text-[#00B383]",
+                    "md:bottom-[15px] md:left-[79px] md:text-[14px] md:group-hover:left-[84px] md:group-hover:text-[#00B383]",
                     isActive
                       ? "translate-y-[10px] opacity-0 pointer-events-none"
                       : "translate-y-0 opacity-100",
                   ].join(" ")}
                 >
-                  Читать дальше   →
+                  Читать дальше →
                 </a>
               </button>
             );

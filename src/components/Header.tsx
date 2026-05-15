@@ -13,7 +13,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -29,77 +29,84 @@ export default function Header() {
         transition-all duration-500
         ${
           scrolled
-            ? "bg-[#FFFFFF]/92 backdrop-blur-2xl shadow-[0_12px_30px_rgba(0,0,0,.12)]"
+            ? "bg-white/88 backdrop-blur-2xl"
             : "bg-transparent"
         }
       `}
     >
       <div
-        className={`
-          mx-auto flex h-[86px] max-w-none items-center justify-between mt-[14px] ml-[14px]
-          transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)]
-          ${
-            scrolled
-              ? "px-[24px] md:px-[72px]"
-              : "px-[20px] md:px-[40px]"
-          }
-        `}
+        className="
+          mx-auto flex h-[72px] items-center justify-between
+          px-[16px]
+          sm:px-[22px]
+          md:px-[34px]
+          lg:px-[42px]
+        "
       >
-        <a href="/" className="relative z-30 block shrink-0">
+        {/* logo */}
+        <a href="/" className="relative z-[70] shrink-0">
           <img
             src={scrolled ? "/logo1.png" : "/logo.svg"}
             alt="Maxi Pharm"
-            className="h-[40px] md:h-[56px] mb-[14px] w-auto object-contain transition-all duration-500"
+            className="
+              h-[28px]
+              w-auto
+              object-contain
+              transition-all duration-500
+
+              sm:h-[32px]
+              md:h-[36px]
+              lg:h-[40px]
+            "
           />
         </a>
 
-        <div className="relative h-[48px]">
+        {/* desktop nav */}
+        <div className="hidden items-center md:flex">
           <nav
             className={`
-              absolute right-0 top-0 hidden h-[48px] items-center overflow-hidden
-              rounded-full border
+              relative flex h-[44px] items-center overflow-hidden
+              rounded-full
+              transition-all duration-500 ease-out
               backdrop-blur-xl
-              shadow-[0_8px_24px_rgba(0,0,0,.12)]
-              transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)]
-              md:flex mt-[-6px]
+
               ${
                 scrolled
-                  ? "border-black/10 bg-black/5"
-                  : "border-white/20 bg-white/10"
+                  ? "bg-white/70 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
+                  : "bg-white/8"
               }
-              ${open ? "w-[730px]" : "w-[48px]"}
+
+              ${open ? "w-[670px]" : "w-[44px]"}
             `}
           >
             <div
               className={`
-                flex items-center gap-[4px] pl-[10px] pr-[58px]
-                transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)]
+                flex items-center gap-[4px]
+                pl-[10px] pr-[54px]
+                transition-all duration-500 ease-out
+
                 ${
                   open
-                    ? "translate-x-0 opacity-100 delay-100"
-                    : "translate-x-[22px] opacity-0"
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-[20px] opacity-0"
                 }
               `}
             >
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  style={{
-                    transitionDelay: open ? `${100 + index * 45}ms` : "0ms",
-                  }}
                   className={`
                     whitespace-nowrap rounded-full
-                    px-[20px] py-[13px]
-                    text-[14px] font-medium leading-none
-                    transition-all duration-300 
-                    hover:bg-black/5
-                    ${scrolled ? "text-black" : "text-white"}
+                    px-[16px] py-[10px]
+                    text-[13px] font-[500]
+                    transition-all duration-300
+
                     ${
-                      open
-                        ? "translate-x-0 opacity-100"
-                        : "translate-x-2 opacity-0"
+                      scrolled
+                        ? "text-[#071E22] hover:bg-black/5"
+                        : "text-white hover:bg-white/10"
                     }
                   `}
                 >
@@ -109,88 +116,171 @@ export default function Header() {
 
               <a
                 href="#contacts"
-                onClick={() => setOpen(false)}
-                style={{
-                  transitionDelay: open ? "260ms" : "0ms",
-                }}
-                className={`
-                  ml-[6px] whitespace-nowrap rounded-full
-                  bg-[#009B72] 
-                  px-[22px] py-[13px]
-                  text-[14px] font-semibold leading-none text-white
-                  shadow-[0_6px_18px_rgba(0,155,114,.28)]
+                className="
+                  ml-[4px]
+                  rounded-full
+                  bg-[#089A69]
+                  px-[18px]
+                  py-[10px]
+                  text-[13px]
+                  font-[600]
+                  text-white
                   transition-all duration-300
-                  hover:bg-[#008866]
-                  active:scale-[.98]
-                  ${
-                    open
-                      ? "translate-x-0 opacity-100"
-                      : "translate-x-2 opacity-0"
-                  }
-                `}
+                  hover:bg-[#00D87B]
+                "
               >
                 Оставить заявку →
               </a>
             </div>
+
+            {/* desktop burger */}
+            <button
+              onClick={() => setOpen(!open)}
+              className={`
+                absolute right-0 top-0 flex h-[44px] w-[44px]
+                items-center justify-center
+                rounded-full
+                transition-all duration-300
+
+                ${
+                  scrolled
+                    ? "bg-white text-[#071E22]"
+                    : "bg-white/12 text-white"
+                }
+              `}
+            >
+              <div className="relative flex h-[16px] w-[16px] items-center justify-center">
+                <span
+                  className={`
+                    absolute h-[1.5px] w-[16px] rounded-full bg-current
+                    transition-all duration-300
+                    ${
+                      open
+                        ? "rotate-45"
+                        : "-translate-y-[5px]"
+                    }
+                  `}
+                />
+
+                <span
+                  className={`
+                    absolute h-[1.5px] w-[16px] rounded-full bg-current
+                    transition-all duration-200
+                    ${
+                      open
+                        ? "opacity-0"
+                        : "opacity-100"
+                    }
+                  `}
+                />
+
+                <span
+                  className={`
+                    absolute h-[1.5px] w-[16px] rounded-full bg-current
+                    transition-all duration-300
+                    ${
+                      open
+                        ? "-rotate-45"
+                        : "translate-y-[5px]"
+                    }
+                  `}
+                />
+              </div>
+            </button>
           </nav>
+        </div>
 
-          <button
-            type="button"
-            onClick={() => setOpen((prev) => !prev)}
-            aria-label={open ? "Закрыть меню" : "Открыть меню"}
-            aria-expanded={open}
-            className="
-              relative z-20 flex h-[48px] w-[48px] mt-[-6px]
-              items-center justify-center
-              transition duration-300
-              active:scale-[.96] bg-[#9DAAAE]/70 rounded-full
-            "
-          >
+        {/* mobile burger */}
+        <button
+          onClick={() => setOpen(!open)}
+          className={`
+            relative z-[70] flex h-[42px] w-[42px]
+            items-center justify-center rounded-full
+            transition-all duration-300 md:hidden
+
+            ${
+              scrolled
+                ? "bg-white text-[#071E22]"
+                : "bg-white/10 text-white"
+            }
+          `}
+        >
+          <div className="relative flex h-[16px] w-[16px] items-center justify-center">
             <span
-              className={`absolute h-[3.5px] w-[24px] rounded-full transition-all duration-300 ${
-                scrolled ? "bg-[#073C46]" : "bg-white"
-              } ${open ? "rotate-45 translate-y-0" : "-translate-y-[8px]"}`}
+              className={`
+                absolute h-[1.5px] w-[16px] rounded-full bg-current
+                transition-all duration-300
+                ${
+                  open
+                    ? "rotate-45"
+                    : "-translate-y-[5px]"
+                }
+              `}
             />
 
             <span
-              className={`absolute h-[3.5px] w-[24px] rounded-full transition-all duration-300 ${
-                scrolled ? "bg-[#073C46]" : "bg-white"
-              } ${open ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"}`}
+              className={`
+                absolute h-[1.5px] w-[16px] rounded-full bg-current
+                transition-all duration-200
+                ${
+                  open
+                    ? "opacity-0"
+                    : "opacity-100"
+                }
+              `}
             />
 
             <span
-              className={`absolute h-[3.5px] w-[24px] rounded-full transition-all duration-300 ${
-                scrolled ? "bg-[#073C46]" : "bg-white"
-              } ${open ? "-rotate-45 translate-y-0" : "translate-y-[8px]"}`}
+              className={`
+                absolute h-[1.5px] w-[16px] rounded-full bg-current
+                transition-all duration-300
+                ${
+                  open
+                    ? "-rotate-45"
+                    : "translate-y-[5px]"
+                }
+              `}
             />
-          </button>
+          </div>
+        </button>
 
-          <div
-            className={`
-              absolute right-0 top-[64px] w-[290px]
-              rounded-[26px] border border-white/15
-              bg-black/70 p-[8px]
-              backdrop-blur-2xl
-              shadow-[0_20px_50px_rgba(0,0,0,.28)]
-              transition-all duration-300 ease-out
-              md:hidden
-              ${
-                open
-                  ? "translate-y-0 opacity-100 pointer-events-auto"
-                  : "-translate-y-2 opacity-0 pointer-events-none"
-              }
-            `}
-          >
+        {/* mobile dropdown */}
+        <div
+          className={`
+            absolute right-[16px] top-[74px] z-[60]
+            w-[260px]
+            rounded-[26px]
+            border border-white/10
+            bg-[#0A232B]/95
+            p-[10px]
+            shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+            backdrop-blur-2xl
+            transition-all duration-300 ease-out
+            md:hidden
+
+            ${
+              open
+                ? "pointer-events-auto translate-y-0 opacity-100"
+                : "pointer-events-none translate-y-[-8px] opacity-0"
+            }
+          `}
+        >
+          <div className="flex flex-col gap-[6px]">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className="
-                  block rounded-[18px]
-                  px-[18px] py-[14px]
-                  text-[15px] font-medium text-white
-                  transition hover:bg-white/10
+                  rounded-[18px]
+                  px-[16px]
+                  py-[14px]
+                  text-[14px]
+                  font-[500]
+                  text-white
+                  transition-all duration-300
+                  hover:bg-white/8
+                  active:scale-[0.99]
                 "
               >
                 {item.label}
@@ -198,14 +288,19 @@ export default function Header() {
             ))}
 
             <a
-              href="#contact"
+              href="#contacts"
               onClick={() => setOpen(false)}
               className="
-                mt-[6px] block rounded-[18px]
-                bg-[#009B72]
-                px-[18px] py-[14px]
-                text-center text-[15px] font-semibold text-white
-                transition hover:bg-[#008866]
+                mt-[4px]
+                flex h-[48px]
+                items-center justify-center
+                rounded-full
+                bg-[#089A69]
+                text-[14px]
+                font-[600]
+                text-white
+                transition-all duration-300
+                hover:bg-[#00D87B]
               "
             >
               Оставить заявку →

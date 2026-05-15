@@ -1,414 +1,284 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default function AboutSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".fade-up", {
-        opacity: 0,
-        y: 40,
-        duration: 1,
-        stagger: 0.08,
-        ease: "power3.out",
-      });
-
-      gsap.from(".left-image", {
-        opacity: 0,
-        x: -80,
-        duration: 1.4,
-        ease: "power4.out",
-      });
-
-      gsap.from(".floating-card", {
-        opacity: 0,
-        x: 80,
-        y: 40,
-        duration: 1.6,
-        ease: "power4.out",
-      });
-
-      gsap.to(".left-image", {
-        y: -25,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          scrub: true,
-        },
-      });
-
-      gsap.to(".floating-card", {
-        y: 25,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          scrub: true,
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
+      id="about_us"
       className="
-        w-full 
-        bg-[#FFFF] 
-        overflow-hidden 
-        
+        relative w-full overflow-hidden
+
+        px-[22px]
         py-[80px]
-        px-[16px]
 
+        sm:px-[28px]
         sm:py-[90px]
-        sm:px-[24px]
 
-        md:px-[40px] 
-        
-        lg:py-[110px] 
-        lg:px-[70px]
+        md:px-[46px]
+        md:py-[110px]
+
+        lg:px-[64px]
+        lg:py-[120px]
+
+        xl:px-[80px]
       "
     >
+      {/* GLOBAL CONTAINER */}
       <div
         className="
-          max-w-[1400px] 
-          mx-auto 
-          grid 
-          lg:grid-cols-2 
-
-          gap-[50px]
-          sm:gap-[60px]
-          lg:gap-[70px]
-
-          items-center
-
-          mt-[20px]
-          sm:mt-[30px]
-          lg:mt-[50px]
+          mx-auto
+          w-full
+          max-w-[1440px]
         "
       >
-        {/* LEFT SIDE */}
+        {/* CONTENT WRAPPER */}
+        <div
+          className="
+            grid
+            items-center
 
-        <div className="relative flex justify-center lg:justify-start">
+            gap-[56px]
+
+            lg:grid-cols-[520px_minmax(0,1fr)]
+            lg:gap-[90px]
+          "
+        >
+          {/* LEFT SIDE */}
           <div
             className="
-              relative 
-              w-full 
+              relative
 
-              max-w-[560px] 
+              w-full
+              max-w-[520px]
 
-              h-[380px]
-              sm:h-[520px]
-              lg:h-[620px]
+              mx-auto
+              lg:mx-0
             "
           >
-            {/* MAIN IMAGE */}
-
+            {/* BACK IMAGE */}
             <div
               className="
-                left-image 
-                absolute 
-                left-0 
-                top-0 
-
+                relative
+                h-[360px]
                 w-[78%]
-                sm:w-[380px]
-                lg:w-[440px]
+                overflow-hidden
+                rounded-[22px]
 
-                h-[280px]
-                sm:h-[460px]
-                lg:h-[560px]
+                sm:h-[430px]
 
-                mt-[20px]
-                sm:mt-[30px]
-                lg:mt-[50px]
+                md:h-[470px]
 
-                rounded-[20px]
-                lg:rounded-[26px]
-
-                overflow-hidden 
-                shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+                lg:h-[520px]
               "
             >
               <img
                 src="/image-01.png"
-                alt=""
-                className="w-full h-full object-cover"
+                alt="Office"
+                className="
+                  h-full
+                  w-full
+                  object-cover
+                "
               />
             </div>
 
-            {/* FLOATING IMAGE */}
-
+            {/* FRONT IMAGE */}
             <div
               className="
-                floating-card 
-                absolute 
-
+                absolute
+                bottom-[-16px]
                 right-0
 
-                bottom-[0px]
-                sm:bottom-[20px]
-                lg:bottom-[20px]
+                h-[220px]
+                w-[62%]
+                overflow-hidden
+                rounded-[20px]
 
-                w-[55%]
-                sm:w-[250px]
-                lg:w-[320px]
+                shadow-[0_24px_60px_rgba(0,0,0,0.14)]
 
-                h-[170px]
-                sm:h-[260px]
+                sm:h-[270px]
+
+                md:h-[310px]
+
+                lg:bottom-[-22px]
                 lg:h-[340px]
-
-                rounded-[18px]
-                lg:rounded-[22px]
-
-                overflow-hidden 
-                bg-white 
-                shadow-[0_20px_50px_rgba(0,0,0,0.10)] 
-                border 
-                border-white/70
               "
             >
               <img
                 src="/image-02.png"
-                alt=""
-                className="w-full h-full object-cover"
+                alt="Documents"
+                className="
+                  h-full
+                  w-full
+                  object-cover
+                "
               />
             </div>
           </div>
-        </div>
 
-        {/* RIGHT SIDE */}
-
-        <div className="max-w-[650px]">
-          {/* TAG */}
-
+          {/* RIGHT SIDE */}
           <div
             className="
-              fade-up 
-              inline-flex 
-              items-center 
-              justify-center 
+              w-full
+              max-w-[690px]
 
-              border 
-              border-[#b9c5ca] 
-
-              rounded-full 
-
-              h-[42px]
-              sm:h-[48px]
-
-              px-[18px]
-              sm:px-[26px]
-
-              text-[14px]
-              sm:text-[18px]
-
-              font-[600] 
-              text-[#11495e] 
-
-              mb-[24px]
-              sm:mb-[34px]
-
-              bg-white/40 
-              backdrop-blur-md
+              mx-auto
+              lg:mx-0
             "
           >
-            О компании
-          </div>
-
-          {/* TITLE */}
-
-          <h1
-            className="
-              fade-up 
-              text-[#0d2d39] 
-
-              text-[24px]
-              sm:text-[30px]
-              lg:text-[30px]
-
-              leading-[1.2] 
-
-              tracking-[-1px]
-              sm:tracking-[-1.5px]
-
-              font-bold 
-              uppercase 
-
-              mb-[14px]
-              lg:mb-[10px]
-            "
-          >
-            ЭКСПЕРТНОЕ СОПРОВОЖДЕНИЕ В СФЕРЕ ФАРМАЦЕВТИКИ И МЕДИЦИНСКИХ
-            ТЕХНОЛОГИЙ
-          </h1>
-
-          {/* DESCRIPTION */}
-
-          <p
-            className="
-              fade-up 
-              text-[#7b8a91] 
-
-              text-[15px]
-              sm:text-[16px]
-
-              leading-[1.7] 
-
-              mb-[34px]
-              sm:mb-[42px]
-
-              max-w-[620px]
-            "
-          >
-            Maxipharm expert специализируется на профессиональном сопровождении
-            регистрации лекарственных средств, медицинских изделий и
-            сопутствующей продукции на территории Республики Узбекистан
-          </p>
-
-          {/* FEATURES */}
-
-          <div
-            className="
-              flex 
-              flex-col 
-
-              gap-[18px]
-              sm:gap-[22px]
-
-              mb-[38px]
-              sm:mb-[48px]
-            "
-          >
-            <div className="fade-up flex items-start gap-[14px]">
-              <div className="min-w-[24px] w-[24px] h-[24px] rounded-full bg-[#11b77a] flex items-center justify-center text-white text-[13px] font-bold mt-[2px]">
-                ✓
-              </div>
-
-              <span className="text-[#3C555D] text-[15px] sm:text-[16px] font-[600] leading-[1.5]">
-                Экспертиза специалистов от 10 до 30 лет
-              </span>
-            </div>
-
-            <div className="fade-up flex items-start gap-[14px]">
-              <div className="min-w-[24px] w-[24px] h-[24px] rounded-full bg-[#11b77a] flex items-center justify-center text-white text-[13px] font-bold mt-[2px]">
-                ✓
-              </div>
-
-              <span className="text-[#3C555D] text-[15px] sm:text-[16px] font-[600] leading-[1.5]">
-                Полный цикл сопровождения регистрации
-              </span>
-            </div>
-
-            <div className="fade-up flex items-start gap-[14px]">
-              <div className="min-w-[24px] w-[24px] h-[24px] rounded-full bg-[#11b77a] flex items-center justify-center text-white text-[13px] font-bold mt-[2px]">
-                ✓
-              </div>
-
-              <span className="text-[#3C555D] text-[15px] sm:text-[16px] font-[600] leading-[1.5]">
-                Более 80 зарегистрированных наименований препаратов в 2025 году
-              </span>
-            </div>
-          </div>
-
-          {/* BUTTONS */}
-
-          <div
-            className="
-              fade-up 
-
-              flex 
-              flex-col
-              sm:flex-row
-
-              gap-[14px]
-              sm:gap-[18px]
-            "
-          >
-            <a
-              href="#services"
+            {/* LABEL */}
+            <div
               className="
-                w-full
-                sm:w-auto
+                inline-flex
+                h-[42px]
+                items-center
+                rounded-full
+                border border-[#BCC8CD]
+                px-[18px]
 
-                h-[50px]
-                sm:h-[52px]
-
-                px-[30px]
-                sm:px-[38px]
-
-                flex 
-                items-center 
-                justify-center 
-
-                rounded-[20px]
-                sm:rounded-[24px]
-
-                bg-[#089A69] 
-
-                text-white 
-
-                text-[16px]
-                sm:text-[20px]
-
-                font-bold 
-
-                transition-all 
-                duration-300 
-
-                hover:bg-[#007935] 
-                hover:text-grey 
-                hover:scale-[1.03]  
-
-                shadow-[0_12px_30px_rgba(16,183,122,0.25)]
+                text-[14px]
+                font-medium
+                text-[#0B2A34]
               "
             >
-              Услуги
-            </a>
+              О компании
+            </div>
 
-            <a
-              href="#contacts"
+            {/* TITLE */}
+            <h2
               className="
-                w-full
-                sm:w-auto
+                mt-[22px]
 
-                h-[50px]
-                sm:h-[52px]
-
-                px-[30px]
-                sm:px-[38px]
-
-                flex 
-                items-center 
-                justify-center 
-
-                rounded-[20px]
-                sm:rounded-[24px]
-
-                bg-[#072c3a] 
-
-                text-white 
-
-                text-[16px]
-                sm:text-[20px]
-
-                font-bold 
-
-                transition-all 
-                duration-300 
-
-                hover:text-[#072c3a] 
-                hover:scale-[1.03] 
-                hover:bg-[#9DAAAE]/50 
-
-                shadow-[0_12px_30px_rgba(7,44,58,0.20)]
+                text-[30px]
+                font-bold
+                uppercase
+                leading-[1.04]
+                tracking-[-0.04em]
+                text-[#0B2A34]
               "
             >
-              Контакт
-            </a>
+              ЭКСПЕРТНОЕ СОПРОВОЖДЕНИЕ В СФЕРЕ ФАРМАЦЕВТИКИ И МЕДИЦИНСКИХ ТЕХНОЛОГИЙ
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                mt-[18px]
+                max-w-[620px]
+
+                text-[16px]
+                font-medium
+                leading-[1.45]
+                text-[#6B7A80]
+              "
+            >
+              Maxipharm expert специализируется на профессиональном сопровождении
+              регистрации лекарственных средств, медицинских изделий и
+              сопутствующей продукции на территории Республики Узбекистан
+            </p>
+
+            {/* LIST */}
+            <div
+              className="
+                mt-[28px]
+                flex flex-col
+                gap-[16px]
+              "
+            >
+              {[
+                "Экспертиза специалистов от 10 до 30 лет",
+                "Полный цикл сопровождения регистрации",
+                "Более 80 зарегистрированных наименований препаратов в 2025 году",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="
+                    flex items-start
+                    gap-[12px]
+                  "
+                >
+                  {/* ICON */}
+                  <svg
+                    className="mt-[2px] shrink-0"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M5 12L10 17L19 7"
+                      stroke="#11A36A"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+
+                  {/* TEXT */}
+                  <p
+                    className="
+                      text-[16px]
+                      font-semibold
+                      leading-[1.4]
+                      text-[#0B2A34]
+                    "
+                  >
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* BUTTONS */}
+            <div
+              className="
+                mt-[34px]
+                flex flex-wrap
+                items-center
+                gap-[14px]
+              "
+            >
+              <a
+                href="#services"
+                className="
+                  inline-flex
+                  h-[52px]
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-[#11A36A]
+                  px-[30px]
+
+                  text-[15px]
+                  font-semibold
+                  text-white
+
+                  transition-all duration-300
+                  hover:bg-[#159764]
+                "
+              >
+                Услуги
+              </a>
+
+              <a
+                href="#contacts"
+                className="
+                  inline-flex
+                  h-[52px]
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-[#0B2A34]
+                  px-[30px]
+
+                  text-[15px]
+                  font-semibold
+                  text-white
+
+                  transition-all duration-300
+                  hover:bg-[#123844]
+                "
+              >
+                Контакт
+              </a>
+            </div>
           </div>
         </div>
       </div>
