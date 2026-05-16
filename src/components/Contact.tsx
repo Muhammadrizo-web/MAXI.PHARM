@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail } from "lucide-react";
@@ -24,6 +26,7 @@ export default function ContactSection() {
   const smooth = [0.16, 1, 0.3, 1] as const;
 
   const [phone, setPhone] = useState("");
+  const [result, setResult] = useState("");
 
   const formatPhone = (rawValue: string) => {
     let digits = rawValue.replace(/\D/g, "");
@@ -46,7 +49,9 @@ export default function ContactSection() {
     return result;
   };
 
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePhoneChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setPhone(formatPhone(e.target.value));
   };
 
@@ -81,6 +86,39 @@ export default function ContactSection() {
       e.preventDefault();
       const newDigits = digits.slice(0, -1);
       setPhone(newDigits ? formatPhone("+998" + newDigits) : "+998 ");
+    }
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setResult("Отправка...");
+
+    const formData = new FormData(e.currentTarget);
+
+    formData.append(
+      "access_key",
+      "0e234390-0e6c-41da-b4f2-c101fc8a0180"
+    );
+
+    const response = await fetch(
+      "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Сообщение отправлено!");
+      e.currentTarget.reset();
+      setPhone("");
+    } else {
+      setResult("Ошибка отправки");
     }
   };
 
@@ -134,8 +172,6 @@ export default function ContactSection() {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 1.05, ease: smooth }}
           >
-            {/* BADGE */}
-
             <motion.div
               whileHover={{ y: -2 }}
               transition={{ duration: 0.7, ease: smooth }}
@@ -160,8 +196,6 @@ export default function ContactSection() {
               Начните сотрудничество
             </motion.div>
 
-            {/* TITLE */}
-
             <h2
               className="
                 mt-[18px]
@@ -176,8 +210,6 @@ export default function ContactSection() {
             >
               Свяжитесь с нами
             </h2>
-
-            {/* CONTACT CARDS */}
 
             <div className="mt-[28px] space-y-[15px]">
               {contacts.map((item, i) => {
@@ -278,6 +310,7 @@ export default function ContactSection() {
           {/* FORM */}
 
           <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 24, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.25 }}
@@ -317,8 +350,6 @@ export default function ContactSection() {
             </h3>
 
             <div className="space-y-[15px]">
-              {/* NAME */}
-
               <div
                 className="
                   grid
@@ -330,7 +361,9 @@ export default function ContactSection() {
                 "
               >
                 <input
+                  name="name"
                   placeholder="Имя"
+                  required
                   className="
                     h-[50px]
                     rounded-[9px]
@@ -356,7 +389,9 @@ export default function ContactSection() {
                 />
 
                 <input
+                  name="surname"
                   placeholder="Фамилия"
+                  required
                   className="
                     h-[50px]
                     rounded-[9px]
@@ -382,10 +417,9 @@ export default function ContactSection() {
                 />
               </div>
 
-              {/* PHONE */}
-
               <input
                 type="tel"
+                name="phone"
                 inputMode="numeric"
                 autoComplete="tel"
                 value={phone}
@@ -394,6 +428,7 @@ export default function ContactSection() {
                 onBlur={handlePhoneBlur}
                 onKeyDown={handlePhoneKeyDown}
                 placeholder="Номер телефона"
+                required
                 className="
                   w-full
                   h-[50px]
@@ -420,10 +455,10 @@ export default function ContactSection() {
                 "
               />
 
-              {/* TEXTAREA */}
-
               <textarea
+                name="message"
                 placeholder="Опишите ваш запрос"
+                required
                 className="
                   h-[110px]
                   w-full
@@ -452,10 +487,8 @@ export default function ContactSection() {
                 "
               />
 
-              {/* BUTTON */}
-
               <motion.button
-                type="button"
+                type="submit"
                 whileHover={{
                   y: -2,
                   boxShadow:
@@ -471,6 +504,7 @@ export default function ContactSection() {
                   w-full
 
                   rounded-[9px]
+
                   bg-[#0E9B67]
 
                   text-[14px]
@@ -483,6 +517,10 @@ export default function ContactSection() {
               >
                 Получить консультацию
               </motion.button>
+
+              <p className="text-[13px] font-medium text-[#12323B]">
+                {result}
+              </p>
             </div>
           </motion.form>
         </div>
