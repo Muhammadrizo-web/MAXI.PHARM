@@ -295,6 +295,7 @@ export default function Header() {
                 flex h-[48px]
                 items-center justify-center
                 rounded-full
+                tracking-widest
                 bg-[#089A69]
                 text-[14px]
                 font-[600]
