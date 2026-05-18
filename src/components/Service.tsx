@@ -1,30 +1,23 @@
-import { Link } from "react-router-dom";
 import { motion, type Transition } from "framer-motion";
+import { Link } from "react-router-dom";
 
-type ServiceItem = {
-  icon: string;
-  title: string;
-  text: string;
-  slug: string;
-};
-
-const services: ServiceItem[] = [
+const services = [
   {
     icon: "/icons/ic-1.png",
     title: "РЕГИСТРАЦИЯ\nЛЕКАРСТВЕННЫХ СРЕДСТВ",
-    text: "Полное сопровождение государственной регистрации лекарственных препаратов, включая подготовку документации...",
+    text: "Комплексное сопровождение регистрации лекарственных средств на всех этапах подготовки и подачи документации...",
     slug: "drug-registration",
   },
   {
     icon: "/icons/ic-2.png",
     title: "РЕГИСТРАЦИЯ\nМЕДИЦИНСКИХ ИЗДЕЛИЙ",
-    text: "Профессиональное сопровождение регистрации медицинских изделий, оборудования и продукции медицинского назначения...",
-    slug: "medical-devices",
+    text: "Профессиональное сопровождение регистрации медицинских изделий в соответствии с действующими требованиями...",
+    slug: "medical-registration",
   },
   {
     icon: "/icons/ic-3.png",
     title: "РЕГИСТРАЦИЯ\nБАД",
-    text: "Регуляторное сопровождение регистрации биологически активных добавок с подготовкой необходимой документации...",
+    text: "Подготовка и сопровождение регистрационного процесса биологически активных добавок с соблюдением всех требований...",
     slug: "bad-registration",
   },
   {
@@ -176,21 +169,22 @@ export default function ServicesSection() {
 
         <div
           className="
-            mt-[30px] 
-            
-            grid 
-            grid-cols-1 
-            
+            mt-[30px]
+
+            grid
+            grid-cols-1
+
             gap-[18px]
 
             justify-items-center
-            
-            sm:mt-[38px] 
-            sm:gap-[24px] 
-            
-            md:grid-cols-2 
-            
-            xl:grid-cols-3 
+            items-start
+
+            sm:mt-[38px]
+            sm:gap-[24px]
+
+            md:grid-cols-2
+
+            xl:grid-cols-3
             xl:gap-[30px]
           "
         >
@@ -225,29 +219,31 @@ export default function ServicesSection() {
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="
-                group 
+                group
                 
-                min-h-[185px] 
-                sm:min-h-[200px] 
+                flex
+                flex-col
                 
-                rounded-[8px] 
-                border 
-                border-[#DDE4E8] 
-                bg-white 
+                rounded-[8px]
+                border
+                border-[#DDE4E8]
+                bg-white
                 
                 shadow-[0_8px_22px_rgba(20,35,45,0.06)]
 
                 px-[18px]
                 py-[20px]
 
-                sm:px-[20px] 
+                sm:px-[20px]
                 sm:py-[26px]
 
                 w-full
                 max-w-[420px]
+
+                h-auto
               "
             >
-              <div className="flex items-start gap-[14px] sm:gap-[20px]">
+              <div className="flex items-start gap-[14px] sm:gap-[20px] h-auto">
                 <motion.div
                   whileHover={{ scale: 1.045 }}
                   transition={{ duration: 0.25 }}
@@ -258,32 +254,32 @@ export default function ServicesSection() {
                     alt=""
                     aria-hidden="true"
                     className="
-                      mt-[2px] 
-                      
+                      mt-[2px]
+
                       h-[34px]
                       w-[34px]
-                      
-                      sm:h-[44px] 
-                      sm:w-[44px] 
-                      
+
+                      sm:h-[44px]
+                      sm:w-[44px]
+
                       object-contain
                     "
                   />
                 </motion.div>
 
-                <div>
+                <div className="flex flex-col flex-1">
                   <h3
                     className="
-                      whitespace-pre-line 
-                      
+                      whitespace-pre-line
+
                       text-[13px]
                       sm:text-[16px]
-                      
-                      font-[700] 
-                      uppercase 
-                      
-                      leading-[1.12] 
-                      tracking-[-0.01em] 
+
+                      font-[700]
+                      uppercase
+
+                      leading-[1.12]
+                      tracking-[-0.01em]
                       text-[#0B2A35]
                     "
                   >
@@ -293,19 +289,21 @@ export default function ServicesSection() {
                   <p
                     className="
                       mt-[12px]
-                      sm:mt-[18px] 
-                      
-                      max-w-[290px] 
-                      
+                      sm:mt-[18px]
+
+                      max-w-[290px]
+
                       text-[13px]
                       sm:text-[16px]
-                      
-                      font-medium 
-                      
+
+                      font-medium
+
                       leading-[1.45]
-                      sm:leading-[1.28] 
-                      
+                      sm:leading-[1.28]
+
                       text-[#5F6870]
+
+                      break-words
                     "
                   >
                     {item.text}
@@ -322,13 +320,13 @@ export default function ServicesSection() {
                     <Link
                       to={`/services/${item.slug}`}
                       className="
-                        text-[12px] 
-                        font-bold 
-                        text-[#0E9B67] 
-                        
-                        transition-colors 
-                        duration-300 
-                        
+                        text-[12px]
+                        font-bold
+                        text-[#0E9B67]
+
+                        transition-colors
+                        duration-300
+
                         hover:text-[#0E9B67]
                       "
                     >
