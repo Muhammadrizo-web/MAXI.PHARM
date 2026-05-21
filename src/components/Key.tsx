@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 type Item = {
   icon: string;
@@ -8,42 +9,39 @@ type Item = {
   extra: string;
 };
 
-const items: Item[] = [
-  {
-    icon: "/icons/icon-1.png",
-    title: "РЕГИСТРАЦИЯ ЛЕКАРСТВЕННЫХ СРЕДСТВ",
-    short:
-      "Подготовка, формирование и комплексное сопровождение регистрационного досье",
-    extra:
-      " в соответствии с установленными требованиями уполномоченных органов, включая анализ документации, структурирование материалов и сопровождение на всех этапах регистрационного процесса",
-  },
-  {
-    icon: "/icons/icon-2.png",
-    title: "РЕГИСТРАЦИЯ МЕДИЦИНСКИХ ИЗДЕЛИЙ",
-    short:
-      "Формирование полного регистрационного досье с последующим профессиональным сопровождением",
-    extra:
-      ", в соответствии с действующими нормативными требованиями, включая подготовку необходимой документации, её экспертный анализ и сопровождение процесса рассмотрения",
-  },
-  {
-    icon: "/icons/icon-3.png",
-    title: "КЛИНИЧЕСКИЕ ИССЛЕДОВАНИЯ",
-    short:
-      "Комплексная подготовка и сопровождение регистрационного досье с учетом действующих требований",
-    extra:
-      ", включая систематизацию документов, проверку полноты материалов и сопровождение взаимодействия с уполномоченными органами на всех этапах рассмотрения",
-  },
-  {
-    icon: "/icons/icon 4.png",
-    title: "ПОДГОТОВКА РЕГИСТРАЦИОННОГО ДОСЬЕ (CTD)",
-    short:
-      "Формирование полного регистрационного досье с учетом требований уполномоченных органов",
-    extra:
-      ", с обеспечением полноты документации, корректности оформления и сопровождения процесса регистрации до получения итогового решения.",
-  },
-];
-
 export default function PriorityDirections() {
+  const { t } = useTranslation();
+
+  const items: Item[] = [
+    {
+      icon: "/icons/icon-1.png",
+      title: t("priority_card_1_title"),
+      short: t("priority_card_1_short"),
+      extra: t("priority_card_1_extra"),
+    },
+
+    {
+      icon: "/icons/icon-2.png",
+      title: t("priority_card_2_title"),
+      short: t("priority_card_2_short"),
+      extra: t("priority_card_2_extra"),
+    },
+
+    {
+      icon: "/icons/icon-3.png",
+      title: t("priority_card_3_title"),
+      short: t("priority_card_3_short"),
+      extra: t("priority_card_3_extra"),
+    },
+
+    {
+      icon: "/icons/icon 4.png",
+      title: t("priority_card_4_title"),
+      short: t("priority_card_4_short"),
+      extra: t("priority_card_4_extra"),
+    },
+  ];
+
   const [active, setActive] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -108,13 +106,11 @@ export default function PriorityDirections() {
         "
       >
         <div className="mx-auto mb-[22px] flex h-[34px] w-fit items-center justify-center rounded-[16px] border border-[#D6DCDD] bg-white px-[24px] text-[15px] font-medium text-[#0B2A35]">
-          Приоритетные направления
+          {t("priority_label")}
         </div>
 
         <h2 className="mx-auto mt-[20px] max-w-[800px] text-center text-[16px] font-bold uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[30px] md:leading-[1.2]">
-          КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ ЭКСПЕРТНОГО
-          СОПРОВОЖДЕНИЯ В СФЕРЕ ФАРМАЦЕВТИЧЕСКОЙ
-          РЕГИСТРАЦИИ
+          {t("priority_title")}
         </h2>
 
         <div
@@ -180,6 +176,7 @@ export default function PriorityDirections() {
 
                     <p className="mt-[12px] max-w-[430px] text-[15px] leading-[1.34] text-[#6F7377] md:mt-[10px] md:text-[14px] md:leading-[1.28]">
                       {item.short}
+
                       <span
                         className={[
                           "inline transition-opacity duration-[500ms] ease-out",
@@ -203,7 +200,7 @@ export default function PriorityDirections() {
                       : "translate-y-0 opacity-100",
                   ].join(" ")}
                 >
-                  Читать дальше →
+                  {t("read_more")} →
                 </a>
               </button>
             );

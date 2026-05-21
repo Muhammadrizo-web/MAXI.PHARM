@@ -1,76 +1,40 @@
+import { useTranslation } from "react-i18next";
+
 export default function AboutSection() {
+  const { t } = useTranslation();
+
   return (
-    <section
-      id="about_us"
-      className="
-        relative w-full overflow-hidden
-
-        px-[22px]
-        py-[80px]
-
-        sm:px-[28px]
-        sm:py-[90px]
-
-        md:px-[46px]
-        md:py-[110px]
-
-        lg:px-[64px]
-        lg:py-[120px]
-
-        xl:px-[80px]
-      "
-    >
-      {/* GLOBAL CONTAINER */}
-      <div
-        className="
-          mx-auto
-          w-full
-          max-w-[1440px]
-        "
-      >
-        {/* CONTENT WRAPPER */}
+    <section className="relative overflow-hidden py-[90px]">
+      <div className="mx-auto max-w-[1320px] px-[18px]">
         <div
           className="
             grid
-            items-center
+            gap-[50px]
 
-            gap-[56px]
-
-            lg:grid-cols-[520px_minmax(0,1fr)]
-            lg:gap-[90px]
+            lg:grid-cols-[560px_1fr]
+            lg:items-center
           "
         >
           {/* LEFT SIDE */}
-          <div
-            className="
-              relative
-
-              w-full
-              max-w-[520px]
-
-              mx-auto
-              lg:mx-0
-            "
-          >
-            {/* BACK IMAGE */}
+          <div className="relative">
             <div
               className="
                 relative
-                h-[360px]
-                w-[78%]
                 overflow-hidden
-                rounded-[22px]
+                rounded-[34px]
 
-                sm:h-[430px]
+                h-[230px]
 
-                md:h-[470px]
+                sm:h-[270px]
+
+                md:h-[310px]
 
                 lg:h-[520px]
               "
             >
               <img
                 src="/image-01.png"
-                alt="Office"
+                alt="About"
                 className="
                   h-full
                   w-full
@@ -79,19 +43,22 @@ export default function AboutSection() {
               />
             </div>
 
-            {/* FRONT IMAGE */}
             <div
               className="
                 absolute
-                bottom-[-16px]
-                right-0
+                bottom-[-14px]
+                right-[-6px]
 
-                h-[220px]
-                w-[62%]
                 overflow-hidden
-                rounded-[20px]
+                rounded-[28px]
 
-                shadow-[0_24px_60px_rgba(0,0,0,0.14)]
+                border-[8px]
+                border-white
+
+                h-[210px]
+                w-[180px]
+
+                shadow-[0_20px_50px_rgba(0,0,0,0.14)]
 
                 sm:h-[270px]
 
@@ -138,7 +105,7 @@ export default function AboutSection() {
                 text-[#0B2A34]
               "
             >
-              О компании
+              {t("about_label")}
             </div>
 
             {/* TITLE */}
@@ -154,7 +121,7 @@ export default function AboutSection() {
                 text-[#0B2A34]
               "
             >
-              ЭКСПЕРТНОЕ СОПРОВОЖДЕНИЕ В СФЕРЕ ФАРМАЦЕВТИКИ И МЕДИЦИНСКИХ ТЕХНОЛОГИЙ
+              {t("about_title")}
             </h2>
 
             {/* DESCRIPTION */}
@@ -169,9 +136,7 @@ export default function AboutSection() {
                 text-[#6B7A80]
               "
             >
-              Maxipharm expert специализируется на профессиональном сопровождении
-              регистрации лекарственных средств, медицинских изделий и
-              сопутствующей продукции на территории Республики Узбекистан
+              {t("about_description")}
             </p>
 
             {/* LIST */}
@@ -183,9 +148,9 @@ export default function AboutSection() {
               "
             >
               {[
-                "Экспертиза со стороны специалистов с опытом работы более 20 лет",
-                "Полный цикл сопровождения регистрации",
-                "Более 80 зарегистрированных наименований препаратов в 2025 году",
+                t("about_item_1"),
+                t("about_item_2"),
+                t("about_item_3"),
               ].map((item) => (
                 <div
                   key={item}
@@ -194,7 +159,6 @@ export default function AboutSection() {
                     gap-[12px]
                   "
                 >
-                  {/* ICON */}
                   <svg
                     className="mt-[2px] shrink-0"
                     width="18"
@@ -211,7 +175,6 @@ export default function AboutSection() {
                     />
                   </svg>
 
-                  {/* TEXT */}
                   <p
                     className="
                       text-[16px]
@@ -254,7 +217,7 @@ export default function AboutSection() {
                   hover:bg-[#159764]
                 "
               >
-                Услуги
+                {t("services")}
               </a>
 
               <a
@@ -276,7 +239,7 @@ export default function AboutSection() {
                   hover:bg-[#123844]
                 "
               >
-                Контакт
+                {t("contacts")}
               </a>
             </div>
           </div>

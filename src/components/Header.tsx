@@ -1,15 +1,33 @@
 import { useEffect, useState } from "react";
-
-const navItems = [
-  { label: "О компании", href: "#about_us" },
-  { label: "Направление", href: "#key" },
-  { label: "Преимущества", href: "#why" },
-  { label: "Услуги", href: "#services" },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const { t, i18n } = useTranslation();
+
+  const navItems = [
+    {
+      label: t("about"),
+      href: "#about_us",
+    },
+
+    {
+      label: t("direction"),
+      href: "#key",
+    },
+
+    {
+      label: t("advantages"),
+      href: "#why",
+    },
+
+    {
+      label: t("services"),
+      href: "#services",
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +80,51 @@ export default function Header() {
         </a>
 
         {/* desktop nav */}
-        <div className="hidden items-center md:flex">
+        <div className="hidden items-center gap-[10px] md:flex">
+
+          {/* language switch */}
+          <div className="flex items-center gap-[6px]">
+
+            <button
+              onClick={() => i18n.changeLanguage("ru")}
+              className={`
+                rounded-full px-[12px] py-[8px]
+                text-[12px] font-[600]
+                transition-all duration-300
+
+                ${
+                  i18n.language === "ru"
+                    ? "bg-[#089A69] text-white"
+                    : scrolled
+                    ? "bg-black/5 text-[#071E22] hover:bg-black/10"
+                    : "bg-white/10 text-white hover:bg-white/20"
+                }
+              `}
+            >
+              RU
+            </button>
+
+            <button
+              onClick={() => i18n.changeLanguage("en")}
+              className={`
+                rounded-full px-[12px] py-[8px]
+                text-[12px] font-[600]
+                transition-all duration-300
+
+                ${
+                  i18n.language === "en"
+                    ? "bg-[#089A69] text-white"
+                    : scrolled
+                    ? "bg-black/5 text-[#071E22] hover:bg-black/10"
+                    : "bg-white/10 text-white hover:bg-white/20"
+                }
+              `}
+            >
+              EN
+            </button>
+
+          </div>
+
           <nav
             className={`
               relative flex h-[44px] items-center overflow-hidden
@@ -129,7 +191,7 @@ export default function Header() {
                   hover:bg-[#00D87B]
                 "
               >
-                Оставить заявку →
+                {t("request")}
               </a>
             </div>
 
@@ -243,71 +305,6 @@ export default function Header() {
             />
           </div>
         </button>
-
-        {/* mobile dropdown */}
-        <div
-          className={`
-            absolute right-[16px] top-[74px] z-[60]
-            w-[260px]
-            rounded-[26px]
-            border border-white/10
-            bg-[#0A232B]/95
-            p-[10px]
-            shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-            backdrop-blur-2xl
-            transition-all duration-300 ease-out
-            md:hidden
-
-            ${
-              open
-                ? "pointer-events-auto translate-y-0 opacity-100"
-                : "pointer-events-none translate-y-[-8px] opacity-0"
-            }
-          `}
-        >
-          <div className="flex flex-col gap-[6px]">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="
-                  rounded-[18px]
-                  px-[16px]
-                  py-[14px]
-                  text-[14px]
-                  font-[500]
-                  text-white
-                  transition-all duration-300
-                  hover:bg-white/8
-                  active:scale-[0.99]
-                "
-              >
-                {item.label}
-              </a>
-            ))}
-
-            <a
-              href="#contacts"
-              onClick={() => setOpen(false)}
-              className="
-                mt-[4px]
-                flex h-[48px]
-                items-center justify-center
-                rounded-full
-                tracking-widest
-                bg-[#089A69]
-                text-[14px]
-                font-[600]
-                text-white
-                transition-all duration-300
-                hover:bg-[#00D87B]
-              "
-            >
-              Оставить заявку →
-            </a>
-          </div>
-        </div>
       </div>
     </header>
   );

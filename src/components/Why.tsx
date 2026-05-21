@@ -1,4 +1,5 @@
 import { motion, type Transition } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 type StatItem = {
   icon: string;
@@ -7,46 +8,51 @@ type StatItem = {
   text: string;
 };
 
-const stats: StatItem[] = [
-  {
-    icon: "/icons/Group-1.png",
-    number: "80+",
-    title: "Наименований препаратов",
-    text: "Зарегистрировано специалистами компании в 2025 году, экспертного рассмотрения и полного регистрационного процесса",
-  },
-  {
-    icon: "/icons/Group-2.png",
-    number: "210 дней",
-    title: "Регистрационный процесс",
-    text: "Средний срок сопровождения регистрационного процесса в зависимости от категории продукции, объёма документации и регуляторных требований",
-  },
-  {
-    icon: "/icons/Group-3.png",
-    number: "20+ лет ",
-    title: "Профессионального опыта",
-    text: "Практический опыт руководящего состава и специалистов компании в сфере фармацевтического законодательства",
-  },
-  {
-    icon: "/icons/Group-4.png",
-    number: "Полный цикл",
-    title: "Комплексный подход",
-    text: "От анализа регистрационного досье и подготовки необходимой документации до сопровождения клинических исследований и завершения процедуры",
-  },
-];
-
 const transition: Transition = {
   duration: 0.65,
   ease: [0.22, 1, 0.36, 1],
 };
 
 export default function WhyChooseUs() {
+  const { t } = useTranslation();
+
+  const stats: StatItem[] = [
+    {
+      icon: "/icons/Group-1.png",
+      number: "80+",
+      title: t("why_card_1_title"),
+      text: t("why_card_1_text"),
+    },
+
+    {
+      icon: "/icons/Group-2.png",
+      number: "210 дней",
+      title: t("why_card_2_title"),
+      text: t("why_card_2_text"),
+    },
+
+    {
+      icon: "/icons/Group-3.png",
+      number: "20+ лет",
+      title: t("why_card_3_title"),
+      text: t("why_card_3_text"),
+    },
+
+    {
+      icon: "/icons/Group-4.png",
+      number: t("why_card_4_number"),
+      title: t("why_card_4_title"),
+      text: t("why_card_4_text"),
+    },
+  ];
+
   return (
     <section
       className="
-        w-full 
+        w-full
         overflow-hidden
-        bg-[#0B2A34] 
-        
+        bg-[#0B2A34]
+
         px-[22px]
         py-[80px]
 
@@ -64,9 +70,9 @@ export default function WhyChooseUs() {
     >
       <div
         className="
-          mx-auto 
+          mx-auto
           w-full
-          max-w-[1440px] 
+          max-w-[1440px]
 
           mt-[20px]
           sm:mt-[35px]
@@ -81,17 +87,17 @@ export default function WhyChooseUs() {
           viewport={{ once: false, amount: 0.55 }}
           transition={transition}
           className="
-            mx-auto 
-            mb-[24px] 
+            mx-auto
+            mb-[24px]
 
-            flex 
-            w-fit 
-            items-center 
-            justify-center 
+            flex
+            w-fit
+            items-center
+            justify-center
 
-            rounded-[18px] 
-            border 
-            border-white/45 
+            rounded-[18px]
+            border
+            border-white/45
 
             h-[40px]
             sm:h-[42px]
@@ -102,11 +108,11 @@ export default function WhyChooseUs() {
             text-[14px]
             sm:text-[17px]
 
-            font-medium 
+            font-medium
             text-white
           "
         >
-          Почему выбирают нас
+          {t("why_label")}
         </motion.div>
 
         {/* TITLE */}
@@ -117,24 +123,22 @@ export default function WhyChooseUs() {
           viewport={{ once: false, amount: 0.55 }}
           transition={{ ...transition, delay: 0.06 }}
           className="
-            mx-auto 
-            max-w-[850px] 
+            mx-auto
+            max-w-[850px]
 
-            text-center 
-            font-bold 
-            uppercase 
+            text-center
+            font-bold
+            uppercase
 
-            leading-[1.2] 
-            tracking-[-0.03em] 
+            leading-[1.2]
+            tracking-[-0.03em]
             text-white
 
             text-[24px]
             sm:text-[28px]
           "
         >
-          МЫ ПРЕДОСТАВЛЯЕМ ЭКСПЕРТНЫЕ РЕШЕНИЯ
-          <br />
-          ДЛЯ КОМПАНИЙ ФАРМАЦЕВТИЧЕСКОЙ ОТРАСЛИ
+          {t("why_title")}
         </motion.h2>
 
         {/* CARDS */}
@@ -143,8 +147,8 @@ export default function WhyChooseUs() {
           className="
             mt-[40px]
 
-            grid 
-            grid-cols-1 
+            grid
+            grid-cols-1
 
             gap-[20px]
 
@@ -162,7 +166,7 @@ export default function WhyChooseUs() {
           {stats.map((item, index) => {
             return (
               <motion.div
-                key={item.number}
+                key={item.title}
                 initial={{ opacity: 0, y: 38, scale: 0.96 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: false, amount: 0.35 }}
@@ -176,14 +180,14 @@ export default function WhyChooseUs() {
                   boxShadow: "0 22px 42px rgba(0,0,0,0.22)",
                 }}
                 className="
-                  flex 
-                  flex-col 
-                  items-center 
+                  flex
+                  flex-col
+                  items-center
 
-                  text-center 
+                  text-center
 
-                  rounded-[14px] 
-                  bg-white 
+                  rounded-[14px]
+                  bg-white
 
                   shadow-[0_12px_28px_rgba(0,0,0,0.18)]
 
@@ -205,7 +209,7 @@ export default function WhyChooseUs() {
                   alt=""
                   aria-hidden="true"
                   className="
-                    mb-[18px] 
+                    mb-[18px]
 
                     h-[46px]
                     w-[46px]
@@ -226,7 +230,7 @@ export default function WhyChooseUs() {
                     text-[24px]
                     sm:text-[26px]
 
-                    font-[500] 
+                    font-[500]
                     leading-[1.05]
                   "
                 >
@@ -237,16 +241,16 @@ export default function WhyChooseUs() {
 
                 <div
                   className="
-                    mt-[8px] 
+                    mt-[8px]
 
-                    whitespace-pre-line 
+                    whitespace-pre-line
 
                     text-[#3C555D]
 
                     text-[18px]
                     sm:text-[20px]
 
-                    font-[500] 
+                    font-[500]
                     leading-[1.08]
                   "
                 >
@@ -266,7 +270,7 @@ export default function WhyChooseUs() {
                     text-[14px]
                     sm:text-[15px]
 
-                    font-medium 
+                    font-medium
                     leading-[1.45]
                   "
                 >

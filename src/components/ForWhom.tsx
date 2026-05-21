@@ -1,19 +1,25 @@
+import { useTranslation } from "react-i18next";
+
 export default function CompaniesSection() {
+  const { t } = useTranslation();
+
   const cards = [
     {
       icon: "/icons/icon-pill.svg.png",
-      title: "Фармацевтические компании",
-      text: "Производители лекарственных средств и фармацевтической продукции",
+      title: t("companies_card_1_title"),
+      text: t("companies_card_1_text"),
     },
+
     {
       icon: "/icons/icon-device.svg.png",
-      title: "Производители медицинских изделий",
-      text: "Компании в сфере производства медицинской техники, медицинских изделий",
+      title: t("companies_card_2_title"),
+      text: t("companies_card_2_text"),
     },
+
     {
       icon: "/icons/icon-document.svg.png",
-      title: "Компании фармацевтической отрасли",
-      text: "Производители БАДов, косметической продукции и сопутствующих товаров",
+      title: t("companies_card_3_title"),
+      text: t("companies_card_3_text"),
     },
   ];
 
@@ -47,6 +53,7 @@ export default function CompaniesSection() {
       >
         {/* TOP */}
         <div className="text-center">
+
           {/* LABEL */}
           <div
             className="
@@ -62,7 +69,7 @@ export default function CompaniesSection() {
               text-[#0B2A34]
             "
           >
-            Для кого мы работаем
+            {t("companies_label")}
           </div>
 
           {/* TITLE */}
@@ -80,7 +87,7 @@ export default function CompaniesSection() {
               text-[#0B2A34]
             "
           >
-            МЫ ПРЕДОСТАВЛЯЕМ ЭКСПЕРТНЫЕ РЕШЕНИЯ ДЛЯ КОМПАНИЙ ФАРМАЦЕВТИЧЕСКОЙ ОТРАСЛИ
+            {t("companies_title")}
           </h2>
         </div>
 

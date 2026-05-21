@@ -1,13 +1,16 @@
 import type { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 type HeroProps = {
   children: ReactNode;
 };
 
 export default function Hero({ children }: HeroProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="p-2">
-      <section className="relative h-[68svh] p-3 min-h-[560px] w-full overflow-hidden rounded-[22px] bg-[#071E22] md:h-[calc(100vh-40px)] md:min-h-[700px] md:max-h-[980px]">
+      <section className="relative h-[68svh] min-h-[560px] w-full overflow-hidden rounded-[22px] bg-[#071E22] p-3 md:h-[calc(100vh-40px)] md:min-h-[700px] md:max-h-[980px]">
         <img
           src="/hero.png"
           alt="Hero"
@@ -29,19 +32,18 @@ export default function Hero({ children }: HeroProps) {
         <div className="relative z-20 flex h-full items-end px-[18px] pb-[26px] pt-[120px] sm:px-[24px] sm:pb-[34px] md:items-center md:px-[34px] md:pb-0 md:pt-[25px]">
           <div className="w-full max-w-[1130px]">
             <h4 className="max-w-[320px] text-[clamp(26px,7vw,46px)] font-bold uppercase leading-[1.15] tracking-[-0.045em] text-white sm:max-w-[500px] md:max-w-[750px]">
-              Экспертное сопровождение регистрации фармацевтической продукции
+              {t("hero_title")}
             </h4>
 
             <p className="mt-[12px] max-w-[320px] text-[clamp(13px,3.8vw,20px)] font-medium leading-[1.35] text-white/90 sm:max-w-[430px] md:mt-[14px] md:max-w-[700px]">
-              От подготовки регистрационного досье до полного сопровождения
-              процедуры регистрации и клинических исследований
+              {t("hero_description")}
             </p>
 
             <a
               href="#contacts"
               className="mt-[30px] inline-flex rounded-3xl bg-[#0B2A34] px-[28px] py-[11px] text-[15px] font-medium text-white shadow-[0_10px_24px_rgba(0,0,0,.18)] transition hover:bg-[#007935] md:px-[30px] md:py-[14px] md:text-[20px]"
             >
-              Получить консультацию
+              {t("consultation")}
             </a>
           </div>
         </div>
