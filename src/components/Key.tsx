@@ -15,30 +15,27 @@ export default function PriorityDirections() {
   const items: Item[] = [
     {
       icon: "/icons/icon-1.png",
-      title: t("priority_card_1_title"),
-      short: t("priority_card_1_short"),
-      extra: t("priority_card_1_extra"),
+      title: t("priority.card_1_title"),
+      short: t("priority.card_1_short"),
+      extra: t("priority.card_1_extra"),
     },
-
     {
       icon: "/icons/icon-2.png",
-      title: t("priority_card_2_title"),
-      short: t("priority_card_2_short"),
-      extra: t("priority_card_2_extra"),
+      title: t("priority.card_2_title"),
+      short: t("priority.card_2_short"),
+      extra: t("priority.card_2_extra"),
     },
-
     {
       icon: "/icons/icon-3.png",
-      title: t("priority_card_3_title"),
-      short: t("priority_card_3_short"),
-      extra: t("priority_card_3_extra"),
+      title: t("priority.card_3_title"),
+      short: t("priority.card_3_short"),
+      extra: t("priority.card_3_extra"),
     },
-
     {
       icon: "/icons/icon 4.png",
-      title: t("priority_card_4_title"),
-      short: t("priority_card_4_short"),
-      extra: t("priority_card_4_extra"),
+      title: t("priority.card_4_title"),
+      short: t("priority.card_4_short"),
+      extra: t("priority.card_4_extra"),
     },
   ];
 
@@ -50,10 +47,8 @@ export default function PriorityDirections() {
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
-
     checkMobile();
     window.addEventListener("resize", checkMobile);
-
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
@@ -63,12 +58,7 @@ export default function PriorityDirections() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [80, -80]);
-
-  const scale = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [0.97, 1, 0.97]
-  );
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.97]);
 
   return (
     <motion.section
@@ -76,18 +66,10 @@ export default function PriorityDirections() {
       style={isMobile ? undefined : { y, scale }}
       className="
         relative w-full overflow-hidden bg-white
-
-        px-[22px]
-        py-[72px]
-
+        px-[22px] py-[72px]
         sm:px-[28px]
-
-        md:px-[46px]
-        md:pt-[85px]
-        md:pb-[70px]
-
+        md:px-[46px] md:pt-[85px] md:pb-[70px]
         lg:px-[64px]
-
         xl:px-[80px]
       "
     >
@@ -97,36 +79,23 @@ export default function PriorityDirections() {
         viewport={{ once: true, amount: isMobile ? 0.08 : 0.18 }}
         transition={{ duration: isMobile ? 0.55 : 0.85, ease: smooth }}
         className="
-          mx-auto
-          mt-[50px]
-          w-full
-          max-w-[1440px]
-          transform-gpu
-          will-change-transform
+          mx-auto mt-[50px] w-full max-w-[1440px]
+          transform-gpu will-change-transform
         "
       >
         <div className="mx-auto mb-[22px] flex h-[34px] w-fit items-center justify-center rounded-[16px] border border-[#D6DCDD] bg-white px-[24px] text-[15px] font-medium text-[#0B2A35]">
-          {t("priority_label")}
+          {t("priority.label")}
         </div>
 
         <h2 className="mx-auto mt-[20px] max-w-[800px] text-center text-[16px] font-bold uppercase leading-[1.12] tracking-[-0.025em] text-[#0B2A35] md:text-[30px] md:leading-[1.2]">
-          {t("priority_title")}
+          {t("priority.title")}
         </h2>
 
         <div
           className="
-            relative mx-auto
-            mt-[34px]
-            grid
-            w-full
-            max-w-[1440px]
-
-            grid-cols-1
-            gap-x-[32px]
-            gap-y-[20px]
-
-            md:grid-cols-2
-            md:gap-y-[28px]
+            relative mx-auto mt-[34px] grid w-full max-w-[1440px]
+            grid-cols-1 gap-x-[32px] gap-y-[20px]
+            md:grid-cols-2 md:gap-y-[28px]
           "
         >
           {items.map((item, index) => {
@@ -176,7 +145,6 @@ export default function PriorityDirections() {
 
                     <p className="mt-[12px] max-w-[430px] text-[15px] leading-[1.34] text-[#6F7377] md:mt-[10px] md:text-[14px] md:leading-[1.28]">
                       {item.short}
-
                       <span
                         className={[
                           "inline transition-opacity duration-[500ms] ease-out",
@@ -200,7 +168,7 @@ export default function PriorityDirections() {
                       : "translate-y-0 opacity-100",
                   ].join(" ")}
                 >
-                  {t("read_more")} →
+                  {t("priority.read_more")} →
                 </a>
               </button>
             );

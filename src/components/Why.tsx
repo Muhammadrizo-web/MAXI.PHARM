@@ -20,102 +20,63 @@ export default function WhyChooseUs() {
     {
       icon: "/icons/Group-1.png",
       number: "80+",
-      title: t("why_card_1_title"),
-      text: t("why_card_1_text"),
+      title: t("why.card_1_title"),
+      text: t("why.card_1_text"),
     },
-
     {
       icon: "/icons/Group-2.png",
-      number: "210 дней",
-      title: t("why_card_2_title"),
-      text: t("why_card_2_text"),
+      number: t("why.card_2_number"),
+      title: t("why.card_2_title"),
+      text: t("why.card_2_text"),
     },
-
     {
       icon: "/icons/Group-3.png",
-      number: "20+ лет",
-      title: t("why_card_3_title"),
-      text: t("why_card_3_text"),
+      number: t("why.card_3_number"),
+      title: t("why.card_3_title"),
+      text: t("why.card_3_text"),
     },
-
     {
       icon: "/icons/Group-4.png",
-      number: t("why_card_4_number"),
-      title: t("why_card_4_title"),
-      text: t("why_card_4_text"),
+      number: t("why.card_4_number"),
+      title: t("why.card_4_title"),
+      text: t("why.card_4_text"),
     },
   ];
 
   return (
     <section
       className="
-        w-full
-        overflow-hidden
-        bg-[#0B2A34]
-
-        px-[22px]
-        py-[80px]
-
-        sm:px-[28px]
-        sm:py-[90px]
-
-        md:px-[46px]
-        md:py-[110px]
-
-        lg:px-[64px]
-        lg:py-[120px]
-
+        w-full overflow-hidden bg-[#0B2A34]
+        px-[22px] py-[80px]
+        sm:px-[28px] sm:py-[90px]
+        md:px-[46px] md:py-[110px]
+        lg:px-[64px] lg:py-[120px]
         xl:px-[80px]
       "
     >
       <div
         className="
-          mx-auto
-          w-full
-          max-w-[1440px]
-
-          mt-[20px]
-          sm:mt-[35px]
-          lg:mt-[50px]
+          mx-auto w-full max-w-[1440px]
+          mt-[20px] sm:mt-[35px] lg:mt-[50px]
         "
       >
-        {/* TOP TAG */}
-
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.55 }}
           transition={transition}
           className="
-            mx-auto
-            mb-[24px]
-
-            flex
-            w-fit
-            items-center
-            justify-center
-
-            rounded-[18px]
-            border
-            border-white/45
-
-            h-[40px]
-            sm:h-[42px]
-
-            px-[20px]
-            sm:px-[30px]
-
-            text-[14px]
-            sm:text-[17px]
-
-            font-medium
-            text-white
+            mx-auto mb-[24px]
+            flex w-fit items-center justify-center
+            rounded-[18px] border border-white/45
+            h-[40px] sm:h-[42px]
+            px-[20px] sm:px-[30px]
+            text-[14px] sm:text-[17px]
+            font-medium text-white
           "
         >
-          {t("why_label")}
+          {t("why.label")}
         </motion.div>
-
-        {/* TITLE */}
 
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
@@ -123,162 +84,69 @@ export default function WhyChooseUs() {
           viewport={{ once: false, amount: 0.55 }}
           transition={{ ...transition, delay: 0.06 }}
           className="
-            mx-auto
-            max-w-[850px]
-
-            text-center
-            font-bold
-            uppercase
-
-            leading-[1.2]
-            tracking-[-0.03em]
-            text-white
-
-            text-[24px]
-            sm:text-[28px]
+            mx-auto max-w-[850px]
+            text-center font-bold uppercase
+            leading-[1.2] tracking-[-0.03em] text-white
+            text-[24px] sm:text-[28px]
           "
         >
-          {t("why_title")}
+          {t("why.title")}
         </motion.h2>
-
-        {/* CARDS */}
 
         <div
           className="
-            mt-[40px]
-
-            grid
-            grid-cols-1
-
-            gap-[20px]
-
-            justify-items-center
-
-            sm:grid-cols-2
-            sm:gap-[24px]
-
+            mt-[40px] grid grid-cols-1 gap-[20px] justify-items-center
+            sm:grid-cols-2 sm:gap-[24px]
             md:grid-cols-2
-
-            lg:grid-cols-4
-            lg:gap-[30px]
+            lg:grid-cols-4 lg:gap-[30px]
           "
         >
-          {stats.map((item, index) => {
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 38, scale: 0.96 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.35 }}
-                transition={{
-                  ...transition,
-                  delay: index * 0.08,
-                }}
-                whileHover={{
-                  y: -8,
-                  scale: 1.015,
-                  boxShadow: "0 22px 42px rgba(0,0,0,0.22)",
-                }}
+          {stats.map((item, index) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 38, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.35 }}
+              transition={{ ...transition, delay: index * 0.08 }}
+              whileHover={{
+                y: -8,
+                scale: 1.015,
+                boxShadow: "0 22px 42px rgba(0,0,0,0.22)",
+              }}
+              className="
+                flex flex-col items-center text-center
+                rounded-[14px] bg-white
+                shadow-[0_12px_28px_rgba(0,0,0,0.18)]
+                px-[16px] py-[22px]
+                w-full max-w-[320px] min-h-[260px]
+                lg:w-[270px]
+              "
+            >
+              <img
+                src={item.icon}
+                alt=""
+                aria-hidden="true"
                 className="
-                  flex
-                  flex-col
-                  items-center
-
-                  text-center
-
-                  rounded-[14px]
-                  bg-white
-
-                  shadow-[0_12px_28px_rgba(0,0,0,0.18)]
-
-                  px-[16px]
-                  py-[22px]
-
-                  w-full
-                  max-w-[320px]
-
-                  min-h-[260px]
-
-                  lg:w-[270px]
+                  mb-[18px]
+                  h-[46px] w-[46px]
+                  sm:h-[50px] sm:w-[50px]
+                  object-contain
                 "
-              >
-                {/* ICON */}
+              />
 
-                <img
-                  src={item.icon}
-                  alt=""
-                  aria-hidden="true"
-                  className="
-                    mb-[18px]
+              <div className="text-[#0B2A34] text-[24px] sm:text-[26px] font-[500] leading-[1.05]">
+                {item.number}
+              </div>
 
-                    h-[46px]
-                    w-[46px]
+              <div className="mt-[8px] whitespace-pre-line text-[#3C555D] text-[18px] sm:text-[20px] font-[500] leading-[1.08]">
+                {item.title}
+              </div>
 
-                    sm:h-[50px]
-                    sm:w-[50px]
-
-                    object-contain
-                  "
-                />
-
-                {/* NUMBER */}
-
-                <div
-                  className="
-                    text-[#0B2A34]
-
-                    text-[24px]
-                    sm:text-[26px]
-
-                    font-[500]
-                    leading-[1.05]
-                  "
-                >
-                  {item.number}
-                </div>
-
-                {/* TITLE */}
-
-                <div
-                  className="
-                    mt-[8px]
-
-                    whitespace-pre-line
-
-                    text-[#3C555D]
-
-                    text-[18px]
-                    sm:text-[20px]
-
-                    font-[500]
-                    leading-[1.08]
-                  "
-                >
-                  {item.title}
-                </div>
-
-                {/* TEXT */}
-
-                <p
-                  className="
-                    mt-[18px]
-
-                    max-w-[240px]
-
-                    text-[#5C6670]
-
-                    text-[14px]
-                    sm:text-[15px]
-
-                    font-medium
-                    leading-[1.45]
-                  "
-                >
-                  {item.text}
-                </p>
-              </motion.div>
-            );
-          })}
+              <p className="mt-[18px] max-w-[240px] text-[#5C6670] text-[14px] sm:text-[15px] font-medium leading-[1.45]">
+                {item.text}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

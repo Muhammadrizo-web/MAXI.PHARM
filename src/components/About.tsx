@@ -105,7 +105,7 @@ export default function AboutSection() {
                 text-[#0B2A34]
               "
             >
-              {t("about_label")}
+              {t("about.label")}
             </div>
 
             {/* TITLE */}
@@ -121,7 +121,7 @@ export default function AboutSection() {
                 text-[#0B2A34]
               "
             >
-              {t("about_title")}
+              {t("about.title")}
             </h2>
 
             {/* DESCRIPTION */}
@@ -136,7 +136,7 @@ export default function AboutSection() {
                 text-[#6B7A80]
               "
             >
-              {t("about_description")}
+              {t("about.description")}
             </p>
 
             {/* LIST */}
@@ -148,9 +148,9 @@ export default function AboutSection() {
               "
             >
               {[
-                t("about_item_1"),
-                t("about_item_2"),
-                t("about_item_3"),
+                t("about.item_1"),
+                t("about.item_2"),
+                t("about.item_3"),
               ].map((item) => (
                 <div
                   key={item}
@@ -198,6 +198,7 @@ export default function AboutSection() {
                 gap-[14px]
               "
             >
+              
               <a
                 href="#services"
                 className="
@@ -217,7 +218,7 @@ export default function AboutSection() {
                   hover:bg-[#159764]
                 "
               >
-                {t("services")}
+                {t("nav.services")}
               </a>
 
               <a
@@ -239,7 +240,7 @@ export default function AboutSection() {
                   hover:bg-[#123844]
                 "
               >
-                {t("contacts")}
+                {t("nav.contacts")}
               </a>
             </div>
           </div>

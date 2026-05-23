@@ -1,74 +1,234 @@
 {
-  "about": "About",
-  "direction": "Direction",
-  "advantages": "Advantages",
-  "services": "Services",
-  "request": "Leave request →",
-  "hero_title": "Expert support for pharmaceutical product registration",
-  "hero_description": "From preparation of registration dossiers to full support of registration procedures and clinical research",
-  "consultation": "Get consultation",
-  "example_title": "Pharmaceutical Product Registration",
-  "example_description": "Full support for registration of medicines and medical devices in the Republic of Uzbekistan.",
-  "example_button": "Learn More",
-   "about_label": "About company",
-  "about_title": "EXPERT SUPPORT IN THE FIELD OF PHARMACEUTICALS AND MEDICAL TECHNOLOGIES",
-  "about_description": "Maxipharm expert specializes in professional support for registration of medicines, medical devices and related products in the Republic of Uzbekistan",
-
-  "about_item_1": "Expertise from specialists with more than 20 years of experience",
-  "about_item_2": "Full registration support cycle",
-  "about_item_3": "More than 80 registered pharmaceutical products in 2025",
-
-  "contacts": "Contact",
-  "companies_label": "Who we work with",
-
-  "companies_title": "WE PROVIDE EXPERT SOLUTIONS FOR PHARMACEUTICAL INDUSTRY COMPANIES",
-
-  "companies_card_1_title": "Pharmaceutical Companies",
-  "companies_card_1_text": "Manufacturers of medicines and pharmaceutical products",
-
-  "companies_card_2_title": "Medical Device Manufacturers",
-  "companies_card_2_text": "Companies producing medical equipment and medical devices",
-
-  "companies_card_3_title": "Pharmaceutical Industry Companies",
-  "companies_card_3_text": "Manufacturers of dietary supplements, cosmetics and related products",
-  "priority_label": "Priority Directions",
-
-  "priority_title": "KEY DIRECTIONS OF EXPERT SUPPORT IN THE FIELD OF PHARMACEUTICAL REGISTRATION",
-
-  "priority_card_1_title": "REGISTRATION OF MEDICINES",
-  "priority_card_1_short": "Preparation, formation and comprehensive support of registration dossier",
-  "priority_card_1_extra": " in accordance with the established requirements of authorized bodies, including documentation analysis, structuring of materials and support at all stages of the registration process",
-
-  "priority_card_2_title": "REGISTRATION OF MEDICAL DEVICES",
-  "priority_card_2_short": "Formation of a complete registration dossier with further professional support",
-  "priority_card_2_extra": ", in accordance with current regulatory requirements, including preparation of necessary documentation, expert analysis and support during the review process",
-
-  "priority_card_3_title": "CLINICAL RESEARCH",
-  "priority_card_3_short": "Comprehensive preparation and support of registration dossier considering current requirements",
-  "priority_card_3_extra": ", including systematization of documents, verification of completeness and support of interaction with authorized bodies at all review stages",
-
-  "priority_card_4_title": "PREPARATION OF REGISTRATION DOSSIER (CTD)",
-  "priority_card_4_short": "Formation of a complete registration dossier according to regulatory requirements",
-  "priority_card_4_extra": ", ensuring completeness of documentation, correctness of оформления and support of the registration process until the final decision is received.",
-
-  "read_more": "Read more",
-  
-  "why_label": "Why Choose Us",
-
-  "why_title": "WE PROVIDE EXPERT SOLUTIONS FOR PHARMACEUTICAL INDUSTRY COMPANIES",
-
-  "why_card_1_title": "Registered Products",
-  "why_card_1_text": "Registered by the company specialists in 2025, including expert review and full registration process",
-
-  "why_card_2_title": "Registration Process",
-  "why_card_2_text": "Average duration of registration support depending on product category, documentation volume and regulatory requirements",
-
-  "why_card_3_title": "Years of Professional Experience",
-  "why_card_3_text": "Practical experience of company management and specialists in pharmaceutical legislation",
-
-  "why_card_4_number": "Full Cycle",
-  "why_card_4_title": "Comprehensive Approach",
-  "why_card_4_text": "From registration dossier analysis and documentation preparation to support of clinical trials and completion of the registration process"
-
+  "nav": {
+    "about": "About",
+    "direction": "Services",
+    "advantages": "Advantages",
+    "services": "Solutions",
+    "contacts": "Contact",
+    "request": "Submit a Request →"
+  },
+  "hero": {
+    "title": "Expert Support for Pharmaceutical Product Registration",
+    "description": "From registration dossier preparation to full support of the registration procedure and clinical trials",
+    "consultation": "Get a Consultation"
+  },
+  "about": {
+    "label": "About Us",
+    "title": "EXPERT SUPPORT IN PHARMACEUTICALS AND MEDICAL TECHNOLOGIES",
+    "description": "Maxipharm Expert specializes in professional support for the registration of medicines, medical devices, and related products in the Republic of Uzbekistan",
+    "item_1": "Expertise from specialists with over 20 years of experience",
+    "item_2": "Full-cycle registration support",
+    "item_3": "Over 80 registered drug names in 2025"
+  },
+  "companies": {
+    "label": "Who We Work With",
+    "title": "WE PROVIDE EXPERT SOLUTIONS FOR COMPANIES IN THE PHARMACEUTICAL INDUSTRY",
+    "card_1_title": "Pharmaceutical Companies",
+    "card_1_text": "Manufacturers of medicines and pharmaceutical products",
+    "card_2_title": "Medical Device Manufacturers",
+    "card_2_text": "Companies involved in the production of medical equipment and devices",
+    "card_3_title": "Pharmaceutical Industry Companies",
+    "card_3_text": "Manufacturers of dietary supplements, cosmetic products, and related goods"
+  },
+  "priority": {
+    "label": "Priority Areas",
+    "title": "KEY AREAS OF EXPERT SUPPORT IN PHARMACEUTICAL REGISTRATION",
+    "read_more": "Read More",
+    "card_1_title": "DRUG REGISTRATION",
+    "card_1_short": "Preparation, formation, and comprehensive support of the registration dossier",
+    "card_1_extra": " in accordance with the requirements of the competent authorities, including document analysis, material structuring, and support at all stages of the registration process",
+    "card_2_title": "MEDICAL DEVICE REGISTRATION",
+    "card_2_short": "Formation of a complete registration dossier with subsequent professional support",
+    "card_2_extra": ", in accordance with current regulatory requirements, including preparation of necessary documentation, expert analysis, and support throughout the review process",
+    "card_3_title": "CLINICAL TRIALS",
+    "card_3_short": "Comprehensive preparation and support of the registration dossier in accordance with current requirements",
+    "card_3_extra": ", including document systematization, completeness verification, and support of interaction with competent authorities at all review stages",
+    "card_4_title": "REGISTRATION DOSSIER PREPARATION (CTD)",
+    "card_4_short": "Formation of a complete registration dossier in accordance with the requirements of the competent authorities",
+    "card_4_extra": ", ensuring completeness of documentation, correct formatting, and support of the registration process until the final decision is obtained."
+  },
+  "why": {
+    "card_2_number": "210 Days",
+    "card_3_number": "20+ Years",
+    "label": "Why Choose Us",
+    "title": "WE PROVIDE EXPERT SOLUTIONS FOR COMPANIES IN THE PHARMACEUTICAL INDUSTRY",
+    "card_1_title": "Drug Names Registered",
+    "card_1_text": "Registered by company specialists in 2025, including expert review and full registration process",
+    "card_2_title": "Registration Process",
+    "card_2_text": "Average duration of registration support depending on product category, documentation volume, and regulatory requirements",
+    "card_3_title": "Years of Professional Experience",
+    "card_3_text": "Practical experience of the company's management and specialists in pharmaceutical legislation",
+    "card_4_number": "Full Cycle",
+    "card_4_title": "Comprehensive Approach",
+    "card_4_text": "From registration dossier analysis and document preparation to clinical trial support and procedure completion"
+  },
+  "services": {
+    "badge": "Our Services",
+    "title": "COMPREHENSIVE REGULATORY SUPPORT\nFOR PHARMACEUTICAL PRODUCTS",
+    "subtitle": "Professional support at every stage of registration — from document preparation to obtaining approval",
+    "more": "Learn more →",
+    "items": {
+      "drug-registration": {
+        "title": "DRUG\nREGISTRATION",
+        "text": "Comprehensive support for drug registration at all stages of document preparation and submission..."
+      },
+      "medical-registration": {
+        "title": "MEDICAL DEVICE\nREGISTRATION",
+        "text": "Professional support for medical device registration in accordance with current regulatory requirements..."
+      },
+      "bad-registration": {
+        "title": "DIETARY SUPPLEMENT\nREGISTRATION",
+        "text": "Preparation and support of the registration process for dietary supplements in full compliance with all requirements..."
+      },
+      "cosmetics-registration": {
+        "title": "COSMETIC PRODUCT\nREGISTRATION",
+        "text": "Support for the registration of therapeutic and cosmetic products in accordance with established requirements..."
+      },
+      "clinical-research": {
+        "title": "CLINICAL\nTRIALS",
+        "text": "Organization and support of clinical trials within the registration process in full compliance with regulatory requirements..."
+      },
+      "regulatory-consulting": {
+        "title": "REGULATORY\nCONSULTING",
+        "text": "Expert guidance on legislation, registration dossier preparation, and regulatory support..."
+      }
+    }
+  },
+  "process": {
+    "badge": "How We Work",
+    "title": "Step-by-Step Registration\nProcess Support",
+    "subtitle": "A systematic approach to regulatory procedures — from initial document review to obtaining the final registration decision",
+    "steps": {
+      "1": { "title": "Dossier Analysis", "text": "Initial review of provided documentation, assessment of material completeness, and determination of the registration support strategy" },
+      "2": { "title": "Dossier Preparation", "text": "Preparation, structuring, and formatting of the registration dossier in accordance with the requirements of the competent authorities" },
+      "3": { "title": "Submission for Review", "text": "Organization of the full registration package submission to the authorized government body, with support throughout the review procedure" },
+      "4": { "title": "Registration Support", "text": "Comprehensive support throughout the registration process at all stages of expert review and interaction with relevant regulatory bodies" },
+      "5": { "title": "Registration with the Ministry of Health of Uzbekistan", "text": "Completion of the registration process, obtaining the registration decision, and official product registration in accordance with established procedures" },
+      "6": { "title": "Clinical Trials", "text": "Organization and support of clinical trials within the registration process in accordance with current regulatory requirements" }
+    }
+  },
+  "faq": {
+  "badge": "How We Work",
+  "default_title": "FREQUENTLY ASKED QUESTIONS",
+  "default_text": "Answers to the most common questions about the registration process, support timelines, and working with our company",
+  "1": {
+    "question": "How long does product registration take?",
+    "answer": "The registration process typically takes between 6 and 24 months depending on the product category, completeness of the registration dossier, the need for additional studies, and current regulatory requirements.",
+    "leftTitle": "REGISTRATION TIMELINES",
+    "leftText": "We assess the documentation, product category, and possible approval stages in advance so the client understands the realistic registration path."
+  },
+  "2": {
+    "question": "What product categories does MAXIPHARM work with?",
+    "answer": "The company supports registration of medicines, medical devices, dietary supplements, and cosmetic products, and provides expert support on clinical trial matters.",
+    "leftTitle": "PRODUCT CATEGORIES",
+    "leftText": "MAXIPHARM supports projects in pharmaceuticals and medical technologies where precision, documentation, and regulatory expertise are critical."
+  },
+  "3": {
+    "question": "What does comprehensive support include?",
+    "answer": "Comprehensive support includes document analysis, registration dossier preparation, submission to the competent authorities, support throughout the review process, and completion of the registration procedure.",
+    "leftTitle": "FULL SUPPORT",
+    "leftText": "The client receives systematic support at every stage: from reviewing source materials to completing the registration process."
+  },
+  "4": {
+    "question": "Can I request only a specific service?",
+    "answer": "Yes. MAXIPHARM provides both full-cycle support and expert assistance for individual areas — dossier preparation, document analysis, and regulatory consultations.",
+    "leftTitle": "INDIVIDUAL SERVICES",
+    "leftText": "If you need help at just one stage, we can join a specific task without full project support."
+  },
+  "5": {
+    "question": "How does the company help reduce the risk of rejection or delays?",
+    "answer": "Through thorough document analysis, correct dossier preparation, and project support in line with current requirements, our specialists help minimize regulatory risks.",
+    "leftTitle": "RISK REDUCTION",
+    "leftText": "We identify weaknesses in documentation early and help reduce the likelihood of revisions, delays, and rejections."
+  },
+  "6": {
+    "question": "How do I start working with you?",
+    "answer": "Cooperation begins with an initial consultation, product category analysis, and assessment of the current state of documentation, after which a support strategy is developed.",
+    "leftTitle": "GETTING STARTED",
+    "leftText": "We start with an initial task analysis, then form a clear action plan, timeline, and support format."
+  }
+},
+"contact": {
+  "badge": "Start Cooperation",
+  "title": "Contact Us",
+  "address_title": "Address",
+  "address_text": "Tashkent, Yunusabad district, Yangitarnov st., 1st passage, house 12",
+  "phone_title": "Phone",
+  "email_title": "Email",
+  "form_title": "Leave your contacts",
+  "name": "First Name",
+  "surname": "Last Name",
+  "phone": "Phone Number",
+  "message": "Describe your request",
+  "submit": "Get a Consultation",
+  "sending": "Sending...",
+  "success": "Message sent!",
+  "error": "Sending error"
+},
+"footer": {
+  "menu": {
+    "title": "Menu",
+    "about": "About",
+    "services": "Services",
+    "process": "How We Work",
+    "faq": "FAQ",
+    "contacts": "Contacts"
+  },
+  "contacts": {
+    "title": "Contact Information",
+    "city": "Republic of Uzbekistan, Tashkent",
+    "street": "Yangitarnov St., 1st passage, house 12",
+    "phone": "+998 (90) 928-22-99",
+    "email": "maxipharm.reg@gmail.com"
+  },
+  "tagline": "Expert regulatory support in pharmaceuticals and medical technologies!",
+  "copyright": "© 2026 MAXIPHARM. All rights reserved.",
+  "privacy": "Privacy Policy",
+  "terms": "Terms of Use"
+},
+  "serviceDetail": {
+    "header": {
+      "title": "REGULATORY SUPPORT FOR PHARMACEUTICAL PRODUCTS",
+      "subtitle": "We help pharmaceutical companies complete the registration of medicines and medical devices — from dossier preparation to obtaining the registration certificate"
+    },
+    "tabs": {
+      "drug-registration": "Drug Registration",
+      "medical-devices": "Medical Devices",
+      "bad-registration": "Dietary Supplements",
+      "cosmetics-registration": "Cosmetic Products",
+      "clinical-research": "Clinical Trials",
+      "regulatory-consulting": "Regulatory Consulting"
+    },
+    "services": {
+      "drug-registration": {
+        "sectionTitle": "DRUG REGISTRATION",
+        "text": "Drug registration — comprehensive support for the state registration of pharmaceutical products in accordance with current regulatory requirements. The service includes preparation and formatting of the registration dossier, analysis and systematization of documentation, interaction with government authorities, expert review support, and advisory assistance at all stages of registration, re-registration, and amendments"
+      },
+      "medical-devices": {
+        "sectionTitle": "MEDICAL DEVICE REGISTRATION",
+        "text": "Full professional support for the registration of medical devices, equipment, and medical-purpose products. Includes documentation analysis, risk class determination, registration dossier preparation, organization of required testing, and interaction with regulatory authorities. We ensure compliance with legislative requirements, minimize rejection risks, and reduce registration timelines for manufacturers and suppliers"
+      },
+      "bad-registration": {
+        "sectionTitle": "DIETARY SUPPLEMENT REGISTRATION",
+        "text": "Professional support for the registration of dietary supplements (DSs) in accordance with current sanitary and regulatory requirements. Includes composition and documentation analysis, registration dossier preparation, required expert reviews, and interaction with authorized bodies. We ensure product compliance with established standards, reduce rejection risks, and accelerate the registration process for market entry"
+      },
+      "cosmetics-registration": {
+        "sectionTitle": "COSMETIC PRODUCT REGISTRATION",
+        "text": "Professional support for the registration and declaration of cosmetic products in accordance with technical regulations and sanitary requirements. Includes composition and labeling analysis, preparation of a complete documentation package, required testing, and interaction with regulatory authorities. We ensure product compliance with standards, reduce rejection risks, and accelerate market entry"
+      },
+      "clinical-research": {
+        "sectionTitle": "CLINICAL TRIALS",
+        "text": "Professional support for the planning and conduct of clinical trials of medicines and medical devices in accordance with international and national standards (GCP). Includes protocol development, documentation preparation, selection of research centers, coordination of trial processes, data quality monitoring, and interaction with regulatory authorities. We ensure correctness, transparency, and compliance of all stages with regulatory requirements for successful product registration"
+      },
+      "regulatory-consulting": {
+        "sectionTitle": "REGULATORY CONSULTING",
+        "text": "Professional guidance on product compliance with the requirements of regulatory authorities in the fields of pharmaceuticals, medical devices, dietary supplements, and cosmetics. Includes regulatory framework analysis, product and documentation assessment, development of registration and market entry strategies, and advisory support at all stages of interaction with regulators. We ensure reduction of regulatory risks, process optimization, and faster receipt of authorization documents"
+      }
+    },
+    "cta": {
+      "title": "STILL HAVE QUESTIONS?",
+      "subtitle": "Contact us — we'll find the ideal solution for your product",
+      "button": "CONTACTS"
+    }
+  }
 }
-
