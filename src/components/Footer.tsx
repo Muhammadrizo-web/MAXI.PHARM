@@ -23,6 +23,7 @@ export default function Footer() {
   const languages = [
     { code: "ru", label: "RU" },
     { code: "en", label: "EN" },
+    { code: "uz", label: "UZ" },
   ];
  
   const smooth = [0.16, 1, 0.3, 1] as const;

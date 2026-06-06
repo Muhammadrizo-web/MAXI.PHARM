@@ -1,0 +1,252 @@
+{
+  "nav": {
+    "about": "Biz haqimizda",
+    "direction": "Xizmatlar",
+    "advantages": "Afzalliklar",
+    "services": "Yechimlar",
+    "contacts": "Aloqa",
+    "request": "Ariza yuborish →"
+  },
+  "hero": {
+    "title": "Dori-darmonlarni ro'yxatdan o'tkazishda mutaxassis ko'magi",
+    "description": "Ro'yxatga olish dossiesini tayyorlashdan tortib ro'yxatdan o'tkazish tartibini va klinik sinovlarni to'liq qo'llab-quvvatlashgacha",
+    "consultation": "Maslahat olish"
+  },
+  "about": {
+    "label": "Biz haqimizda",
+    "title": "FARMATSEVTIKA VA TIBBIY TEXNOLOGIYALARDA MUTAXASSIS KO'MAGI",
+    "description": "Maxipharm Expert O'zbekiston Respublikasida dori vositalari, tibbiy buyumlar va tegishli mahsulotlarni ro'yxatdan o'tkazishni professional qo'llab-quvvatlashga ixtisoslashgan",
+    "item_1": "20 yildan ortiq tajribaga ega mutaxassislar bilimlari",
+    "item_2": "Ro'yxatdan o'tkazishni to'liq tsiklda qo'llab-quvvatlash",
+    "item_3": "2025 yilda 80 dan ortiq dori nomi ro'yxatdan o'tkazildi"
+  },
+  "companies": {
+    "label": "Biz kimlar bilan ishlaymiz",
+    "title": "FARMATSEVTIKA SANOATI KOMPANIYALARIGA MUTAXASSIS YECHIMLAR TAQDIM ETAMIZ",
+    "card_1_title": "Farmatsevtika kompaniyalari",
+    "card_1_text": "Dori vositalari va farmatsevtika mahsulotlari ishlab chiqaruvchilari",
+    "card_2_title": "Tibbiy asbob-uskunalar ishlab chiqaruvchilari",
+    "card_2_text": "Tibbiy uskuna va qurilmalar ishlab chiqarish bilan shug'ullanuvchi kompaniyalar",
+    "card_3_title": "Farmatsevtika sanoati kompaniyalari",
+    "card_3_text": "Biologik faol qo'shimchalar, kosmetik mahsulotlar va tegishli tovarlar ishlab chiqaruvchilari"
+  },
+  "priority": {
+    "label": "Ustuvor yo'nalishlar",
+    "title": "FARMATSEVTIK RO'YXATDAN O'TKAZISHDA MUTAXASSIS KO'MAGINING ASOSIY YO'NALISHLARI",
+    "read_more": "Batafsil",
+    "card_1_title": "DORI VOSITALARINI RO'YXATDAN O'TKAZISH",
+    "card_1_short": "Vakolatli organlar talablariga muvofiq ro'yxatga olish dossiesini tayyorlash, shakllantirish va har tomonlama qo'llab-quvvatlash",
+    "card_1_extra": ", hujjatlarni tahlil qilish, materiallarni tuzish va ro'yxatdan o'tkazish jarayonining barcha bosqichlarida ko'mak ko'rsatishni o'z ichiga olgan holda",
+    "card_2_title": "TIBBIY BUYUMLARNI RO'YXATDAN O'TKAZISH",
+    "card_2_short": "Joriy me'yoriy talablarga muvofiq professional qo'llab-quvvatlash bilan to'liq ro'yxatga olish dossiesini shakllantirish",
+    "card_2_extra": ", zarur hujjatlarni tayyorlash, ekspert tahlili va ko'rib chiqish jarayonida ko'mak ko'rsatishni o'z ichiga olgan holda",
+    "card_3_title": "KLINIK SINOVLAR",
+    "card_3_short": "Joriy talablarga muvofiq ro'yxatga olish dossiesini har tomonlama tayyorlash va qo'llab-quvvatlash",
+    "card_3_extra": ", hujjatlarni tizimlash, to'liqligini tekshirish va barcha ko'rib chiqish bosqichlarida vakolatli organlar bilan munosabatlarni qo'llab-quvvatlashni o'z ichiga olgan holda",
+    "card_4_title": "RO'YXATGA OLISH DOSSIESINI TAYYORLASH (CTD)",
+    "card_4_short": "Vakolatli organlar talablariga muvofiq to'liq ro'yxatga olish dossiesini shakllantirish",
+    "card_4_extra": ", hujjatlarning to'liqligi, to'g'ri rasmiylashtirilishi va yakuniy qaror olinguncha ro'yxatdan o'tkazish jarayonini qo'llab-quvvatlashni ta'minlagan holda."
+  },
+  "why": {
+    "card_2_number": "210 kun",
+    "card_3_number": "20+ yil",
+    "label": "Nima uchun biz",
+    "title": "FARMATSEVTIKA SANOATI KOMPANIYALARIGA MUTAXASSIS YECHIMLAR TAQDIM ETAMIZ",
+    "card_1_title": "Ro'yxatdan o'tkazilgan dori nomlari",
+    "card_1_text": "2025 yilda kompaniya mutaxassislari tomonidan ro'yxatdan o'tkazilgan, ekspert ko'rib chiqishi va to'liq ro'yxatdan o'tkazish jarayonini o'z ichiga olgan holda",
+    "card_2_title": "Ro'yxatdan o'tkazish jarayoni",
+    "card_2_text": "Mahsulot toifasi, hujjatlar hajmi va me'yoriy talablarga qarab ro'yxatdan o'tkazishni qo'llab-quvvatlashning o'rtacha muddati",
+    "card_3_title": "Yillik professional tajriba",
+    "card_3_text": "Kompaniya rahbariyati va mutaxassislarining farmatsevtika qonunchiligi sohasidagi amaliy tajribasi",
+    "card_4_number": "To'liq tsikl",
+    "card_4_title": "Kompleks yondashuv",
+    "card_4_text": "Ro'yxatga olish dossiesini tahlil qilish va hujjatlarni tayyorlashdan klinik sinovlarni qo'llab-quvvatlash va jarayonni yakunlashgacha"
+  },
+  "services": {
+    "badge": "Bizning xizmatlar",
+    "title": "FARMATSEVTIKA MAHSULOTLARI UCHUN KOMPLEKS\nME'YORIY QO'LLAB-QUVVATLASH",
+    "subtitle": "Ro'yxatdan o'tkazishning har bir bosqichida professional ko'mak — hujjatlarni tayyorlashdan ruxsatnoma olishgacha",
+    "more": "Batafsil →",
+    "items": {
+      "drug-registration": {
+        "title": "DORI VOSITALARINI\nRO'YXATDAN O'TKAZISH",
+        "text": "Hujjatlarni tayyorlash va topshirishning barcha bosqichlarida dori vositalarini ro'yxatdan o'tkazishni har tomonlama qo'llab-quvvatlash..."
+      },
+      "medical-registration": {
+        "title": "TIBBIY BUYUMLARNI\nRO'YXATDAN O'TKAZISH",
+        "text": "Joriy me'yoriy talablarga muvofiq tibbiy buyumlarni ro'yxatdan o'tkazishni professional qo'llab-quvvatlash..."
+      },
+      "bad-registration": {
+        "title": "BIOLOGIK FAOL\nQO'SHIMCHALARNI RO'YXATDAN O'TKAZISH",
+        "text": "Barcha talablarga to'liq rioya qilgan holda biologik faol qo'shimchalarni ro'yxatdan o'tkazish jarayonini tayyorlash va qo'llab-quvvatlash..."
+      },
+      "cosmetics-registration": {
+        "title": "KOSMETIK MAHSULOTLARNI\nRO'YXATDAN O'TKAZISH",
+        "text": "Belgilangan talablarga muvofiq davolash va kosmetik mahsulotlarni ro'yxatdan o'tkazishni qo'llab-quvvatlash..."
+      },
+      "clinical-research": {
+        "title": "KLINIK\nSINOVLAR",
+        "text": "Me'yoriy talablarga to'liq rioya qilgan holda ro'yxatdan o'tkazish jarayonida klinik sinovlarni tashkil etish va qo'llab-quvvatlash..."
+      },
+      "regulatory-consulting": {
+        "title": "ME'YORIY\nKONSALTING",
+        "text": "Qonunchilik, ro'yxatga olish dossiesini tayyorlash va me'yoriy qo'llab-quvvatlash bo'yicha ekspert maslahati..."
+      }
+    }
+  },
+  "process": {
+    "badge": "Biz qanday ishlaymiz",
+    "title": "Ro'yxatdan o'tkazish jarayonini\nbosqichma-bosqich qo'llab-quvvatlash",
+    "subtitle": "Me'yoriy tartib-qoidalarga tizimli yondashuv — dastlabki hujjatlarni ko'rib chiqishdan yakuniy ro'yxatdan o'tkazish qarorini olishgacha",
+    "steps": {
+      "1": {
+        "title": "Dossieni tahlil qilish",
+        "text": "Taqdim etilgan hujjatlarni dastlabki ko'rib chiqish, materiallarning to'liqligini baholash va ro'yxatdan o'tkazishni qo'llab-quvvatlash strategiyasini belgilash"
+      },
+      "2": {
+        "title": "Dossieni tayyorlash",
+        "text": "Vakolatli organlar talablariga muvofiq ro'yxatga olish dossiesini tayyorlash, tuzish va rasmiylashtirish"
+      },
+      "3": {
+        "title": "Ko'rib chiqishga topshirish",
+        "text": "To'liq ro'yxatdan o'tkazish paketini vakolatli davlat organiga topshirishni tashkil etish, ko'rib chiqish tartibida qo'llab-quvvatlash bilan"
+      },
+      "4": {
+        "title": "Ro'yxatdan o'tkazishni qo'llab-quvvatlash",
+        "text": "Ekspert ko'rib chiqishning barcha bosqichlarida va tegishli me'yoriy organlar bilan munosabatlarda ro'yxatdan o'tkazish jarayonini har tomonlama qo'llab-quvvatlash"
+      },
+      "5": {
+        "title": "O'zbekiston Sog'liqni saqlash vazirligi tomonidan ro'yxatdan o'tkazish",
+        "text": "Ro'yxatdan o'tkazish jarayonini yakunlash, ro'yxatdan o'tkazish qarorini olish va belgilangan tartib-qoidalarga muvofiq mahsulotni rasmiy ro'yxatdan o'tkazish"
+      },
+      "6": {
+        "title": "Klinik sinovlar",
+        "text": "Joriy me'yoriy talablarga muvofiq ro'yxatdan o'tkazish jarayonida klinik sinovlarni tashkil etish va qo'llab-quvvatlash"
+      }
+    }
+  },
+  "faq": {
+    "1": {
+      "question": "Mahsulotni ro'yxatdan o'tkazish qancha vaqt oladi?",
+      "answer": "Ro'yxatdan o'tkazish jarayoni odatda mahsulot toifasiga, ro'yxatga olish dossiesining to'liqligiga, qo'shimcha tadqiqotlar zaruriyatiga va joriy me'yoriy talablarga qarab 6 dan 24 oygacha davom etadi.",
+      "leftTitle": "RO'YXATDAN O'TKAZISH MUDDATLARI",
+      "leftText": "Mijoz ro'yxatdan o'tkazishning real yo'lini tushunishi uchun biz hujjatlarni, mahsulot toifasini va mumkin bo'lgan tasdiqlash bosqichlarini oldindan baholaymiz."
+    },
+    "2": {
+      "question": "MAXIPHARM qaysi mahsulot toifalari bilan ishlaydi?",
+      "answer": "Kompaniya dori vositalari, tibbiy buyumlar, biologik faol qo'shimchalar va kosmetik mahsulotlarni ro'yxatdan o'tkazishni qo'llab-quvvatlaydi hamda klinik sinovlar bo'yicha ekspert ko'magi ko'rsatadi.",
+      "leftTitle": "MAHSULOT TOIFALARI",
+      "leftText": "MAXIPHARM aniqlik, hujjatlar va me'yoriy ekspertiza muhim ahamiyat kasb etadigan farmatsevtika va tibbiy texnologiyalar sohasidagi loyihalarni qo'llab-quvvatlaydi."
+    },
+    "3": {
+      "question": "Kompleks qo'llab-quvvatlash nimani o'z ichiga oladi?",
+      "answer": "Kompleks qo'llab-quvvatlash hujjatlarni tahlil qilish, ro'yxatga olish dossiesini tayyorlash, vakolatli organlarga topshirish, ko'rib chiqish jarayonida qo'llab-quvvatlash va ro'yxatdan o'tkazish tartibini yakunlashni o'z ichiga oladi.",
+      "leftTitle": "TO'LIQ QO'LLAB-QUVVATLASH",
+      "leftText": "Mijoz har bir bosqichda tizimli ko'mak oladi: manba materiallarini ko'rib chiqishdan ro'yxatdan o'tkazish jarayonini yakunlashgacha."
+    },
+    "4": {
+      "question": "Faqat bitta xizmatni so'rash mumkinmi?",
+      "answer": "Ha. MAXIPHARM to'liq tsikl qo'llab-quvvatlashni ham, alohida yo'nalishlarda — dossie tayyorlash, hujjatlarni tahlil qilish va me'yoriy maslahatlar bo'yicha ekspert yordamini ham taqdim etadi.",
+      "leftTitle": "INDIVIDUAL XIZMATLAR",
+      "leftText": "Agar faqat bitta bosqichda yordam kerak bo'lsa, biz to'liq loyiha qo'llab-quvvatlasisiz muayyan vazifaga qo'shilishimiz mumkin."
+    },
+    "5": {
+      "question": "Kompaniya rad etish yoki kechikishlar xavfini kamaytirishga qanday yordam beradi?",
+      "answer": "Hujjatlarni chuqur tahlil qilish, dossieni to'g'ri tayyorlash va loyihani joriy talablarga muvofiq qo'llab-quvvatlash orqali mutaxassislarimiz me'yoriy xavflarni minimallashtirishga yordam beradi.",
+      "leftTitle": "XAVFNI KAMAYTIRISH",
+      "leftText": "Biz hujjatlardagi zaif tomonlarni erta aniqlaymiz va qayta ko'rib chiqish, kechikishlar va rad etishlar ehtimolini kamaytirishga yordam beramiz."
+    },
+    "6": {
+      "question": "Siz bilan ishlashni qanday boshlash mumkin?",
+      "answer": "Hamkorlik dastlabki maslahat, mahsulot toifasini tahlil qilish va hujjatlarning joriy holatini baholashdan boshlanadi, shundan so'ng qo'llab-quvvatlash strategiyasi ishlab chiqiladi.",
+      "leftTitle": "ISHNI BOSHLASH",
+      "leftText": "Biz dastlabki vazifani tahlil qilishdan boshlaymiz, so'ngra aniq harakat rejasi, muddat va qo'llab-quvvatlash formatini tuzamiz."
+    },
+    "badge": "Biz qanday ishlaymiz",
+    "default_title": "KO'P SO'RALADIGAN SAVOLLAR",
+    "default_text": "Ro'yxatdan o'tkazish jarayoni, qo'llab-quvvatlash muddatlari va kompaniyamiz bilan ishlash haqida eng ko'p so'raladigan savollarga javoblar"
+  },
+  "contact": {
+    "badge": "Hamkorlikni boshlash",
+    "title": "Biz bilan bog'laning",
+    "address_title": "Manzil",
+    "address_text": "Toshkent, Yunusobod tumani, Yangitarnov ko'chasi, 1-o'tish joyi, 12-uy",
+    "phone_title": "Telefon",
+    "email_title": "Elektron pochta",
+    "form_title": "Kontaktlaringizni qoldiring",
+    "name": "Ism",
+    "surname": "Familiya",
+    "phone": "Telefon raqami",
+    "message": "So'rovingizni tasvirlab bering",
+    "submit": "Maslahat olish",
+    "sending": "Yuborilmoqda...",
+    "success": "Xabar yuborildi!",
+    "error": "Yuborishda xatolik"
+  },
+  "footer": {
+    "menu": {
+      "title": "Menyu",
+      "about": "Biz haqimizda",
+      "services": "Xizmatlar",
+      "process": "Biz qanday ishlaymiz",
+      "faq": "Ko'p so'raladigan savollar",
+      "contacts": "Aloqa"
+    },
+    "contacts": {
+      "title": "Aloqa ma'lumotlari",
+      "city": "O'zbekiston Respublikasi, Toshkent",
+      "street": "Yangitarnov ko'chasi, 1-o'tish joyi, 12-uy",
+      "phone": "+998 (90) 928-22-99",
+      "email": "maxipharm.reg@gmail.com"
+    },
+    "tagline": "Farmatsevtika va tibbiy texnologiyalarda mutaxassis me'yoriy qo'llab-quvvatlash!",
+    "copyright": "© 2026 MAXIPHARM. Barcha huquqlar himoyalangan.",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari"
+  },
+  "serviceDetail": {
+    "header": {
+      "title": "FARMATSEVTIKA MAHSULOTLARI UCHUN ME'YORIY QO'LLAB-QUVVATLASH",
+      "subtitle": "Biz farmatsevtika kompaniyalariga dori vositalari va tibbiy buyumlarni ro'yxatdan o'tkazishni yakunlashda yordam beramiz — dossie tayyorlashdan ro'yxatdan o'tkazish guvohnomasini olishgacha"
+    },
+    "tabs": {
+      "drug-registration": "Dori vositalarini ro'yxatdan o'tkazish",
+      "medical-devices": "Tibbiy buyumlar",
+      "bad-registration": "Biologik faol qo'shimchalar",
+      "cosmetics-registration": "Kosmetik mahsulotlar",
+      "clinical-research": "Klinik sinovlar",
+      "regulatory-consulting": "Me'yoriy konsalting"
+    },
+    "services": {
+      "drug-registration": {
+        "sectionTitle": "DORI VOSITALARINI RO'YXATDAN O'TKAZISH",
+        "text": "Dori vositalarini ro'yxatdan o'tkazish — joriy me'yoriy talablarga muvofiq farmatsevtika mahsulotlarini davlat ro'yxatidan o'tkazishni har tomonlama qo'llab-quvvatlash. Xizmat ro'yxatga olish dossiesini tayyorlash va rasmiylashtirish, hujjatlarni tahlil qilish va tizimlash, davlat organlari bilan munosabatlar, ekspert ko'rib chiqishni qo'llab-quvvatlash va ro'yxatdan o'tkazish, qayta ro'yxatdan o'tkazish hamda o'zgartirish kiritishning barcha bosqichlarida maslahat ko'magini o'z ichiga oladi"
+      },
+      "medical-devices": {
+        "sectionTitle": "TIBBIY BUYUMLARNI RO'YXATDAN O'TKAZISH",
+        "text": "Tibbiy buyumlar, asbob-uskunalar va tibbiy maqsadlarda foydalaniladigan mahsulotlarni ro'yxatdan o'tkazishni to'liq professional qo'llab-quvvatlash. Hujjatlarni tahlil qilish, xavf sinfini aniqlash, ro'yxatga olish dossiesini tayyorlash, zarur sinovlarni tashkil etish va me'yoriy organlar bilan munosabatlarni o'z ichiga oladi. Biz qonun hujjatlari talablariga rioya etilishini ta'minlaymiz, rad etilish xavflarini minimallashtiramiz va ishlab chiqaruvchilar hamda yetkazib beruvchilar uchun ro'yxatdan o'tkazish muddatlarini qisqartiramiz"
+      },
+      "bad-registration": {
+        "sectionTitle": "BIOLOGIK FAOL QO'SHIMCHALARNI RO'YXATDAN O'TKAZISH",
+        "text": "Joriy sanitariya va me'yoriy talablarga muvofiq biologik faol qo'shimchalarni (BFQ) ro'yxatdan o'tkazishni professional qo'llab-quvvatlash. Tarkib va hujjatlarni tahlil qilish, ro'yxatga olish dossiesini tayyorlash, zarur ekspert ko'rib chiqishlari va vakolatli organlar bilan munosabatlarni o'z ichiga oladi. Biz mahsulotning belgilangan standartlarga muvofiqligini ta'minlaymiz, rad etilish xavflarini kamaytiramiz va bozorga chiqish uchun ro'yxatdan o'tkazish jarayonini tezlashtiramiz"
+      },
+      "cosmetics-registration": {
+        "sectionTitle": "KOSMETIK MAHSULOTLARNI RO'YXATDAN O'TKAZISH",
+        "text": "Texnik reglamentlar va sanitariya talablariga muvofiq kosmetik mahsulotlarni ro'yxatdan o'tkazish va deklaratsiyalashni professional qo'llab-quvvatlash. Tarkib va yorliqni tahlil qilish, to'liq hujjatlar paketini tayyorlash, zarur sinovlar va me'yoriy organlar bilan munosabatlarni o'z ichiga oladi. Biz mahsulotning standartlarga muvofiqligini ta'minlaymiz, rad etilish xavflarini kamaytiramiz va bozorga tezroq chiqishga yordam beramiz"
+      },
+      "clinical-research": {
+        "sectionTitle": "KLINIK SINOVLAR",
+        "text": "Xalqaro va milliy standartlarga (GCP) muvofiq dori vositalari va tibbiy buyumlarning klinik sinovlarini rejalashtirish va o'tkazishni professional qo'llab-quvvatlash. Protokol ishlab chiqish, hujjatlarni tayyorlash, tadqiqot markazlarini tanlash, sinovlar jarayonini muvofiqlashtirish, ma'lumotlar sifatini monitoring qilish va me'yoriy organlar bilan munosabatlarni o'z ichiga oladi. Biz mahsulotni muvaffaqiyatli ro'yxatdan o'tkazish uchun barcha bosqichlarning to'g'riligi, shaffofligi va me'yoriy talablarga muvofiqligini ta'minlaymiz"
+      },
+      "regulatory-consulting": {
+        "sectionTitle": "ME'YORIY KONSALTING",
+        "text": "Farmatsevtika, tibbiy buyumlar, biologik faol qo'shimchalar va kosmetika sohasidagi mahsulotlarning me'yoriy organlar talablariga muvofiqligi bo'yicha professional maslahat. Me'yoriy bazani tahlil qilish, mahsulot va hujjatlarni baholash, ro'yxatdan o'tkazish va bozorga chiqish strategiyalarini ishlab chiqish hamda regulyatorlar bilan munosabatlarning barcha bosqichlarida maslahat ko'magini o'z ichiga oladi. Biz me'yoriy xavflarni kamaytirish, jarayonlarni optimallashtirish va ruxsat hujjatlarini tezroq olishni ta'minlaymiz"
+      }
+    },
+    "cta": {
+      "title": "SAVOLLARINGIZ BORMI?",
+      "subtitle": "Biz bilan bog'laning — mahsulotingiz uchun ideal yechim topamiz",
+      "button": "ALOQA"
+    }
+  }
+}

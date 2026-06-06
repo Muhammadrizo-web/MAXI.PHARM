@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-
+ 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
+ 
   const { t, i18n } = useTranslation();
-
+ 
   const navItems = useMemo(
     () => [
       { label: t("nav.about"), href: "#about_us" },
@@ -16,7 +16,7 @@ export default function Header() {
     ],
     [t, i18n.language]
   );
-
+ 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -25,14 +25,14 @@ export default function Header() {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+ 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [open]);
-
+ 
   return (
     <>
       <header
@@ -62,7 +62,7 @@ export default function Header() {
               "
             />
           </a>
-
+ 
           {/* desktop nav */}
           <div className="hidden items-center gap-[10px] md:flex">
             <div className="flex items-center gap-[6px]">
@@ -83,7 +83,7 @@ export default function Header() {
               >
                 RU
               </button>
-
+ 
               <button
                 onClick={() => i18n.changeLanguage("en")}
                 className={`
@@ -101,8 +101,26 @@ export default function Header() {
               >
                 EN
               </button>
+ 
+              <button
+                onClick={() => i18n.changeLanguage("uz")}
+                className={`
+                  rounded-full px-[12px] py-[8px]
+                  text-[12px] font-[600]
+                  transition-all duration-300
+                  ${
+                    i18n.language === "uz"
+                      ? "bg-[#089A69] text-white"
+                      : scrolled
+                      ? "bg-black/5 text-[#071E22] hover:bg-black/10"
+                      : "bg-white/10 text-white hover:bg-white/20"
+                  }
+                `}
+              >
+                UZ
+              </button>
             </div>
-
+ 
             <nav
               className={`
                 relative flex h-[44px] items-center overflow-hidden
@@ -145,7 +163,7 @@ export default function Header() {
                     {item.label}
                   </a>
                 ))}
-
+ 
                 <a
                   href="#contacts"
                   className="
@@ -159,7 +177,7 @@ export default function Header() {
                   {t("nav.request")}
                 </a>
               </div>
-
+ 
               {/* desktop burger */}
               <button
                 onClick={() => setOpen(!open)}
@@ -197,7 +215,7 @@ export default function Header() {
               </button>
             </nav>
           </div>
-
+ 
           {/* mobile burger */}
           <button
             onClick={() => setOpen(!open)}
@@ -235,7 +253,7 @@ export default function Header() {
           </button>
         </div>
       </header>
-
+ 
       {/* mobile menu — только на мобиле */}
       <div className="md:hidden">
         {/* backdrop */}
@@ -247,7 +265,7 @@ export default function Header() {
             ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
           `}
         />
-
+ 
         {/* bottom sheet */}
         <div
           className={`
@@ -262,7 +280,7 @@ export default function Header() {
           <div className="flex justify-center pt-[10px] pb-[6px]">
             <div className="h-[4px] w-[32px] rounded-full bg-black/10" />
           </div>
-
+ 
           {/* ссылки */}
           <nav className="px-[16px]">
             {navItems.map((item) => (
@@ -292,7 +310,7 @@ export default function Header() {
               </a>
             ))}
           </nav>
-
+ 
           {/* язык + кнопка */}
           <div className="px-[16px] pt-[14px] pb-[4px] flex flex-col gap-[10px]">
             <div className="flex gap-[8px]">
@@ -318,8 +336,19 @@ export default function Header() {
               >
                 EN
               </button>
+              <button
+                onClick={() => i18n.changeLanguage("uz")}
+                className={`
+                  flex-1 h-[40px] rounded-full
+                  text-[13px] font-[600]
+                  transition-all duration-200
+                  ${i18n.language === "uz" ? "bg-[#089A69] text-white" : "bg-black/[0.05] text-[#071E22]"}
+                `}
+              >
+                UZ
+              </button>
             </div>
-
+ 
             <a
               href="#contacts"
               onClick={() => setOpen(false)}
